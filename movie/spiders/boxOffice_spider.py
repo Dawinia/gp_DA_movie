@@ -11,7 +11,7 @@ class BoxOfficeSpider(scrapy.Spider):
     name = "boxOffice"
 
     def start_requests(self):
-        start_urls = ['http://piaofang.maoyan.com/second-box', ]
+        start_urls = ['http://piaofang.maoyan.com/second-box?beginDate=20200111', ]
 
         for url in start_urls:
             yield scrapy.Request(url=url, callback=self.parse)
