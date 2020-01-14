@@ -1,0 +1,136 @@
+INFO:scrapy.utils.log:Scrapy 1.8.0 started (bot: movie)
+INFO:scrapy.utils.log:Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Dec 27 2019, 00:09:34) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Linux-5.0.0-37-generic-x86_64-with-debian-buster-sid
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'movie', 'FEED_FORMAT': 'json', 'FEED_URI': 'result-20200111.json', 'NEWSPIDER_MODULE': 'movie.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['movie.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 29d68d1793ea9499
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['movie.pipelines.MoviePipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://piaofang.maoyan.com/robots.txt> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://piaofang.maoyan.com/second-box?beginDate=20160101> (referer: None)
+INFO:boxOfficeLogger:ok
+ERROR:scrapy.core.scraper:Spider error processing <GET http://piaofang.maoyan.com/second-box?beginDate=20160101> (referer: None)
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/spiders/boxOffice_spider.py", line 26, in parse
+    for i, movie_info in enumerate(text['list']):
+KeyError: 'list'
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 533,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 2771,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 0.731718,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 1, 14, 14, 6, 48, 724027),
+ 'log_count/DEBUG': 2,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 11,
+ 'memusage/max': 1407225856,
+ 'memusage/startup': 1407225856,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/KeyError': 1,
+ 'start_time': datetime.datetime(2020, 1, 14, 14, 6, 47, 992309)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.8.0 started (bot: movie)
+INFO:scrapy.utils.log:Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Dec 27 2019, 00:09:34) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Linux-5.0.0-37-generic-x86_64-with-debian-buster-sid
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'movie', 'NEWSPIDER_MODULE': 'movie.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['movie.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 18a4e2d22d1ad97d
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['movie.pipelines.MoviePipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://piaofang.maoyan.com/robots.txt> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://piaofang.maoyan.com/second-box?beginDate=20160101> (referer: None)
+INFO:boxOfficeLogger:ok
+INFO:boxOfficeLogger:1: 唐人街探案
+INFO:boxOfficeLogger:2: 老炮儿
+INFO:boxOfficeLogger:3: 寻龙诀
+INFO:boxOfficeLogger:4: 小门神
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 533,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 2769,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 0.48415,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 1, 14, 14, 7, 41, 111096),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 15,
+ 'memusage/max': 1413857280,
+ 'memusage/startup': 1413857280,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2020, 1, 14, 14, 7, 40, 626946)}
+INFO:scrapy.core.engine:Spider closed (finished)
