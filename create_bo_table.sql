@@ -14,9 +14,10 @@ create table if not exists boxOffice
     sumBoxInfo      float                     not null comment '总综合票房',
     showView        smallint                  not null comment '场均人次',
     crawlDate       date                      not null comment '爬取日期',
-    constraint boxOffice_movieID_uindex
-        unique (movieID)
+    yearRate        varchar(13)               not null comment '年份加排名',
+    constraint boxOffice_yearRate_uindex
+        unique (yearRate)
 );
 
 alter table boxOffice
-    add primary key (movieID);
+    add primary key (yearRate);

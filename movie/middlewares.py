@@ -6,6 +6,10 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+import requests
+from movie.spiders.boxOffice_spider import logger
+import json
+import random
 
 
 class MovieSpiderMiddleware(object):
@@ -101,3 +105,43 @@ class MovieDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class CookiesMiddleware(object):
+    pass
+
+
+class ProxyMiddleware():
+    def __init__(self, proxy_url):
+        self.proxy_url = proxy_url
+
+    def get_random_proxy(self):
+        try:
+            # response = requests.get(self.proxy_url)
+            # if response.status_code == 200:
+            #     proxy = response.text
+
+            response = requests.get(self.proxy_url)
+            if response.status_code == 200:
+                proxy_d = random.choice(json.loads(response.text))
+                ip = proxy_d.get('ip')
+                port = proxy_d.get('port')
+                proxy = ip + ':' + port
+                return proxy
+        except requests.ConnectionError:
+            return None
+
+    def process_request(self, request, spider):
+        # if request.meta.get('retry_times'):
+        proxy = self.get_random_proxy()
+        if proxy:
+            uri = 'https://{proxy}'.format(proxy=proxy)
+            logger.debug('使用代理 ' + proxy)
+            request.meta['proxy'] = uri
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        settings = crawler.settings
+        return cls(
+            proxy_url=settings.get('PROXY_URL')
+        )
