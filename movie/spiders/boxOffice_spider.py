@@ -3,18 +3,38 @@ import logging
 from scrapy.loader import ItemLoader
 from movie.items import BoxOfficeItem
 import datetime
+import time
 import json
+from scrapy.utils.project import get_project_settings
 
-logging.basicConfig(filename="boxOffice_spider.log", level=logging.WARNING,
+settings = get_project_settings()
+
+logging.basicConfig(filename=settings['BOXOFFICE_LOG_FILE'], level=logging.WARNING,
                     format='%(asctime)s -  %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s')
 logger = logging.getLogger('boxOfficeLogger')
 
 
-def get_year_rate(date, rate):
-    """ return the record year and corresponding rate as the primary key
-        like 2016-01-01#1
+def get_year_rate(year, rate):
     """
-    return str(date) + f'#{rate}'
+    return the record year and corresponding rate as the primary key
+    :param year: like 20160101
+    :param rate: like 1
+    :return: like 2016-01-01#1
+    """
+    return str(year) + f'#{rate}'
+
+
+def is_legal_date(date: str) -> bool:
+    """
+    if the str is a legal date
+    :param date: the str about date
+    :return: True if the str is legal
+    """
+    try:
+        time.strptime(date, "%Y%m%d")
+        return True
+    except :
+        return False
 
 
 class BoxOfficeSpider(scrapy.Spider):

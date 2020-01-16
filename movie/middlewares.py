@@ -111,33 +111,26 @@ class CookiesMiddleware(object):
     pass
 
 
-class ProxyMiddleware():
-    def __init__(self, proxy_url):
+class ProxyMiddleware(object):
+    def __init__(self, proxy_url: list):
         self.proxy_url = proxy_url
 
     def get_random_proxy(self):
         try:
             # response = requests.get(self.proxy_url)
             # if response.status_code == 200:
-            #     proxy = response.text
-
-            response = requests.get(self.proxy_url)
-            if response.status_code == 200:
-                proxy_d = random.choice(json.loads(response.text))
-                ip = proxy_d.get('ip')
-                port = proxy_d.get('port')
-                proxy = ip + ':' + port
-                return proxy
+            #    proxy = response.text
+            proxy = random.choice(self.proxy_url)
+            return proxy
         except requests.ConnectionError:
             return None
 
     def process_request(self, request, spider):
         # if request.meta.get('retry_times'):
-        proxy = self.get_random_proxy()
+        proxy = random.choice(self.proxy_url)
         if proxy:
-            uri = 'https://{proxy}'.format(proxy=proxy)
             logger.debug('使用代理 ' + proxy)
-            request.meta['proxy'] = uri
+            request.meta['proxy'] = proxy
 
     @classmethod
     def from_crawler(cls, crawler):

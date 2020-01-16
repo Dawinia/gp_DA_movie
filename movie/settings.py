@@ -45,9 +45,10 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-# SPIDER_MIDDLEWARES = {
-#    'movie.middlewares.MovieSpiderMiddleware': 543,
-# }
+SPIDER_MIDDLEWARES = {
+    'movie.middlewares.ProxyMiddleware': 542,
+    'movie.middlewares.MovieSpiderMiddleware': 543,
+}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -67,6 +68,8 @@ ITEM_PIPELINES = {
     'movie.pipelines.BoxOfficePipeline': 300,
     'movie.pipelines.MySQLPipeline': 301,
 }
+
+BOXOFFICE_LOG_FILE = "boxOffice_spider.log"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,3 +91,17 @@ ITEM_PIPELINES = {
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+# Configure the proxy pool
+PROXY_URL = [
+    "http://117.57.90.148:9999",
+    "http://223.199.23.252:9999",
+    "http://223.199.22.150:9999",
+    "http://106.85.130.9:9999",
+    "http://223.199.16.30:9999",
+    "http://223.199.19.109:9999",
+]
+
+DATABASE_USER = "root"
+DATABASE_PASSWORD = "password"
+DATABASE_PORT = "3306"
+DATABASE_NAME = "movie"
