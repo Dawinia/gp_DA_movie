@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'movie.spiders'
 # USER_AGENT = 'movie (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -100,6 +100,8 @@ PROXY_URL = [
     "http://223.199.16.30:9999",
     "http://223.199.19.109:9999",
 ]
+
+END_DATE = 20160301
 
 DATABASE_USER = "root"
 DATABASE_PASSWORD = "password"
