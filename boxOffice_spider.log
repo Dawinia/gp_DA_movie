@@ -1,19 +1,18 @@
-2020-04-17 23:45:43,991 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
-2020-04-17 23:45:43,996 -  log.py[line:149] - INFO: Versions: lxml 4.3.2.0, libxml2 2.9.9, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.3 (default, Mar 27 2019, 22:11:17) - [GCC 7.3.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.6.1, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
-2020-04-17 23:45:43,999 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
-2020-04-17 23:45:44,007 -  telnet.py[line:60] - INFO: Telnet Password: 225651521004f104
-2020-04-17 23:45:44,015 -  middleware.py[line:48] - INFO: Enabled extensions:
+2020-04-18 01:12:26,971 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-18 01:12:26,974 -  log.py[line:149] - INFO: Versions: lxml 4.3.2.0, libxml2 2.9.9, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.3 (default, Mar 27 2019, 22:11:17) - [GCC 7.3.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.6.1, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-18 01:12:26,977 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-18 01:12:26,984 -  telnet.py[line:60] - INFO: Telnet Password: a5bbe7099760e386
+2020-04-18 01:12:26,992 -  middleware.py[line:48] - INFO: Enabled extensions:
 ['scrapy.extensions.corestats.CoreStats',
  'scrapy.extensions.telnet.TelnetConsole',
  'scrapy.extensions.memusage.MemoryUsage',
  'scrapy.extensions.logstats.LogStats']
-2020-04-17 23:45:44,127 -  middlewares.py[line:132] - ERROR: start to use judge duplicate
-2020-04-17 23:45:44,130 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+2020-04-18 01:12:27,097 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
- 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
  'movie.middlewares.MovieDownloaderMiddleware',
  'scrapy.downloadermiddlewares.retry.RetryMiddleware',
  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
@@ -22,40 +21,2109 @@
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2020-04-17 23:45:44,132 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+2020-04-18 01:12:27,099 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
- 'movie.middlewares.UserAgentMiddleware',
- 'movie.middlewares.ProxyMiddleware',
  'movie.middlewares.MovieSpiderMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2020-04-17 23:45:44,137 -  pipelines.py[line:44] - ERROR: setting: custom boxOffice setting
-2020-04-17 23:45:44,174 -  pipelines.py[line:40] - ERROR: pipeline init
-2020-04-17 23:45:44,174 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+2020-04-18 01:12:27,105 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-18 01:12:27,105 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-18 01:12:27,140 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-18 01:12:27,140 -  middleware.py[line:48] - INFO: Enabled item pipelines:
 ['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
-2020-04-17 23:45:44,174 -  engine.py[line:257] - INFO: Spider opened
-2020-04-17 23:45:44,175 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2020-04-17 23:45:44,175 -  middlewares.py[line:112] - INFO: Spider opened: movie
-2020-04-17 23:45:44,175 -  middlewares.py[line:65] - INFO: Spider opened: movie
-2020-04-17 23:45:44,176 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6026
-2020-04-17 23:45:44,180 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
-2020-04-17 23:45:44,181 -  middlewares.py[line:138] - ERROR: into the process function of dm
-2020-04-17 23:45:44,181 -  middlewares.py[line:142] - ERROR: url_seen has been added!
-2020-04-17 23:45:44,383 -  engine.py[line:296] - INFO: Closing spider (finished)
-2020-04-17 23:45:44,385 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
-{'downloader/exception_count': 1,
- 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 1,
- 'elapsed_time_seconds': 0.20932,
+2020-04-18 01:12:27,140 -  engine.py[line:257] - INFO: Spider opened
+2020-04-18 01:12:27,141 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-18 01:12:27,141 -  middlewares.py[line:112] - INFO: Spider opened: movie
+2020-04-18 01:12:27,141 -  middlewares.py[line:65] - INFO: Spider opened: movie
+2020-04-18 01:12:27,142 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6026
+2020-04-18 01:12:27,144 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-18 01:12:27,310 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419> (referer: None)
+2020-04-18 01:12:27,314 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418> (referer: None)
+2020-04-18 01:12:27,494 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419
+2020-04-18 01:12:27,499 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-18 01:12:27,503 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['1801.52'],
+ 'boxRate': ['29.6%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映16天'],
+ 'seatRate': ['5.5%'],
+ 'showInfo': [74705],
+ 'showRate': ['20.7%'],
+ 'showView': ['7'],
+ 'splitBoxInfo': ['1665.02'],
+ 'splitSumBoxInfo': ['63400.0'],
+ 'sumBoxInfo': ['68600.0'],
+ 'yearRate': ['2019-04-19#1']}
+{'boxInfo': ['1801.52'],
+ 'boxRate': ['29.6%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映16天'],
+ 'seatRate': ['5.5%'],
+ 'showInfo': [74705],
+ 'showRate': ['20.7%'],
+ 'showView': ['7'],
+ 'splitBoxInfo': ['1665.02'],
+ 'splitSumBoxInfo': ['63400.0'],
+ 'sumBoxInfo': ['68600.0'],
+ 'yearRate': ['2019-04-19#1']}
+2020-04-18 01:12:27,513 -  movie_spider.py[line:143] - WARNING: get 2 movie info, named None.
+2020-04-18 01:12:27,517 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['1079.52'],
+ 'boxRate': ['17.7%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映17天'],
+ 'seatRate': ['7.6%'],
+ 'showInfo': [38571],
+ 'showRate': ['10.6%'],
+ 'showView': ['9'],
+ 'splitBoxInfo': ['981.18'],
+ 'splitSumBoxInfo': ['22400.0'],
+ 'sumBoxInfo': ['24900.0'],
+ 'yearRate': ['2019-04-19#2']}
+{'boxInfo': ['1079.52'],
+ 'boxRate': ['17.7%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映17天'],
+ 'seatRate': ['7.6%'],
+ 'showInfo': [38571],
+ 'showRate': ['10.6%'],
+ 'showView': ['9'],
+ 'splitBoxInfo': ['981.18'],
+ 'splitSumBoxInfo': ['22400.0'],
+ 'sumBoxInfo': ['24900.0'],
+ 'yearRate': ['2019-04-19#2']}
+2020-04-18 01:12:27,598 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418
+2020-04-18 01:12:27,602 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-18 01:12:27,606 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['1462.50'],
+ 'boxRate': ['41.8%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['4.0%'],
+ 'showInfo': [97520],
+ 'showRate': ['31.0%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['1344.97'],
+ 'splitSumBoxInfo': ['61700.0'],
+ 'sumBoxInfo': ['66800.0'],
+ 'yearRate': ['2019-04-18#1']}
+{'boxInfo': ['1462.50'],
+ 'boxRate': ['41.8%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['4.0%'],
+ 'showInfo': [97520],
+ 'showRate': ['31.0%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['1344.97'],
+ 'splitSumBoxInfo': ['61700.0'],
+ 'sumBoxInfo': ['66800.0'],
+ 'yearRate': ['2019-04-18#1']}
+2020-04-18 01:12:27,644 -  movie_spider.py[line:143] - WARNING: get 3 movie info, named None.
+2020-04-18 01:12:27,646 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['905.52'],
+ 'boxRate': ['14.9%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1207260],
+ 'movieName': ['如影随心'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [73594],
+ 'showRate': ['20.4%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['851.62'],
+ 'splitSumBoxInfo': ['860.7'],
+ 'sumBoxInfo': ['915.0'],
+ 'yearRate': ['2019-04-19#3']}
+{'boxInfo': ['905.52'],
+ 'boxRate': ['14.9%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1207260],
+ 'movieName': ['如影随心'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [73594],
+ 'showRate': ['20.4%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['851.62'],
+ 'splitSumBoxInfo': ['860.7'],
+ 'sumBoxInfo': ['915.0'],
+ 'yearRate': ['2019-04-19#3']}
+2020-04-18 01:12:27,647 -  movie_spider.py[line:143] - WARNING: get 4 movie info, named None.
+2020-04-18 01:12:27,648 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['694.98'],
+ 'boxRate': ['11.4%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1162868],
+ 'movieName': ['转型团伙'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['5.9%'],
+ 'showInfo': [49100],
+ 'showRate': ['13.6%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['636.16'],
+ 'splitSumBoxInfo': ['641.7'],
+ 'sumBoxInfo': ['700.9'],
+ 'yearRate': ['2019-04-19#4']}
+{'boxInfo': ['694.98'],
+ 'boxRate': ['11.4%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1162868],
+ 'movieName': ['转型团伙'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['5.9%'],
+ 'showInfo': [49100],
+ 'showRate': ['13.6%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['636.16'],
+ 'splitSumBoxInfo': ['641.7'],
+ 'sumBoxInfo': ['700.9'],
+ 'yearRate': ['2019-04-19#4']}
+2020-04-18 01:12:27,650 -  movie_spider.py[line:143] - WARNING: get 5 movie info, named None.
+2020-04-18 01:12:27,651 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['296.15'],
+ 'boxRate': ['4.8%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['7.9%'],
+ 'showInfo': [12467],
+ 'showRate': ['3.4%'],
+ 'showView': ['8'],
+ 'splitBoxInfo': ['268.68'],
+ 'splitSumBoxInfo': ['4342.2'],
+ 'sumBoxInfo': ['4814.6'],
+ 'yearRate': ['2019-04-19#5']}
+{'boxInfo': ['296.15'],
+ 'boxRate': ['4.8%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['7.9%'],
+ 'showInfo': [12467],
+ 'showRate': ['3.4%'],
+ 'showView': ['8'],
+ 'splitBoxInfo': ['268.68'],
+ 'splitSumBoxInfo': ['4342.2'],
+ 'sumBoxInfo': ['4814.6'],
+ 'yearRate': ['2019-04-19#5']}
+2020-04-18 01:12:27,652 -  movie_spider.py[line:143] - WARNING: get 6 movie info, named None.
+2020-04-18 01:12:27,653 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['254.99'],
+ 'boxRate': ['4.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1211412],
+ 'movieName': ['神奇乐园历险记'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['5.3%'],
+ 'showInfo': [24047],
+ 'showRate': ['6.6%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['236.39'],
+ 'splitSumBoxInfo': ['252.1'],
+ 'sumBoxInfo': ['271.5'],
+ 'yearRate': ['2019-04-19#6']}
+{'boxInfo': ['254.99'],
+ 'boxRate': ['4.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1211412],
+ 'movieName': ['神奇乐园历险记'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['5.3%'],
+ 'showInfo': [24047],
+ 'showRate': ['6.6%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['236.39'],
+ 'splitSumBoxInfo': ['252.1'],
+ 'sumBoxInfo': ['271.5'],
+ 'yearRate': ['2019-04-19#6']}
+2020-04-18 01:12:27,654 -  movie_spider.py[line:143] - WARNING: get 7 movie info, named None.
+2020-04-18 01:12:27,654 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['251.90'],
+ 'boxRate': ['4.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [248123],
+ 'movieName': ['雷霆沙赞！'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['3.6%'],
+ 'showInfo': [17805],
+ 'showRate': ['4.9%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['233.81'],
+ 'splitSumBoxInfo': ['25900.0'],
+ 'sumBoxInfo': ['28300.0'],
+ 'yearRate': ['2019-04-19#7']}
+{'boxInfo': ['251.90'],
+ 'boxRate': ['4.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [248123],
+ 'movieName': ['雷霆沙赞！'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['3.6%'],
+ 'showInfo': [17805],
+ 'showRate': ['4.9%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['233.81'],
+ 'splitSumBoxInfo': ['25900.0'],
+ 'sumBoxInfo': ['28300.0'],
+ 'yearRate': ['2019-04-19#7']}
+2020-04-18 01:12:27,656 -  dupefilters.py[line:70] - DEBUG: Filtered duplicate request: <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2020-04-18 01:12:27,656 -  movie_spider.py[line:143] - WARNING: get 2 movie info, named None.
+2020-04-18 01:12:27,657 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['812.48'],
+ 'boxRate': ['23.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映16天'],
+ 'seatRate': ['4.7%'],
+ 'showInfo': [55306],
+ 'showRate': ['17.6%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['733.55'],
+ 'splitSumBoxInfo': ['21400.0'],
+ 'sumBoxInfo': ['23800.0'],
+ 'yearRate': ['2019-04-18#2']}
+{'boxInfo': ['812.48'],
+ 'boxRate': ['23.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映16天'],
+ 'seatRate': ['4.7%'],
+ 'showInfo': [55306],
+ 'showRate': ['17.6%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['733.55'],
+ 'splitSumBoxInfo': ['21400.0'],
+ 'sumBoxInfo': ['23800.0'],
+ 'yearRate': ['2019-04-18#2']}
+2020-04-18 01:12:27,658 -  movie_spider.py[line:143] - WARNING: get 3 movie info, named None.
+2020-04-18 01:12:27,659 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['349.66'],
+ 'boxRate': ['10.0%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['4.6%'],
+ 'showInfo': [32841],
+ 'showRate': ['10.4%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['315.54'],
+ 'splitSumBoxInfo': ['4073.5'],
+ 'sumBoxInfo': ['4518.5'],
+ 'yearRate': ['2019-04-18#3']}
+{'boxInfo': ['349.66'],
+ 'boxRate': ['10.0%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['4.6%'],
+ 'showInfo': [32841],
+ 'showRate': ['10.4%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['315.54'],
+ 'splitSumBoxInfo': ['4073.5'],
+ 'sumBoxInfo': ['4518.5'],
+ 'yearRate': ['2019-04-18#3']}
+2020-04-18 01:12:27,660 -  movie_spider.py[line:143] - WARNING: get 4 movie info, named None.
+2020-04-18 01:12:27,661 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['218.96'],
+ 'boxRate': ['6.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [248123],
+ 'movieName': ['雷霆沙赞！'],
+ 'releaseInfo': ['上映14天'],
+ 'seatRate': ['3.2%'],
+ 'showInfo': [34886],
+ 'showRate': ['11.1%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['200.61'],
+ 'splitSumBoxInfo': ['25600.0'],
+ 'sumBoxInfo': ['28100.0'],
+ 'yearRate': ['2019-04-18#4']}
+{'boxInfo': ['218.96'],
+ 'boxRate': ['6.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [248123],
+ 'movieName': ['雷霆沙赞！'],
+ 'releaseInfo': ['上映14天'],
+ 'seatRate': ['3.2%'],
+ 'showInfo': [34886],
+ 'showRate': ['11.1%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['200.61'],
+ 'splitSumBoxInfo': ['25600.0'],
+ 'sumBoxInfo': ['28100.0'],
+ 'yearRate': ['2019-04-18#4']}
+2020-04-18 01:12:27,662 -  movie_spider.py[line:143] - WARNING: get 5 movie info, named None.
+2020-04-18 01:12:27,663 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['199.15'],
+ 'boxRate': ['5.6%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映28天'],
+ 'seatRate': ['4.0%'],
+ 'showInfo': [19631],
+ 'showRate': ['6.2%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['184.15'],
+ 'splitSumBoxInfo': ['31400.0'],
+ 'sumBoxInfo': ['34000.0'],
+ 'yearRate': ['2019-04-18#5']}
+{'boxInfo': ['199.15'],
+ 'boxRate': ['5.6%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映28天'],
+ 'seatRate': ['4.0%'],
+ 'showInfo': [19631],
+ 'showRate': ['6.2%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['184.15'],
+ 'splitSumBoxInfo': ['31400.0'],
+ 'sumBoxInfo': ['34000.0'],
+ 'yearRate': ['2019-04-18#5']}
+2020-04-18 01:12:27,664 -  movie_spider.py[line:143] - WARNING: get 6 movie info, named None.
+2020-04-18 01:12:27,664 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['78.71'],
+ 'boxRate': ['2.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['46.5%'],
+ 'showInfo': [203],
+ 'showRate': ['<0.1%'],
+ 'showView': ['102'],
+ 'splitBoxInfo': ['78.71'],
+ 'splitSumBoxInfo': ['1756.8'],
+ 'sumBoxInfo': ['1769.3'],
+ 'yearRate': ['2019-04-18#6']}
+{'boxInfo': ['78.71'],
+ 'boxRate': ['2.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['46.5%'],
+ 'showInfo': [203],
+ 'showRate': ['<0.1%'],
+ 'showView': ['102'],
+ 'splitBoxInfo': ['78.71'],
+ 'splitSumBoxInfo': ['1756.8'],
+ 'sumBoxInfo': ['1769.3'],
+ 'yearRate': ['2019-04-18#6']}
+2020-04-18 01:12:27,666 -  movie_spider.py[line:143] - WARNING: get 7 movie info, named None.
+2020-04-18 01:12:27,666 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['49.98'],
+ 'boxRate': ['1.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [368260],
+ 'movieName': ['最佳男友进化论'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['2.8%'],
+ 'showInfo': [17033],
+ 'showRate': ['5.4%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['45.56'],
+ 'splitSumBoxInfo': ['1275.4'],
+ 'sumBoxInfo': ['1404.9'],
+ 'yearRate': ['2019-04-18#7']}
+{'boxInfo': ['49.98'],
+ 'boxRate': ['1.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [368260],
+ 'movieName': ['最佳男友进化论'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['2.8%'],
+ 'showInfo': [17033],
+ 'showRate': ['5.4%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['45.56'],
+ 'splitSumBoxInfo': ['1275.4'],
+ 'sumBoxInfo': ['1404.9'],
+ 'yearRate': ['2019-04-18#7']}
+2020-04-18 01:12:27,667 -  movie_spider.py[line:143] - WARNING: get 8 movie info, named None.
+2020-04-18 01:12:27,668 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['182.63'],
+ 'boxRate': ['3.0%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映29天'],
+ 'seatRate': ['6.3%'],
+ 'showInfo': [9234],
+ 'showRate': ['2.5%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['170.68'],
+ 'splitSumBoxInfo': ['31600.0'],
+ 'sumBoxInfo': ['34200.0'],
+ 'yearRate': ['2019-04-19#8']}
+{'boxInfo': ['182.63'],
+ 'boxRate': ['3.0%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映29天'],
+ 'seatRate': ['6.3%'],
+ 'showInfo': [9234],
+ 'showRate': ['2.5%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['170.68'],
+ 'splitSumBoxInfo': ['31600.0'],
+ 'sumBoxInfo': ['34200.0'],
+ 'yearRate': ['2019-04-19#8']}
+2020-04-18 01:12:27,669 -  movie_spider.py[line:143] - WARNING: get 9 movie info, named None.
+2020-04-18 01:12:27,670 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['176.59'],
+ 'boxRate': ['2.9%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [581264],
+ 'movieName': ['境·界'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['4.2%'],
+ 'showInfo': [38871],
+ 'showRate': ['10.7%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['165.47'],
+ 'splitSumBoxInfo': ['169.0'],
+ 'sumBoxInfo': ['180.3'],
+ 'yearRate': ['2019-04-19#9']}
+{'boxInfo': ['176.59'],
+ 'boxRate': ['2.9%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [581264],
+ 'movieName': ['境·界'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['4.2%'],
+ 'showInfo': [38871],
+ 'showRate': ['10.7%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['165.47'],
+ 'splitSumBoxInfo': ['169.0'],
+ 'sumBoxInfo': ['180.3'],
+ 'yearRate': ['2019-04-19#9']}
+2020-04-18 01:12:27,671 -  movie_spider.py[line:143] - WARNING: get 10 movie info, named None.
+2020-04-18 01:12:27,672 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['70.57'],
+ 'boxRate': ['1.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['89.1%'],
+ 'showInfo': [154],
+ 'showRate': ['<0.1%'],
+ 'showView': ['119'],
+ 'splitBoxInfo': ['70.57'],
+ 'splitSumBoxInfo': ['1827.4'],
+ 'sumBoxInfo': ['1839.8'],
+ 'yearRate': ['2019-04-19#10']}
+{'boxInfo': ['70.57'],
+ 'boxRate': ['1.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['89.1%'],
+ 'showInfo': [154],
+ 'showRate': ['<0.1%'],
+ 'showView': ['119'],
+ 'splitBoxInfo': ['70.57'],
+ 'splitSumBoxInfo': ['1827.4'],
+ 'sumBoxInfo': ['1839.8'],
+ 'yearRate': ['2019-04-19#10']}
+2020-04-18 01:12:27,673 -  movie_spider.py[line:143] - WARNING: get 11 movie info, named None.
+2020-04-18 01:12:27,674 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['54.15'],
+ 'boxRate': ['0.8%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1219670],
+ 'movieName': ['海市蜃楼'],
+ 'releaseInfo': ['上映23天'],
+ 'seatRate': ['17.1%'],
+ 'showInfo': [846],
+ 'showRate': ['0.2%'],
+ 'showView': ['21'],
+ 'splitBoxInfo': ['53.21'],
+ 'splitSumBoxInfo': ['9814.5'],
+ 'sumBoxInfo': ['10800.0'],
+ 'yearRate': ['2019-04-19#11']}
+{'boxInfo': ['54.15'],
+ 'boxRate': ['0.8%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1219670],
+ 'movieName': ['海市蜃楼'],
+ 'releaseInfo': ['上映23天'],
+ 'seatRate': ['17.1%'],
+ 'showInfo': [846],
+ 'showRate': ['0.2%'],
+ 'showView': ['21'],
+ 'splitBoxInfo': ['53.21'],
+ 'splitSumBoxInfo': ['9814.5'],
+ 'sumBoxInfo': ['10800.0'],
+ 'yearRate': ['2019-04-19#11']}
+2020-04-18 01:12:27,675 -  movie_spider.py[line:143] - WARNING: get 12 movie info, named None.
+2020-04-18 01:12:27,675 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['38.21'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1167831],
+ 'movieName': ['波西米亚狂想曲'],
+ 'releaseInfo': ['上映29天'],
+ 'seatRate': ['6.3%'],
+ 'showInfo': [1404],
+ 'showRate': ['0.3%'],
+ 'showView': ['7'],
+ 'splitBoxInfo': ['35.12'],
+ 'splitSumBoxInfo': ['8723.1'],
+ 'sumBoxInfo': ['9628.7'],
+ 'yearRate': ['2019-04-19#12']}
+{'boxInfo': ['38.21'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1167831],
+ 'movieName': ['波西米亚狂想曲'],
+ 'releaseInfo': ['上映29天'],
+ 'seatRate': ['6.3%'],
+ 'showInfo': [1404],
+ 'showRate': ['0.3%'],
+ 'showView': ['7'],
+ 'splitBoxInfo': ['35.12'],
+ 'splitSumBoxInfo': ['8723.1'],
+ 'sumBoxInfo': ['9628.7'],
+ 'yearRate': ['2019-04-19#12']}
+2020-04-18 01:12:27,676 -  movie_spider.py[line:143] - WARNING: get 13 movie info, named None.
+2020-04-18 01:12:27,677 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['37.22'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [346765],
+ 'movieName': ['小飞象'],
+ 'releaseInfo': ['上映22天'],
+ 'seatRate': ['6.2%'],
+ 'showInfo': [2194],
+ 'showRate': ['0.6%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['34.54'],
+ 'splitSumBoxInfo': ['13000.0'],
+ 'sumBoxInfo': ['14200.0'],
+ 'yearRate': ['2019-04-19#13']}
+{'boxInfo': ['37.22'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [346765],
+ 'movieName': ['小飞象'],
+ 'releaseInfo': ['上映22天'],
+ 'seatRate': ['6.2%'],
+ 'showInfo': [2194],
+ 'showRate': ['0.6%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['34.54'],
+ 'splitSumBoxInfo': ['13000.0'],
+ 'sumBoxInfo': ['14200.0'],
+ 'yearRate': ['2019-04-19#13']}
+2020-04-18 01:12:27,717 -  movie_spider.py[line:143] - WARNING: get 8 movie info, named None.
+2020-04-18 01:12:27,718 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['38.73'],
+ 'boxRate': ['1.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [346765],
+ 'movieName': ['小飞象'],
+ 'releaseInfo': ['上映21天'],
+ 'seatRate': ['3.7%'],
+ 'showInfo': [5994],
+ 'showRate': ['1.9%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['35.60'],
+ 'splitSumBoxInfo': ['13000.0'],
+ 'sumBoxInfo': ['14100.0'],
+ 'yearRate': ['2019-04-18#8']}
+{'boxInfo': ['38.73'],
+ 'boxRate': ['1.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [346765],
+ 'movieName': ['小飞象'],
+ 'releaseInfo': ['上映21天'],
+ 'seatRate': ['3.7%'],
+ 'showInfo': [5994],
+ 'showRate': ['1.9%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['35.60'],
+ 'splitSumBoxInfo': ['13000.0'],
+ 'sumBoxInfo': ['14100.0'],
+ 'yearRate': ['2019-04-18#8']}
+2020-04-18 01:12:27,720 -  movie_spider.py[line:143] - WARNING: get 9 movie info, named None.
+2020-04-18 01:12:27,720 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['36.80'],
+ 'boxRate': ['1.0%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1216383],
+ 'movieName': ['比悲伤更悲伤的故事'],
+ 'releaseInfo': ['上映36天'],
+ 'seatRate': ['3.4%'],
+ 'showInfo': [5956],
+ 'showRate': ['1.8%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['33.18'],
+ 'splitSumBoxInfo': ['85600.0'],
+ 'sumBoxInfo': ['95500.0'],
+ 'yearRate': ['2019-04-18#9']}
+{'boxInfo': ['36.80'],
+ 'boxRate': ['1.0%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1216383],
+ 'movieName': ['比悲伤更悲伤的故事'],
+ 'releaseInfo': ['上映36天'],
+ 'seatRate': ['3.4%'],
+ 'showInfo': [5956],
+ 'showRate': ['1.8%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['33.18'],
+ 'splitSumBoxInfo': ['85600.0'],
+ 'sumBoxInfo': ['95500.0'],
+ 'yearRate': ['2019-04-18#9']}
+2020-04-18 01:12:27,722 -  movie_spider.py[line:143] - WARNING: get 10 movie info, named None.
+2020-04-18 01:12:27,722 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['29.60'],
+ 'boxRate': ['0.8%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1167831],
+ 'movieName': ['波西米亚狂想曲'],
+ 'releaseInfo': ['上映28天'],
+ 'seatRate': ['4.5%'],
+ 'showInfo': [2483],
+ 'showRate': ['0.7%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['26.69'],
+ 'splitSumBoxInfo': ['8688.0'],
+ 'sumBoxInfo': ['9590.5'],
+ 'yearRate': ['2019-04-18#10']}
+{'boxInfo': ['29.60'],
+ 'boxRate': ['0.8%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1167831],
+ 'movieName': ['波西米亚狂想曲'],
+ 'releaseInfo': ['上映28天'],
+ 'seatRate': ['4.5%'],
+ 'showInfo': [2483],
+ 'showRate': ['0.7%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['26.69'],
+ 'splitSumBoxInfo': ['8688.0'],
+ 'sumBoxInfo': ['9590.5'],
+ 'yearRate': ['2019-04-18#10']}
+2020-04-18 01:12:27,723 -  movie_spider.py[line:143] - WARNING: get 11 movie info, named None.
+2020-04-18 01:12:27,724 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['29.57'],
+ 'boxRate': ['0.8%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [345875],
+ 'movieName': ['风中有朵雨做的云'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['3.5%'],
+ 'showInfo': [4158],
+ 'showRate': ['1.3%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['27.32'],
+ 'splitSumBoxInfo': ['5880.6'],
+ 'sumBoxInfo': ['6417.6'],
+ 'yearRate': ['2019-04-18#11']}
+{'boxInfo': ['29.57'],
+ 'boxRate': ['0.8%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [345875],
+ 'movieName': ['风中有朵雨做的云'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['3.5%'],
+ 'showInfo': [4158],
+ 'showRate': ['1.3%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['27.32'],
+ 'splitSumBoxInfo': ['5880.6'],
+ 'sumBoxInfo': ['6417.6'],
+ 'yearRate': ['2019-04-18#11']}
+2020-04-18 01:12:27,725 -  movie_spider.py[line:143] - WARNING: get 12 movie info, named None.
+2020-04-18 01:12:27,726 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['26.64'],
+ 'boxRate': ['0.7%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1213175],
+ 'movieName': ['在乎你'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['2.7%'],
+ 'showInfo': [6366],
+ 'showRate': ['2.0%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['25.63'],
+ 'splitSumBoxInfo': ['593.3'],
+ 'sumBoxInfo': ['624.5'],
+ 'yearRate': ['2019-04-18#12']}
+{'boxInfo': ['26.64'],
+ 'boxRate': ['0.7%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1213175],
+ 'movieName': ['在乎你'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['2.7%'],
+ 'showInfo': [6366],
+ 'showRate': ['2.0%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['25.63'],
+ 'splitSumBoxInfo': ['593.3'],
+ 'sumBoxInfo': ['624.5'],
+ 'yearRate': ['2019-04-18#12']}
+2020-04-18 01:12:27,727 -  movie_spider.py[line:143] - WARNING: get 13 movie info, named None.
+2020-04-18 01:12:27,728 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['19.80'],
+ 'boxRate': ['0.5%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1219670],
+ 'movieName': ['海市蜃楼'],
+ 'releaseInfo': ['上映22天'],
+ 'seatRate': ['3.7%'],
+ 'showInfo': [2511],
+ 'showRate': ['0.7%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['17.96'],
+ 'splitSumBoxInfo': ['9761.3'],
+ 'sumBoxInfo': ['10800.0'],
+ 'yearRate': ['2019-04-18#13']}
+{'boxInfo': ['19.80'],
+ 'boxRate': ['0.5%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1219670],
+ 'movieName': ['海市蜃楼'],
+ 'releaseInfo': ['上映22天'],
+ 'seatRate': ['3.7%'],
+ 'showInfo': [2511],
+ 'showRate': ['0.7%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['17.96'],
+ 'splitSumBoxInfo': ['9761.3'],
+ 'sumBoxInfo': ['10800.0'],
+ 'yearRate': ['2019-04-18#13']}
+2020-04-18 01:12:27,729 -  movie_spider.py[line:143] - WARNING: get 14 movie info, named None.
+2020-04-18 01:12:27,730 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['26.64'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1216383],
+ 'movieName': ['比悲伤更悲伤的故事'],
+ 'releaseInfo': ['上映37天'],
+ 'seatRate': ['4.2%'],
+ 'showInfo': [2861],
+ 'showRate': ['0.7%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['24.19'],
+ 'splitSumBoxInfo': ['85600.0'],
+ 'sumBoxInfo': ['95500.0'],
+ 'yearRate': ['2019-04-19#14']}
+{'boxInfo': ['26.64'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1216383],
+ 'movieName': ['比悲伤更悲伤的故事'],
+ 'releaseInfo': ['上映37天'],
+ 'seatRate': ['4.2%'],
+ 'showInfo': [2861],
+ 'showRate': ['0.7%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['24.19'],
+ 'splitSumBoxInfo': ['85600.0'],
+ 'sumBoxInfo': ['95500.0'],
+ 'yearRate': ['2019-04-19#14']}
+2020-04-18 01:12:27,731 -  movie_spider.py[line:143] - WARNING: get 15 movie info, named None.
+2020-04-18 01:12:27,732 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['15.59'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [248906],
+ 'movieName': ['流浪地球'],
+ 'releaseInfo': [''],
+ 'seatRate': ['5.5%'],
+ 'showInfo': [932],
+ 'showRate': ['0.2%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['14.54'],
+ 'splitSumBoxInfo': ['435200.0'],
+ 'sumBoxInfo': ['467800.0'],
+ 'yearRate': ['2019-04-19#15']}
+{'boxInfo': ['15.59'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [248906],
+ 'movieName': ['流浪地球'],
+ 'releaseInfo': [''],
+ 'seatRate': ['5.5%'],
+ 'showInfo': [932],
+ 'showRate': ['0.2%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['14.54'],
+ 'splitSumBoxInfo': ['435200.0'],
+ 'sumBoxInfo': ['467800.0'],
+ 'yearRate': ['2019-04-19#15']}
+2020-04-18 01:12:27,733 -  movie_spider.py[line:143] - WARNING: get 16 movie info, named None.
+2020-04-18 01:12:27,734 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['15.11'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1238775],
+ 'movieName': ['特别追踪'],
+ 'releaseInfo': [''],
+ 'seatRate': ['47.9%'],
+ 'showInfo': [71],
+ 'showRate': ['<0.1%'],
+ 'showView': ['43'],
+ 'splitBoxInfo': ['15.10'],
+ 'splitSumBoxInfo': ['398.1'],
+ 'sumBoxInfo': ['398.2'],
+ 'yearRate': ['2019-04-19#16']}
+{'boxInfo': ['15.11'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1238775],
+ 'movieName': ['特别追踪'],
+ 'releaseInfo': [''],
+ 'seatRate': ['47.9%'],
+ 'showInfo': [71],
+ 'showRate': ['<0.1%'],
+ 'showView': ['43'],
+ 'splitBoxInfo': ['15.10'],
+ 'splitSumBoxInfo': ['398.1'],
+ 'sumBoxInfo': ['398.2'],
+ 'yearRate': ['2019-04-19#16']}
+2020-04-18 01:12:27,735 -  movie_spider.py[line:143] - WARNING: get 17 movie info, named None.
+2020-04-18 01:12:27,736 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['13.73'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [345875],
+ 'movieName': ['风中有朵雨做的云'],
+ 'releaseInfo': ['上映16天'],
+ 'seatRate': ['5.0%'],
+ 'showInfo': [1094],
+ 'showRate': ['0.3%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['12.74'],
+ 'splitSumBoxInfo': ['5893.4'],
+ 'sumBoxInfo': ['6431.3'],
+ 'yearRate': ['2019-04-19#17']}
+{'boxInfo': ['13.73'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [345875],
+ 'movieName': ['风中有朵雨做的云'],
+ 'releaseInfo': ['上映16天'],
+ 'seatRate': ['5.0%'],
+ 'showInfo': [1094],
+ 'showRate': ['0.3%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['12.74'],
+ 'splitSumBoxInfo': ['5893.4'],
+ 'sumBoxInfo': ['6431.3'],
+ 'yearRate': ['2019-04-19#17']}
+2020-04-18 01:12:27,737 -  movie_spider.py[line:143] - WARNING: get 18 movie info, named None.
+2020-04-18 01:12:27,738 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['13.47'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['10.2%'],
+ 'showInfo': [133],
+ 'showRate': ['<0.1%'],
+ 'showView': ['24'],
+ 'splitBoxInfo': ['13.45'],
+ 'splitSumBoxInfo': ['750.5'],
+ 'sumBoxInfo': ['755.1'],
+ 'yearRate': ['2019-04-19#18']}
+{'boxInfo': ['13.47'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['10.2%'],
+ 'showInfo': [133],
+ 'showRate': ['<0.1%'],
+ 'showView': ['24'],
+ 'splitBoxInfo': ['13.45'],
+ 'splitSumBoxInfo': ['750.5'],
+ 'sumBoxInfo': ['755.1'],
+ 'yearRate': ['2019-04-19#18']}
+2020-04-18 01:12:27,743 -  movie_spider.py[line:143] - WARNING: get 14 movie info, named None.
+2020-04-18 01:12:27,744 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['15.89'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1156894],
+ 'movieName': ['欲念游戏'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['3.0%'],
+ 'showInfo': [10298],
+ 'showRate': ['3.2%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['15.16'],
+ 'splitSumBoxInfo': ['683.4'],
+ 'sumBoxInfo': ['728.5'],
+ 'yearRate': ['2019-04-18#14']}
+{'boxInfo': ['15.89'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1156894],
+ 'movieName': ['欲念游戏'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['3.0%'],
+ 'showInfo': [10298],
+ 'showRate': ['3.2%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['15.16'],
+ 'splitSumBoxInfo': ['683.4'],
+ 'sumBoxInfo': ['728.5'],
+ 'yearRate': ['2019-04-18#14']}
+2020-04-18 01:12:27,745 -  movie_spider.py[line:143] - WARNING: get 15 movie info, named None.
+2020-04-18 01:12:27,746 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['15.15'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['10.4%'],
+ 'showInfo': [258],
+ 'showRate': ['<0.1%'],
+ 'showView': ['14'],
+ 'splitBoxInfo': ['15.12'],
+ 'splitSumBoxInfo': ['737.1'],
+ 'sumBoxInfo': ['741.6'],
+ 'yearRate': ['2019-04-18#15']}
+{'boxInfo': ['15.15'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['10.4%'],
+ 'showInfo': [258],
+ 'showRate': ['<0.1%'],
+ 'showView': ['14'],
+ 'splitBoxInfo': ['15.12'],
+ 'splitSumBoxInfo': ['737.1'],
+ 'sumBoxInfo': ['741.6'],
+ 'yearRate': ['2019-04-18#15']}
+2020-04-18 01:12:27,747 -  movie_spider.py[line:143] - WARNING: get 16 movie info, named None.
+2020-04-18 01:12:27,747 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['14.19'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [248906],
+ 'movieName': ['流浪地球'],
+ 'releaseInfo': [''],
+ 'seatRate': ['4.4%'],
+ 'showInfo': [1578],
+ 'showRate': ['0.5%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['13.11'],
+ 'splitSumBoxInfo': ['435200.0'],
+ 'sumBoxInfo': ['467800.0'],
+ 'yearRate': ['2019-04-18#16']}
+{'boxInfo': ['14.19'],
+ 'boxRate': ['0.4%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [248906],
+ 'movieName': ['流浪地球'],
+ 'releaseInfo': [''],
+ 'seatRate': ['4.4%'],
+ 'showInfo': [1578],
+ 'showRate': ['0.5%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['13.11'],
+ 'splitSumBoxInfo': ['435200.0'],
+ 'sumBoxInfo': ['467800.0'],
+ 'yearRate': ['2019-04-18#16']}
+2020-04-18 01:12:27,748 -  movie_spider.py[line:143] - WARNING: get 17 movie info, named None.
+2020-04-18 01:12:27,750 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['7.89'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1206415],
+ 'movieName': ['虫林大作战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['2.0%'],
+ 'showInfo': [3856],
+ 'showRate': ['1.2%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['7.33'],
+ 'splitSumBoxInfo': ['642.0'],
+ 'sumBoxInfo': ['699.0'],
+ 'yearRate': ['2019-04-18#17']}
+{'boxInfo': ['7.89'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1206415],
+ 'movieName': ['虫林大作战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['2.0%'],
+ 'showInfo': [3856],
+ 'showRate': ['1.2%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['7.33'],
+ 'splitSumBoxInfo': ['642.0'],
+ 'sumBoxInfo': ['699.0'],
+ 'yearRate': ['2019-04-18#17']}
+2020-04-18 01:12:27,751 -  movie_spider.py[line:143] - WARNING: get 18 movie info, named None.
+2020-04-18 01:12:27,752 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['7.02'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1239678],
+ 'movieName': ['原来如此'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [1309],
+ 'showRate': ['0.4%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['6.40'],
+ 'splitSumBoxInfo': ['80.3'],
+ 'sumBoxInfo': ['87.5'],
+ 'yearRate': ['2019-04-18#18']}
+{'boxInfo': ['7.02'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1239678],
+ 'movieName': ['原来如此'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [1309],
+ 'showRate': ['0.4%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['6.40'],
+ 'splitSumBoxInfo': ['80.3'],
+ 'sumBoxInfo': ['87.5'],
+ 'yearRate': ['2019-04-18#18']}
+2020-04-18 01:12:27,753 -  movie_spider.py[line:143] - WARNING: get 19 movie info, named None.
+2020-04-18 01:12:27,754 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['12.79'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1230119],
+ 'movieName': ['难以置信'],
+ 'releaseInfo': ['上映9天'],
+ 'seatRate': ['49.0%'],
+ 'showInfo': [93],
+ 'showRate': ['<0.1%'],
+ 'showView': ['33'],
+ 'splitBoxInfo': ['12.79'],
+ 'splitSumBoxInfo': ['47.6'],
+ 'sumBoxInfo': ['48.7'],
+ 'yearRate': ['2019-04-19#19']}
+{'boxInfo': ['12.79'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1230119],
+ 'movieName': ['难以置信'],
+ 'releaseInfo': ['上映9天'],
+ 'seatRate': ['49.0%'],
+ 'showInfo': [93],
+ 'showRate': ['<0.1%'],
+ 'showView': ['33'],
+ 'splitBoxInfo': ['12.79'],
+ 'splitSumBoxInfo': ['47.6'],
+ 'sumBoxInfo': ['48.7'],
+ 'yearRate': ['2019-04-19#19']}
+2020-04-18 01:12:27,755 -  movie_spider.py[line:143] - WARNING: get 20 movie info, named None.
+2020-04-18 01:12:27,756 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['11.85'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1259639],
+ 'movieName': ['毕业旅行之逍遥骑士'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['5.6%'],
+ 'showInfo': [1382],
+ 'showRate': ['0.3%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['11.76'],
+ 'splitSumBoxInfo': ['11.7'],
+ 'sumBoxInfo': ['11.8'],
+ 'yearRate': ['2019-04-19#20']}
+{'boxInfo': ['11.85'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1259639],
+ 'movieName': ['毕业旅行之逍遥骑士'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['5.6%'],
+ 'showInfo': [1382],
+ 'showRate': ['0.3%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['11.76'],
+ 'splitSumBoxInfo': ['11.7'],
+ 'sumBoxInfo': ['11.8'],
+ 'yearRate': ['2019-04-19#20']}
+2020-04-18 01:12:27,757 -  movie_spider.py[line:143] - WARNING: get 21 movie info, named None.
+2020-04-18 01:12:27,758 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['11.12'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1213175],
+ 'movieName': ['在乎你'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['2.5%'],
+ 'showInfo': [545],
+ 'showRate': ['0.1%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['11.00'],
+ 'splitSumBoxInfo': ['604.3'],
+ 'sumBoxInfo': ['635.7'],
+ 'yearRate': ['2019-04-19#21']}
+{'boxInfo': ['11.12'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1213175],
+ 'movieName': ['在乎你'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['2.5%'],
+ 'showInfo': [545],
+ 'showRate': ['0.1%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['11.00'],
+ 'splitSumBoxInfo': ['604.3'],
+ 'sumBoxInfo': ['635.7'],
+ 'yearRate': ['2019-04-19#21']}
+2020-04-18 01:12:27,759 -  movie_spider.py[line:143] - WARNING: get 22 movie info, named None.
+2020-04-18 01:12:27,760 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['10.68'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1249315],
+ 'movieName': ['大路朝天'],
+ 'releaseInfo': [''],
+ 'seatRate': ['41.3%'],
+ 'showInfo': [46],
+ 'showRate': ['<0.1%'],
+ 'showView': ['117'],
+ 'splitBoxInfo': ['10.68'],
+ 'splitSumBoxInfo': ['2563.4'],
+ 'sumBoxInfo': ['2564.6'],
+ 'yearRate': ['2019-04-19#22']}
+{'boxInfo': ['10.68'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1249315],
+ 'movieName': ['大路朝天'],
+ 'releaseInfo': [''],
+ 'seatRate': ['41.3%'],
+ 'showInfo': [46],
+ 'showRate': ['<0.1%'],
+ 'showView': ['117'],
+ 'splitBoxInfo': ['10.68'],
+ 'splitSumBoxInfo': ['2563.4'],
+ 'sumBoxInfo': ['2564.6'],
+ 'yearRate': ['2019-04-19#22']}
+2020-04-18 01:12:27,761 -  movie_spider.py[line:143] - WARNING: get 23 movie info, named None.
+2020-04-18 01:12:27,762 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['7.08'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [179],
+ 'showRate': ['<0.1%'],
+ 'showView': ['15'],
+ 'splitBoxInfo': ['7.07'],
+ 'splitSumBoxInfo': ['1629.7'],
+ 'sumBoxInfo': ['1635.0'],
+ 'yearRate': ['2019-04-19#23']}
+{'boxInfo': ['7.08'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [179],
+ 'showRate': ['<0.1%'],
+ 'showView': ['15'],
+ 'splitBoxInfo': ['7.07'],
+ 'splitSumBoxInfo': ['1629.7'],
+ 'sumBoxInfo': ['1635.0'],
+ 'yearRate': ['2019-04-19#23']}
+2020-04-18 01:12:27,764 -  movie_spider.py[line:143] - WARNING: get 19 movie info, named None.
+2020-04-18 01:12:27,765 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['6.65'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1206605],
+ 'movieName': ['绿皮书'],
+ 'releaseInfo': ['重映49天'],
+ 'seatRate': ['4.2%'],
+ 'showInfo': [794],
+ 'showRate': ['0.2%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['6.06'],
+ 'splitSumBoxInfo': ['43100.0'],
+ 'sumBoxInfo': ['47800.0'],
+ 'yearRate': ['2019-04-18#19']}
+{'boxInfo': ['6.65'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1206605],
+ 'movieName': ['绿皮书'],
+ 'releaseInfo': ['重映49天'],
+ 'seatRate': ['4.2%'],
+ 'showInfo': [794],
+ 'showRate': ['0.2%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['6.06'],
+ 'splitSumBoxInfo': ['43100.0'],
+ 'sumBoxInfo': ['47800.0'],
+ 'yearRate': ['2019-04-18#19']}
+2020-04-18 01:12:27,766 -  movie_spider.py[line:143] - WARNING: get 20 movie info, named None.
+2020-04-18 01:12:27,767 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['6.64'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1238775],
+ 'movieName': ['特别追踪'],
+ 'releaseInfo': [''],
+ 'seatRate': ['37.4%'],
+ 'showInfo': [45],
+ 'showRate': ['<0.1%'],
+ 'showView': ['30'],
+ 'splitBoxInfo': ['6.64'],
+ 'splitSumBoxInfo': ['383.0'],
+ 'sumBoxInfo': ['383.1'],
+ 'yearRate': ['2019-04-18#20']}
+{'boxInfo': ['6.64'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1238775],
+ 'movieName': ['特别追踪'],
+ 'releaseInfo': [''],
+ 'seatRate': ['37.4%'],
+ 'showInfo': [45],
+ 'showRate': ['<0.1%'],
+ 'showView': ['30'],
+ 'splitBoxInfo': ['6.64'],
+ 'splitSumBoxInfo': ['383.0'],
+ 'sumBoxInfo': ['383.1'],
+ 'yearRate': ['2019-04-18#20']}
+2020-04-18 01:12:27,768 -  movie_spider.py[line:143] - WARNING: get 21 movie info, named None.
+2020-04-18 01:12:27,769 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['6.59'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1249315],
+ 'movieName': ['大路朝天'],
+ 'releaseInfo': [''],
+ 'seatRate': ['35.2%'],
+ 'showInfo': [31],
+ 'showRate': ['<0.1%'],
+ 'showView': ['107'],
+ 'splitBoxInfo': ['6.59'],
+ 'splitSumBoxInfo': ['2552.7'],
+ 'sumBoxInfo': ['2553.9'],
+ 'yearRate': ['2019-04-18#21']}
+{'boxInfo': ['6.59'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1249315],
+ 'movieName': ['大路朝天'],
+ 'releaseInfo': [''],
+ 'seatRate': ['35.2%'],
+ 'showInfo': [31],
+ 'showRate': ['<0.1%'],
+ 'showView': ['107'],
+ 'splitBoxInfo': ['6.59'],
+ 'splitSumBoxInfo': ['2552.7'],
+ 'sumBoxInfo': ['2553.9'],
+ 'yearRate': ['2019-04-18#21']}
+2020-04-18 01:12:27,770 -  movie_spider.py[line:143] - WARNING: get 22 movie info, named None.
+2020-04-18 01:12:27,770 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['6.52'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1238926],
+ 'movieName': ['我们的爱情'],
+ 'releaseInfo': ['上映42天'],
+ 'seatRate': ['21.0%'],
+ 'showInfo': [28],
+ 'showRate': ['<0.1%'],
+ 'showView': ['75'],
+ 'splitBoxInfo': ['6.52'],
+ 'splitSumBoxInfo': ['35.9'],
+ 'sumBoxInfo': ['36.2'],
+ 'yearRate': ['2019-04-18#22']}
+{'boxInfo': ['6.52'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1238926],
+ 'movieName': ['我们的爱情'],
+ 'releaseInfo': ['上映42天'],
+ 'seatRate': ['21.0%'],
+ 'showInfo': [28],
+ 'showRate': ['<0.1%'],
+ 'showView': ['75'],
+ 'splitBoxInfo': ['6.52'],
+ 'splitSumBoxInfo': ['35.9'],
+ 'sumBoxInfo': ['36.2'],
+ 'yearRate': ['2019-04-18#22']}
+2020-04-18 01:12:27,771 -  movie_spider.py[line:143] - WARNING: get 23 movie info, named None.
+2020-04-18 01:12:27,772 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['5.54'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [184],
+ 'showRate': ['<0.1%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['5.53'],
+ 'splitSumBoxInfo': ['1622.6'],
+ 'sumBoxInfo': ['1627.9'],
+ 'yearRate': ['2019-04-18#23']}
+{'boxInfo': ['5.54'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [184],
+ 'showRate': ['<0.1%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['5.53'],
+ 'splitSumBoxInfo': ['1622.6'],
+ 'sumBoxInfo': ['1627.9'],
+ 'yearRate': ['2019-04-18#23']}
+2020-04-18 01:12:27,773 -  movie_spider.py[line:143] - WARNING: get 24 movie info, named None.
+2020-04-18 01:12:27,774 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['4.86'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映14天'],
+ 'seatRate': ['1.4%'],
+ 'showInfo': [567],
+ 'showRate': ['0.1%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['4.83'],
+ 'splitSumBoxInfo': ['724.2'],
+ 'sumBoxInfo': ['779.8'],
+ 'yearRate': ['2019-04-18#24']}
+{'boxInfo': ['4.86'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映14天'],
+ 'seatRate': ['1.4%'],
+ 'showInfo': [567],
+ 'showRate': ['0.1%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['4.83'],
+ 'splitSumBoxInfo': ['724.2'],
+ 'sumBoxInfo': ['779.8'],
+ 'yearRate': ['2019-04-18#24']}
+2020-04-18 01:12:27,775 -  movie_spider.py[line:143] - WARNING: get 24 movie info, named None.
+2020-04-18 01:12:27,776 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['7.03'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [368260],
+ 'movieName': ['最佳男友进化论'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['2.8%'],
+ 'showInfo': [2678],
+ 'showRate': ['0.7%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['6.40'],
+ 'splitSumBoxInfo': ['1281.8'],
+ 'sumBoxInfo': ['1411.9'],
+ 'yearRate': ['2019-04-19#24']}
+{'boxInfo': ['7.03'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [368260],
+ 'movieName': ['最佳男友进化论'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['2.8%'],
+ 'showInfo': [2678],
+ 'showRate': ['0.7%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['6.40'],
+ 'splitSumBoxInfo': ['1281.8'],
+ 'sumBoxInfo': ['1411.9'],
+ 'yearRate': ['2019-04-19#24']}
+2020-04-18 01:12:27,777 -  movie_spider.py[line:143] - WARNING: get 25 movie info, named None.
+2020-04-18 01:12:27,778 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['6.87'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1239678],
+ 'movieName': ['原来如此'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['4.6%'],
+ 'showInfo': [600],
+ 'showRate': ['0.1%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['6.37'],
+ 'splitSumBoxInfo': ['86.7'],
+ 'sumBoxInfo': ['94.4'],
+ 'yearRate': ['2019-04-19#25']}
+{'boxInfo': ['6.87'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1239678],
+ 'movieName': ['原来如此'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['4.6%'],
+ 'showInfo': [600],
+ 'showRate': ['0.1%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['6.37'],
+ 'splitSumBoxInfo': ['86.7'],
+ 'sumBoxInfo': ['94.4'],
+ 'yearRate': ['2019-04-19#25']}
+2020-04-18 01:12:27,779 -  movie_spider.py[line:143] - WARNING: get 26 movie info, named None.
+2020-04-18 01:12:27,779 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['6.13'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1262586],
+ 'movieName': ['Hello 北京'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['9.2%'],
+ 'showInfo': [1561],
+ 'showRate': ['0.4%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['5.80'],
+ 'splitSumBoxInfo': ['9.2'],
+ 'sumBoxInfo': ['9.6'],
+ 'yearRate': ['2019-04-19#26']}
+{'boxInfo': ['6.13'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1262586],
+ 'movieName': ['Hello 北京'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['9.2%'],
+ 'showInfo': [1561],
+ 'showRate': ['0.4%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['5.80'],
+ 'splitSumBoxInfo': ['9.2'],
+ 'sumBoxInfo': ['9.6'],
+ 'yearRate': ['2019-04-19#26']}
+2020-04-18 01:12:27,781 -  movie_spider.py[line:143] - WARNING: get 27 movie info, named None.
+2020-04-18 01:12:27,781 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['5.94'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1206605],
+ 'movieName': ['绿皮书'],
+ 'releaseInfo': ['重映50天'],
+ 'seatRate': ['7.0%'],
+ 'showInfo': [290],
+ 'showRate': ['<0.1%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['5.59'],
+ 'splitSumBoxInfo': ['43100.0'],
+ 'sumBoxInfo': ['47800.0'],
+ 'yearRate': ['2019-04-19#27']}
+{'boxInfo': ['5.94'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1206605],
+ 'movieName': ['绿皮书'],
+ 'releaseInfo': ['重映50天'],
+ 'seatRate': ['7.0%'],
+ 'showInfo': [290],
+ 'showRate': ['<0.1%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['5.59'],
+ 'splitSumBoxInfo': ['43100.0'],
+ 'sumBoxInfo': ['47800.0'],
+ 'yearRate': ['2019-04-19#27']}
+2020-04-18 01:12:27,783 -  movie_spider.py[line:143] - WARNING: get 28 movie info, named None.
+2020-04-18 01:12:27,784 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['5.15'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['2.2%'],
+ 'showInfo': [161],
+ 'showRate': ['<0.1%'],
+ 'showView': ['7'],
+ 'splitBoxInfo': ['5.15'],
+ 'splitSumBoxInfo': ['729.4'],
+ 'sumBoxInfo': ['785.0'],
+ 'yearRate': ['2019-04-19#28']}
+{'boxInfo': ['5.15'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['2.2%'],
+ 'showInfo': [161],
+ 'showRate': ['<0.1%'],
+ 'showView': ['7'],
+ 'splitBoxInfo': ['5.15'],
+ 'splitSumBoxInfo': ['729.4'],
+ 'sumBoxInfo': ['785.0'],
+ 'yearRate': ['2019-04-19#28']}
+2020-04-18 01:12:27,785 -  movie_spider.py[line:143] - WARNING: get 29 movie info, named None.
+2020-04-18 01:12:27,785 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['4.89'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1257272],
+ 'movieName': ['暗语者'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['41.3%'],
+ 'showInfo': [38],
+ 'showRate': ['<0.1%'],
+ 'showView': ['50'],
+ 'splitBoxInfo': ['4.89'],
+ 'splitSumBoxInfo': ['10.6'],
+ 'sumBoxInfo': ['10.7'],
+ 'yearRate': ['2019-04-19#29']}
+{'boxInfo': ['4.89'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1257272],
+ 'movieName': ['暗语者'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['41.3%'],
+ 'showInfo': [38],
+ 'showRate': ['<0.1%'],
+ 'showView': ['50'],
+ 'splitBoxInfo': ['4.89'],
+ 'splitSumBoxInfo': ['10.6'],
+ 'sumBoxInfo': ['10.7'],
+ 'yearRate': ['2019-04-19#29']}
+2020-04-18 01:12:27,789 -  movie_spider.py[line:143] - WARNING: get 25 movie info, named None.
+2020-04-18 01:12:27,790 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['4.85'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [343344],
+ 'movieName': ['我的宠物是大象'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['2.5%'],
+ 'showInfo': [4623],
+ 'showRate': ['1.4%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['4.64'],
+ 'splitSumBoxInfo': ['236.1'],
+ 'sumBoxInfo': ['249.1'],
+ 'yearRate': ['2019-04-18#25']}
+{'boxInfo': ['4.85'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [343344],
+ 'movieName': ['我的宠物是大象'],
+ 'releaseInfo': ['上映7天'],
+ 'seatRate': ['2.5%'],
+ 'showInfo': [4623],
+ 'showRate': ['1.4%'],
+ 'showView': ['1'],
+ 'splitBoxInfo': ['4.64'],
+ 'splitSumBoxInfo': ['236.1'],
+ 'sumBoxInfo': ['249.1'],
+ 'yearRate': ['2019-04-18#25']}
+2020-04-18 01:12:27,791 -  movie_spider.py[line:143] - WARNING: get 26 movie info, named None.
+2020-04-18 01:12:27,792 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['4.72'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1206939],
+ 'movieName': ['守灵'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [746],
+ 'showRate': ['0.2%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['4.28'],
+ 'splitSumBoxInfo': ['274.5'],
+ 'sumBoxInfo': ['305.6'],
+ 'yearRate': ['2019-04-18#26']}
+{'boxInfo': ['4.72'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1206939],
+ 'movieName': ['守灵'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [746],
+ 'showRate': ['0.2%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['4.28'],
+ 'splitSumBoxInfo': ['274.5'],
+ 'sumBoxInfo': ['305.6'],
+ 'yearRate': ['2019-04-18#26']}
+2020-04-18 01:12:27,793 -  movie_spider.py[line:143] - WARNING: get 27 movie info, named None.
+2020-04-18 01:12:27,794 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['4.63'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [410629],
+ 'movieName': ['阿丽塔：战斗天使'],
+ 'releaseInfo': ['上映56天'],
+ 'seatRate': ['3.8%'],
+ 'showInfo': [434],
+ 'showRate': ['0.1%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['4.25'],
+ 'splitSumBoxInfo': ['81900.0'],
+ 'sumBoxInfo': ['89600.0'],
+ 'yearRate': ['2019-04-18#27']}
+{'boxInfo': ['4.63'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [410629],
+ 'movieName': ['阿丽塔：战斗天使'],
+ 'releaseInfo': ['上映56天'],
+ 'seatRate': ['3.8%'],
+ 'showInfo': [434],
+ 'showRate': ['0.1%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['4.25'],
+ 'splitSumBoxInfo': ['81900.0'],
+ 'sumBoxInfo': ['89600.0'],
+ 'yearRate': ['2019-04-18#27']}
+2020-04-18 01:12:27,796 -  movie_spider.py[line:143] - WARNING: get 28 movie info, named None.
+2020-04-18 01:12:27,797 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['4.23'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1162868],
+ 'movieName': ['转型团伙'],
+ 'releaseInfo': ['零点场'],
+ 'seatRate': ['21.7%'],
+ 'showInfo': [66],
+ 'showRate': ['<0.1%'],
+ 'showView': ['19'],
+ 'splitBoxInfo': ['3.98'],
+ 'splitSumBoxInfo': ['5.6'],
+ 'sumBoxInfo': ['5.9'],
+ 'yearRate': ['2019-04-18#28']}
+{'boxInfo': ['4.23'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [1162868],
+ 'movieName': ['转型团伙'],
+ 'releaseInfo': ['零点场'],
+ 'seatRate': ['21.7%'],
+ 'showInfo': [66],
+ 'showRate': ['<0.1%'],
+ 'showView': ['19'],
+ 'splitBoxInfo': ['3.98'],
+ 'splitSumBoxInfo': ['5.6'],
+ 'sumBoxInfo': ['5.9'],
+ 'yearRate': ['2019-04-18#28']}
+2020-04-18 01:12:27,798 -  movie_spider.py[line:143] - WARNING: get 29 movie info, named None.
+2020-04-18 01:12:27,799 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['3.27'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [507792],
+ 'movieName': ['地久天长'],
+ 'releaseInfo': ['上映28天'],
+ 'seatRate': ['5.1%'],
+ 'showInfo': [418],
+ 'showRate': ['0.1%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['3.05'],
+ 'splitSumBoxInfo': ['4157.6'],
+ 'sumBoxInfo': ['4477.1'],
+ 'yearRate': ['2019-04-18#29']}
+{'boxInfo': ['3.27'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [507792],
+ 'movieName': ['地久天长'],
+ 'releaseInfo': ['上映28天'],
+ 'seatRate': ['5.1%'],
+ 'showInfo': [418],
+ 'showRate': ['0.1%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['3.05'],
+ 'splitSumBoxInfo': ['4157.6'],
+ 'sumBoxInfo': ['4477.1'],
+ 'yearRate': ['2019-04-18#29']}
+2020-04-18 01:12:27,800 -  movie_spider.py[line:143] - WARNING: get 30 movie info, named None.
+2020-04-18 01:12:27,800 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['4.69'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1156894],
+ 'movieName': ['欲念游戏'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [1324],
+ 'showRate': ['0.3%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['4.61'],
+ 'splitSumBoxInfo': ['688.0'],
+ 'sumBoxInfo': ['733.2'],
+ 'yearRate': ['2019-04-19#30']}
+{'boxInfo': ['4.69'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-19'],
+ 'movieID': [1156894],
+ 'movieName': ['欲念游戏'],
+ 'releaseInfo': ['上映8天'],
+ 'seatRate': ['4.3%'],
+ 'showInfo': [1324],
+ 'showRate': ['0.3%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['4.61'],
+ 'splitSumBoxInfo': ['688.0'],
+ 'sumBoxInfo': ['733.2'],
+ 'yearRate': ['2019-04-19#30']}
+2020-04-18 01:12:27,801 -  movie_spider.py[line:153] - ERROR: boxOffice start parse
+2020-04-18 01:12:27,803 -  movie_spider.py[line:143] - WARNING: get 30 movie info, named None.
+2020-04-18 01:12:27,804 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :{'boxInfo': ['2.39'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [643506],
+ 'movieName': ['古镇画情'],
+ 'releaseInfo': ['展映'],
+ 'seatRate': ['--'],
+ 'showInfo': [72],
+ 'showRate': ['<0.1%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['2.39'],
+ 'splitSumBoxInfo': ['985.4'],
+ 'sumBoxInfo': ['988.0'],
+ 'yearRate': ['2019-04-18#30']}
+{'boxInfo': ['2.39'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-18'],
+ 'movieID': [643506],
+ 'movieName': ['古镇画情'],
+ 'releaseInfo': ['展映'],
+ 'seatRate': ['--'],
+ 'showInfo': [72],
+ 'showRate': ['<0.1%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['2.39'],
+ 'splitSumBoxInfo': ['985.4'],
+ 'sumBoxInfo': ['988.0'],
+ 'yearRate': ['2019-04-18#30']}
+2020-04-18 01:12:27,804 -  movie_spider.py[line:153] - ERROR: boxOffice start parse
+2020-04-18 01:12:27,983 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:27,999 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,007 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,014 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,020 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,026 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9B%B7%E9%9C%86%E6%B2%99%E8%B5%9E%EF%BC%81> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,031 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,042 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A2%83%C2%B7%E7%95%8C> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,085 -  movie_spider.py[line:164] - ERROR: movie_name = 老师·好 and movie_year = 2019-04-18 and tpp_id = 1212492
+2020-04-18 01:12:28,085 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-18 01:12:28,085 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,085 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,099 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,107 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%BD%AC%E5%9E%8B%E5%9B%A2%E4%BC%99> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,115 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,125 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,131 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%A3%8E%E4%B8%AD%E6%9C%89%E6%9C%B5%E9%9B%A8%E5%81%9A%E7%9A%84%E4%BA%91> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,136 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BF%83> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,141 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,147 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,147 -  movie_spider.py[line:164] - ERROR: movie_name = 波西米亚狂想曲 and movie_year = 2019-04-19 and tpp_id = 1167831
+2020-04-18 01:12:28,147 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2
+2020-04-18 01:12:28,147 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,147 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,148 -  movie_spider.py[line:164] - ERROR: movie_name = 照相师 and movie_year = 2019-04-18 and tpp_id = 1228750
+2020-04-18 01:12:28,148 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-18 01:12:28,148 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,148 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,149 -  movie_spider.py[line:164] - ERROR: movie_name = 海市蜃楼 and movie_year = 2019-04-19 and tpp_id = 1219670
+2020-04-18 01:12:28,149 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC
+2020-04-18 01:12:28,149 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,150 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,157 -  movie_spider.py[line:164] - ERROR: movie_name = 反贪风暴4 and movie_year = 2019-04-19 and tpp_id = 1211727
+2020-04-18 01:12:28,157 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-18 01:12:28,157 -  movie_spider.py[line:170] - ERROR: len of text is 1
+2020-04-18 01:12:28,157 -  movie_spider.py[line:183] - ERROR: get movie info url = https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-18 01:12:28,159 -  movie_spider.py[line:164] - ERROR: movie_name = 雷霆沙赞！ and movie_year = 2019-04-18 and tpp_id = 248123
+2020-04-18 01:12:28,159 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E9%9B%B7%E9%9C%86%E6%B2%99%E8%B5%9E%EF%BC%81
+2020-04-18 01:12:28,159 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,159 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,160 -  movie_spider.py[line:164] - ERROR: movie_name = 调音师 and movie_year = 2019-04-19 and tpp_id = 1239544
+2020-04-18 01:12:28,160 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-18 01:12:28,160 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,160 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,161 -  movie_spider.py[line:164] - ERROR: movie_name = 境·界 and movie_year = 2019-04-19 and tpp_id = 581264
+2020-04-18 01:12:28,161 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A2%83%C2%B7%E7%95%8C
+2020-04-18 01:12:28,161 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,161 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,179 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,186 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%9C%B0%E4%B9%85%E5%A4%A9%E9%95%BF> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,206 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%9A%97%E8%AF%AD%E8%80%85> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,207 -  movie_spider.py[line:164] - ERROR: movie_name = 神奇乐园历险记 and movie_year = 2019-04-19 and tpp_id = 1211412
+2020-04-18 01:12:28,207 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-18 01:12:28,207 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,207 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,209 -  movie_spider.py[line:164] - ERROR: movie_name = 转型团伙 and movie_year = 2019-04-19 and tpp_id = 1162868
+2020-04-18 01:12:28,209 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E8%BD%AC%E5%9E%8B%E5%9B%A2%E4%BC%99
+2020-04-18 01:12:28,209 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,209 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,216 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%98%BF%E4%B8%BD%E5%A1%94%EF%BC%9A%E6%88%98%E6%96%97%E5%A4%A9%E4%BD%BF> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,224 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E7%9A%84%E5%AE%A0%E7%89%A9%E6%98%AF%E5%A4%A7%E8%B1%A1> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,229 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%AE%88%E7%81%B5> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,229 -  movie_spider.py[line:164] - ERROR: movie_name = 流浪地球 and movie_year = 2019-04-19 and tpp_id = 248906
+2020-04-18 01:12:28,230 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83
+2020-04-18 01:12:28,230 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,230 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,239 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=Hello%20%E5%8C%97%E4%BA%AC> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,245 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,246 -  movie_spider.py[line:164] - ERROR: movie_name = 特别追踪 and movie_year = 2019-04-19 and tpp_id = 1238775
+2020-04-18 01:12:28,246 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA
+2020-04-18 01:12:28,246 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,246 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,253 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%BB%BF%E7%9A%AE%E4%B9%A6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,258 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1%E6%83%85> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,259 -  movie_spider.py[line:164] - ERROR: movie_name = 风中有朵雨做的云 and movie_year = 2019-04-18 and tpp_id = 345875
+2020-04-18 01:12:28,259 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E9%A3%8E%E4%B8%AD%E6%9C%89%E6%9C%B5%E9%9B%A8%E5%81%9A%E7%9A%84%E4%BA%91
+2020-04-18 01:12:28,259 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,259 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,260 -  movie_spider.py[line:164] - ERROR: movie_name = 如影随心 and movie_year = 2019-04-19 and tpp_id = 1207260
+2020-04-18 01:12:28,260 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BF%83
+2020-04-18 01:12:28,261 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,261 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,261 -  movie_spider.py[line:164] - ERROR: movie_name = 在乎你 and movie_year = 2019-04-18 and tpp_id = 1213175
+2020-04-18 01:12:28,262 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0
+2020-04-18 01:12:28,262 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,262 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,269 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,269 -  movie_spider.py[line:164] - ERROR: movie_name = 祈祷落幕时 and movie_year = 2019-04-19 and tpp_id = 1205909
+2020-04-18 01:12:28,269 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-18 01:12:28,269 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,269 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,282 -  movie_spider.py[line:164] - ERROR: movie_name = 古镇画情 and movie_year = 2019-04-18 and tpp_id = 643506
+2020-04-18 01:12:28,282 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85
+2020-04-18 01:12:28,283 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,283 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,294 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A4%A7%E8%B7%AF%E6%9C%9D%E5%A4%A9> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,295 -  movie_spider.py[line:164] - ERROR: movie_name = 地久天长 and movie_year = 2019-04-18 and tpp_id = 507792
+2020-04-18 01:12:28,295 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%9C%B0%E4%B9%85%E5%A4%A9%E9%95%BF
+2020-04-18 01:12:28,295 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,295 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,311 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9A%BE%E4%BB%A5%E7%BD%AE%E4%BF%A1> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,317 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8E%9F%E6%9D%A5%E5%A6%82%E6%AD%A4> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,317 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%AF%95%E4%B8%9A%E6%97%85%E8%A1%8C%E4%B9%8B%E9%80%8D%E9%81%A5%E9%AA%91%E5%A3%AB> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190419)
+2020-04-18 01:12:28,317 -  movie_spider.py[line:164] - ERROR: movie_name = 暗语者 and movie_year = 2019-04-19 and tpp_id = 1257272
+2020-04-18 01:12:28,318 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%9A%97%E8%AF%AD%E8%80%85
+2020-04-18 01:12:28,318 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,318 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,319 -  movie_spider.py[line:164] - ERROR: movie_name = 阿丽塔：战斗天使 and movie_year = 2019-04-18 and tpp_id = 410629
+2020-04-18 01:12:28,319 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E9%98%BF%E4%B8%BD%E5%A1%94%EF%BC%9A%E6%88%98%E6%96%97%E5%A4%A9%E4%BD%BF
+2020-04-18 01:12:28,319 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,319 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,321 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%99%AB%E6%9E%97%E5%A4%A7%E4%BD%9C%E6%88%98> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,326 -  movie_spider.py[line:164] - ERROR: movie_name = 我的宠物是大象 and movie_year = 2019-04-18 and tpp_id = 343344
+2020-04-18 01:12:28,326 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E7%9A%84%E5%AE%A0%E7%89%A9%E6%98%AF%E5%A4%A7%E8%B1%A1
+2020-04-18 01:12:28,326 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,326 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,331 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,333 -  movie_spider.py[line:164] - ERROR: movie_name = 守灵 and movie_year = 2019-04-18 and tpp_id = 1206939
+2020-04-18 01:12:28,333 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%AE%88%E7%81%B5
+2020-04-18 01:12:28,333 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,333 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,336 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%AC%B2%E5%BF%B5%E6%B8%B8%E6%88%8F> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,341 -  movie_spider.py[line:164] - ERROR: movie_name = Hello 北京 and movie_year = 2019-04-19 and tpp_id = 1262586
+2020-04-18 01:12:28,342 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=Hello%20%E5%8C%97%E4%BA%AC
+2020-04-18 01:12:28,342 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,342 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,347 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%AF%94%E6%82%B2%E4%BC%A4%E6%9B%B4%E6%82%B2%E4%BC%A4%E7%9A%84%E6%95%85%E4%BA%8B> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,347 -  movie_spider.py[line:164] - ERROR: movie_name = 青蛙王子历险记 and movie_year = 2019-04-19 and tpp_id = 1229702
+2020-04-18 01:12:28,347 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-18 01:12:28,347 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,347 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,354 -  movie_spider.py[line:164] - ERROR: movie_name = 绿皮书 and movie_year = 2019-04-18 and tpp_id = 1206605
+2020-04-18 01:12:28,354 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E7%BB%BF%E7%9A%AE%E4%B9%A6
+2020-04-18 01:12:28,354 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,355 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,360 -  movie_spider.py[line:164] - ERROR: movie_name = 我们的爱情 and movie_year = 2019-04-18 and tpp_id = 1238926
+2020-04-18 01:12:28,361 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1%E6%83%85
+2020-04-18 01:12:28,361 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,361 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,370 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%9C%80%E4%BD%B3%E7%94%B7%E5%8F%8B%E8%BF%9B%E5%8C%96%E8%AE%BA> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,371 -  movie_spider.py[line:164] - ERROR: movie_name = 我和神马查干 and movie_year = 2019-04-19 and tpp_id = 330115
+2020-04-18 01:12:28,371 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-18 01:12:28,371 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,371 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,376 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%B0%8F%E9%A3%9E%E8%B1%A1> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190418)
+2020-04-18 01:12:28,396 -  movie_spider.py[line:164] - ERROR: movie_name = 大路朝天 and movie_year = 2019-04-19 and tpp_id = 1249315
+2020-04-18 01:12:28,396 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A4%A7%E8%B7%AF%E6%9C%9D%E5%A4%A9
+2020-04-18 01:12:28,396 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,396 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,413 -  movie_spider.py[line:164] - ERROR: movie_name = 难以置信 and movie_year = 2019-04-19 and tpp_id = 1230119
+2020-04-18 01:12:28,413 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E9%9A%BE%E4%BB%A5%E7%BD%AE%E4%BF%A1
+2020-04-18 01:12:28,413 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,413 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,418 -  movie_spider.py[line:164] - ERROR: movie_name = 原来如此 and movie_year = 2019-04-18 and tpp_id = 1239678
+2020-04-18 01:12:28,418 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8E%9F%E6%9D%A5%E5%A6%82%E6%AD%A4
+2020-04-18 01:12:28,418 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,418 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,421 -  movie_spider.py[line:164] - ERROR: movie_name = 毕业旅行之逍遥骑士 and movie_year = 2019-04-19 and tpp_id = 1259639
+2020-04-18 01:12:28,421 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%AF%95%E4%B8%9A%E6%97%85%E8%A1%8C%E4%B9%8B%E9%80%8D%E9%81%A5%E9%AA%91%E5%A3%AB
+2020-04-18 01:12:28,421 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,421 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,425 -  movie_spider.py[line:164] - ERROR: movie_name = 虫林大作战 and movie_year = 2019-04-18 and tpp_id = 1206415
+2020-04-18 01:12:28,425 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E8%99%AB%E6%9E%97%E5%A4%A7%E4%BD%9C%E6%88%98
+2020-04-18 01:12:28,425 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,425 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,433 -  movie_spider.py[line:164] - ERROR: movie_name = 远去的牧歌 and movie_year = 2019-04-18 and tpp_id = 1236912
+2020-04-18 01:12:28,433 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-18 01:12:28,434 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,434 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,439 -  movie_spider.py[line:164] - ERROR: movie_name = 欲念游戏 and movie_year = 2019-04-18 and tpp_id = 1156894
+2020-04-18 01:12:28,439 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%AC%B2%E5%BF%B5%E6%B8%B8%E6%88%8F
+2020-04-18 01:12:28,439 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,439 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,448 -  movie_spider.py[line:164] - ERROR: movie_name = 比悲伤更悲伤的故事 and movie_year = 2019-04-18 and tpp_id = 1216383
+2020-04-18 01:12:28,449 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%AF%94%E6%82%B2%E4%BC%A4%E6%9B%B4%E6%82%B2%E4%BC%A4%E7%9A%84%E6%95%85%E4%BA%8B
+2020-04-18 01:12:28,449 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,449 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,472 -  movie_spider.py[line:164] - ERROR: movie_name = 最佳男友进化论 and movie_year = 2019-04-18 and tpp_id = 368260
+2020-04-18 01:12:28,472 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E6%9C%80%E4%BD%B3%E7%94%B7%E5%8F%8B%E8%BF%9B%E5%8C%96%E8%AE%BA
+2020-04-18 01:12:28,472 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,472 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:28,478 -  movie_spider.py[line:164] - ERROR: movie_name = 小飞象 and movie_year = 2019-04-18 and tpp_id = 346765
+2020-04-18 01:12:28,479 -  movie_spider.py[line:169] - ERROR: the url is https://movie.douban.com/j/subject_suggest?q=%E5%B0%8F%E9%A3%9E%E8%B1%A1
+2020-04-18 01:12:28,479 -  movie_spider.py[line:170] - ERROR: len of text is 0
+2020-04-18 01:12:28,479 -  movie_spider.py[line:172] - ERROR: not response scraped
+2020-04-18 01:12:29,446 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> (referer: https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44)
+2020-04-18 01:12:29,548 -  movie_spider.py[line:187] - CRITICAL: crawled movie info of https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-18 01:12:29,592 -  movie_spider.py[line:191] - CRITICAL: type of data is <class 'str'>
+2020-04-18 01:12:29,593 -  movie_spider.py[line:199] - ERROR: len of movie info = 13
+2020-04-18 01:12:29,595 -  pipelines.py[line:50] - INFO: item is new
+2020-04-18 01:12:29,596 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.MovieInfoItem'>
+2020-04-18 01:12:29,598 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-18 01:12:29,649 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'sql_mode'
+2020-04-18 01:12:29,649 -  log.py[line:110] - INFO: {}
+2020-04-18 01:12:29,664 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-04-18 01:12:29,665 -  log.py[line:110] - INFO: {}
+2020-04-18 01:12:29,670 -  log.py[line:110] - INFO: SELECT DATABASE()
+2020-04-18 01:12:29,670 -  log.py[line:110] - INFO: {}
+2020-04-18 01:12:29,672 -  log.py[line:110] - INFO: show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-04-18 01:12:29,672 -  log.py[line:110] - INFO: {}
+2020-04-18 01:12:29,688 -  log.py[line:110] - INFO: SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-04-18 01:12:29,689 -  log.py[line:110] - INFO: {}
+2020-04-18 01:12:29,690 -  log.py[line:110] - INFO: SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-04-18 01:12:29,691 -  log.py[line:110] - INFO: {}
+2020-04-18 01:12:29,693 -  log.py[line:110] - INFO: SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-04-18 01:12:29,693 -  log.py[line:110] - INFO: {}
+2020-04-18 01:12:29,726 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-18 01:12:29,729 -  log.py[line:110] - INFO: INSERT INTO `movieInfo` (`dbMovieID`, `tppMovieID`, `movieName`, directors, writers, actors, genre, area, duration, `publishedDate`, `rateCount`, `doubanRate`) VALUES (%(dbMovieID)s, %(tppMovieID)s, %(movieName)s, %(directors)s, %(writers)s, %(actors)s, %(genre)s, %(area)s, %(duration)s, %(publishedDate)s, %(rateCount)s, %(doubanRate)s)
+2020-04-18 01:12:29,730 -  log.py[line:110] - INFO: {'dbMovieID': '27202819', 'tppMovieID': 1211727, 'movieName': '反贪风暴4 P風暴', 'directors': '林德禄', 'writers': '黄浩华/何文龙', 'actors': '古天乐/郑嘉颖/林峯/林家栋/周秀娜/张智霖/谭耀文/张继聪/蔡瀚亿/廖启智', 'genre': '动作/犯罪', 'area': ' 中国香港 / 中国大陆', 'duration': 96, 'publishedDate': '2019-04-04', 'rateCount': '131408', 'doubanRate': '6.0'}
+2020-04-18 01:12:29,732 -  log.py[line:110] - INFO: ROLLBACK
+2020-04-18 01:12:29,787 -  scraper.py[line:236] - ERROR: Error processing {'actors': '古天乐/郑嘉颖/林峯/林家栋/周秀娜/张智霖/谭耀文/张继聪/蔡瀚亿/廖启智',
+ 'area': ' 中国香港 / 中国大陆',
+ 'dbMovieID': ['27202819'],
+ 'directors': '林德禄',
+ 'doubanRate': ['6.0'],
+ 'duration': [96],
+ 'genre': '动作/犯罪',
+ 'movieName': ['反贪风暴4 P風暴'],
+ 'publishedDate': ['2019-04-04'],
+ 'rateCount': ['131408'],
+ 'tppMovieID': [1211727],
+ 'writers': '黄浩华/何文龙'}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '27202819' for key 'movieInfo.movieInfo_dbMocieID_uindex'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 84, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2451, in flush
+    self._flush(objects)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2549, in _flush
+    flush_context.execute()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1120, in _emit_insert_statements
+    statement, params
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/dawinia/anaconda3/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '27202819' for key 'movieInfo.movieInfo_dbMocieID_uindex'")
+[SQL: INSERT INTO `movieInfo` (`dbMovieID`, `tppMovieID`, `movieName`, directors, writers, actors, genre, area, duration, `publishedDate`, `rateCount`, `doubanRate`) VALUES (%(dbMovieID)s, %(tppMovieID)s, %(movieName)s, %(directors)s, %(writers)s, %(actors)s, %(genre)s, %(area)s, %(duration)s, %(publishedDate)s, %(rateCount)s, %(doubanRate)s)]
+[parameters: {'dbMovieID': '27202819', 'tppMovieID': 1211727, 'movieName': '反贪风暴4 P風暴', 'directors': '林德禄', 'writers': '黄浩华/何文龙', 'actors': '古天乐/郑嘉颖/林峯/林家栋/周秀娜/张智霖/谭耀文/张继聪/蔡瀚亿/廖启智', 'genre': '动作/犯罪', 'area': ' 中国香港 / 中国大陆', 'duration': 96, 'publishedDate': '2019-04-04', 'rateCount': '131408', 'doubanRate': '6.0'}]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-04-18 01:12:29,806 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-18 01:12:29,810 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 48700,
+ 'downloader/request_count': 40,
+ 'downloader/request_method_count/GET': 40,
+ 'downloader/response_bytes': 50559,
+ 'downloader/response_count': 40,
+ 'downloader/response_status_count/200': 40,
+ 'dupefilter/filtered': 23,
+ 'elapsed_time_seconds': 2.667461,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2020, 4, 17, 15, 45, 44, 384914),
- 'log_count/ERROR': 6,
- 'memusage/max': 72241152,
- 'memusage/startup': 72241152,
- 'scheduler/dequeued': 1,
- 'scheduler/dequeued/memory': 1,
- 'scheduler/enqueued': 1,
- 'scheduler/enqueued/memory': 1,
- 'start_time': datetime.datetime(2020, 4, 17, 15, 45, 44, 175594)}
-2020-04-17 23:45:44,386 -  engine.py[line:327] - INFO: Spider closed (finished)
+ 'finish_time': datetime.datetime(2020, 4, 17, 17, 12, 29, 809011),
+ 'item_dropped_count': 60,
+ 'item_dropped_reasons_count/DropItem': 60,
+ 'log_count/CRITICAL': 3,
+ 'log_count/ERROR': 158,
+ 'log_count/WARNING': 121,
+ 'memusage/max': 72245248,
+ 'memusage/startup': 72245248,
+ 'request_depth_max': 2,
+ 'response_received_count': 40,
+ 'scheduler/dequeued': 40,
+ 'scheduler/dequeued/memory': 40,
+ 'scheduler/enqueued': 40,
+ 'scheduler/enqueued/memory': 40,
+ 'start_time': datetime.datetime(2020, 4, 17, 17, 12, 27, 141550)}
+2020-04-18 01:12:29,810 -  engine.py[line:327] - INFO: Spider closed (finished)

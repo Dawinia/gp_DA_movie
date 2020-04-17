@@ -48,15 +48,15 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    'movie.middlewares.UserAgentMiddleware': 541,
-    'movie.middlewares.ProxyMiddleware': 542,
     'movie.middlewares.MovieSpiderMiddleware': 543,
 }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'movie.middlewares.DuplicateMiddleware': 540,
+    # 'movie.middlewares.DuplicateMiddleware': 540,
+    'movie.middlewares.UserAgentMiddleware': 541,
+    # 'movie.middlewares.ProxyMiddleware': 542,
     'movie.middlewares.MovieDownloaderMiddleware': 543,
 }
 
@@ -108,8 +108,8 @@ PROXY_URL = [
 
 RANDOM_UserAgent_TYPE = 'random'
 
-BEGIN_DATE = 20190417
-END_DATE = 20190417
+BEGIN_DATE = 20190418
+END_DATE = 20190419
 
 DATABASE_USER = "root"
 DATABASE_PASSWORD = "ws.748264"
@@ -121,7 +121,8 @@ REDIS_PORT = 6379
 
 URL_SEEN = "url_seen"
 
-REDIS_PASSWORD = "ws.748264"
+
+REDIS_PASSWORD = "movie"
 SET_TEST = "global setting"
 
 COMMANDS_MODULE = 'movie.commands'

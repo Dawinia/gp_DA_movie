@@ -142,7 +142,7 @@ class DuplicateMiddleware(object):
         logger.error(f"{self.key} has been added!")
         if not self.conn.sadd(self.key, new_url):
             raise IgnoreRequest(f"{request.url} has been crawled")
-        return None
+        return request
 
     @classmethod
     def from_crawler(cls, crawler):

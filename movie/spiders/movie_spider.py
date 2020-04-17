@@ -91,7 +91,7 @@ class MovieSpider(scrapy.Spider):
     comment_base_url = "https://movie.douban.com/subject/{}/comments"
 
     def start_requests(self):
-        data = {'beginDate': 20160101}
+        data = {'showDate': 20160101}
         base_url = 'http://piaofang.maoyan.com/dashboard-ajax/movie?'
         logger.error(f"boxOffice start request for url = {base_url}")
         for date in range(self.settings.get('BEGIN_DATE'), self.settings.get('END_DATE') + 1):
@@ -202,12 +202,14 @@ class MovieSpider(scrapy.Spider):
         item_loader.replace_value('tppMovieID', tpp_id)
 
         def get_name_list(parent):
+            return [child.get('name').split(' ')[0] for child in text.get(parent)][:10]
+
+        def get_person_info(parent):
             for detail in text.get(parent):
                 person_item_loader.replace_value('name', detail.get('name'))
                 person_item_loader.replace_value('url', detail.get('url'))
                 person_item_loader.replace_value('identity', parent)
                 yield person_item_loader.load_item()
-            return [child.get('name').split(' ')[0] for child in text.get(parent)][:10]
 
         item_loader.replace_value('directors', get_name_list('director'))
         item_loader.replace_value('writers', get_name_list('author'))
@@ -224,6 +226,10 @@ class MovieSpider(scrapy.Spider):
         item_loader.replace_value('doubanRate', text.get('aggregateRating').get('ratingValue'))
 
         yield item_loader.load_item()
+
+        get_person_info('director')
+        get_person_info('author')
+        get_person_info('actor')
 
         # yield scrapy.Request()
 

@@ -27,9 +27,9 @@ def get_minute(time: str):
 
 print(get_minute('PT1H36M'))
 
-con = redis.StrictRedis(host='localhost', port=6379, password='ws.748264')
+con = redis.StrictRedis(host='localhost', port=6379, password='movie')
 con.set('hello', 'world')
-if not con.sadd('test', 'new_url'):
-    print(con.smembers('test'))
+if not con.sadd('movieInfo', '27663743'):
+    print(f"existed -- {con.smembers('movieInfo')}")
 else:
-    print(f"new_url has been crawled")
+    print(f"success")

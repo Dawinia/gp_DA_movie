@@ -5,19 +5,23 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 from scrapy.exceptions import DropItem
-from movie.dao import MySQLHelper
+from movie.dao import MySQLHelper, RedisHelper
 from movie.dao.databasetable import BoxOfficeTableTemplate, MovieInfoTableTemplate, PersonTableTemplate
 from movie.spiders.movie_spider import logger
 from movie.items import BoxOfficeItem, MovieCommentItem, MovieInfoItem, PersonInfoItem
 
 
 class BoxOfficePipeline(object):
-    def __init__(self):
-        self.id_seen = set()
+    def __init__(self, redis_helper: RedisHelper):
+        logger.error(f"start to use judge duplicate")
+        self.conn = redis_helper.get_conn()
 
-    # @classmethod
-    # def from_crawler(cls, crawler):
-    #     pass
+    @classmethod
+    def from_crawler(cls, crawler):
+        settings = crawler.settings
+        return cls(
+            RedisHelper(settings.get('REDIS_HOST'), settings.get('REDIS_PORT'), settings.get('REDIS_PASSWORD'))
+        )
     #
     # def open_spider(self):
     #     pass
@@ -30,7 +34,21 @@ class BoxOfficePipeline(object):
         #     raise DropItem(f"Duplicate item found :{item}")
         # else:
         #     self.id_seen.add(item['movie_id'])
-        return item
+        key, value = 'default', 'default'
+        if isinstance(item, BoxOfficeItem):
+            key, value = 'boxOffice', item['yearRate'][0]
+        elif isinstance(item, MovieInfoItem):
+            key, value = 'movieInfo', item['dbMovieID'][0]
+        elif isinstance(item, PersonInfoItem):
+            key, value = 'personInfo', item['name'][0]
+        else:
+            key, value = 'default', 'default'
+
+        if not self.conn.sadd(key, value):
+            raise DropItem(f"Duplicate item found :{item}")
+        else:
+            logger.info(f"item is new")
+            return item
 
 
 class MySQLPipeline(object):
