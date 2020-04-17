@@ -14,6 +14,8 @@ BOT_NAME = 'movie'
 SPIDER_MODULES = ['movie.spiders']
 NEWSPIDER_MODULE = 'movie.spiders'
 
+LOG_LEVEL = "WARNING"
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'movie (+http://www.yourdomain.com)'
 
@@ -46,6 +48,8 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
+    'movie.middlewares.DuplicateMiddleware': 540,
+    'movie.middlewares.UserAgentMiddleware': 541,
     'movie.middlewares.ProxyMiddleware': 542,
     'movie.middlewares.MovieSpiderMiddleware': 543,
 }
@@ -70,6 +74,7 @@ ITEM_PIPELINES = {
 }
 
 BOXOFFICE_LOG_FILE = "boxOffice_spider.log"
+MOVIECOMMENT_LOG_FILE = "movieComment_spider.log"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -101,9 +106,22 @@ PROXY_URL = [
     "http://223.199.19.109:9999",
 ]
 
-END_DATE = 20160301
+RANDOM_UserAgent_TYPE = 'random'
+
+BEGIN_DATE = 20190417
+END_DATE = 20200110
 
 DATABASE_USER = "root"
-DATABASE_PASSWORD = "password"
+DATABASE_PASSWORD = "ws.748264"
 DATABASE_PORT = "3306"
 DATABASE_NAME = "movie"
+
+REDIS_HOST = "127.0.0.1"
+REDIS_PORT = 6379
+
+URL_SEEN = "url_seen"
+
+REDIS_PASSWORD = "ws.748264"
+SET_TEST = "global setting"
+
+COMMANDS_MODULE = 'movie.commands'

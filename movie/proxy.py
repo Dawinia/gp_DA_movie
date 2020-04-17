@@ -8,8 +8,6 @@ import time
 import requests
 
 
-# TODO: 完善IP代理池的获取，多线程爬虫
-
 class Proxies(object):
     """docstring for Proxies"""
 
@@ -18,19 +16,12 @@ class Proxies(object):
         self.verify_pro = []
         self.page = page
         self.headers = {
-            'Accept': '*/*',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)   '
                           'Chrome/45.0.2454.101 Safari/537.36',
-            'Accept-Encoding': 'gzip, deflate, sdch',
-            'Accept-Language': 'zh-CN,zh;q=0.8'
         }
         self.bd_headers = {
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) '
                           'Chrome/79.0.3945.117 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;'
-                      'q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8'
         }
         self.get_proxies()
         self.get_proxies_nn()
@@ -97,7 +88,7 @@ class Proxies(object):
                     self.proxies['https'].append(legal_proxy)
                 else:
                     self.proxies['http'].append(legal_proxy)
-            except :
+            except:
                 break
         print('verify_proxies done!')
 
@@ -110,8 +101,8 @@ class Proxies(object):
             protocol = 'https' if 'https' in proxy else 'http'
             proxies = {protocol: proxy}
             try:
-                if requests.get('http://www.baidu.com', proxies=proxies, timeout=2,
-                                headers=self.bd_headers).status_code == 200:
+                if requests.get('https://movie.douban.com/', proxies=proxies, timeout=2,
+                                headers=self.headers).status_code == 200:
                     print('success %s' % proxy)
                     new_queue.put(proxy)
             except ConnectionRefusedError:

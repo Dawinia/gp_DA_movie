@@ -1,0 +1,1435 @@
+2020-01-28 21:03:46,718 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-01-28 21:03:46,723 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Linux-5.3.0-26-generic-x86_64-with-debian-buster-sid
+2020-01-28 21:03:46,735 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-01-28 21:03:46,749 -  telnet.py[line:60] - INFO: Telnet Password: 0d00804f1fc897a1
+2020-01-28 21:03:46,771 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-01-28 21:03:46,831 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-01-28 21:03:47,014 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-01-28 21:03:47,029 -  pipelines.py[line:44] - ERROR: setting: custom boxOffice setting
+2020-01-28 21:03:47,066 -  pipelines.py[line:40] - ERROR: pipeline init
+2020-01-28 21:03:47,066 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-01-28 21:03:47,067 -  engine.py[line:257] - INFO: Spider opened
+2020-01-28 21:03:47,070 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-01-28 21:03:47,070 -  middlewares.py[line:65] - INFO: Spider opened: movie
+2020-01-28 21:03:47,072 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-01-28 21:03:47,078 -  movie_spider.py[line:71] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/second-box?
+2020-01-28 21:03:47,403 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/second-box?beginDate=20160101> (referer: None)
+2020-01-28 21:03:47,514 -  movie_spider.py[line:89] - ERROR: now crawl url : http://piaofang.maoyan.com/second-box?beginDate=20160101
+2020-01-28 21:03:47,526 -  movie_spider.py[line:113] - WARNING: get 1 movie info, named 唐人街探案.
+2020-01-28 21:03:47,534 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:03:47,544 -  databasetable.py[line:42] - WARNING: here movieID equals to 247300
+2020-01-28 21:03:47,545 -  databasetable.py[line:42] - WARNING: here movieName equals to 唐人街探案
+2020-01-28 21:03:47,545 -  databasetable.py[line:42] - WARNING: here seatRate equals to 61.6%
+2020-01-28 21:03:47,545 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 11414.40
+2020-01-28 21:03:47,546 -  databasetable.py[line:42] - WARNING: here boxRate equals to 32.5%
+2020-01-28 21:03:47,546 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映2天
+2020-01-28 21:03:47,546 -  databasetable.py[line:42] - WARNING: here showInfo equals to 50239
+2020-01-28 21:03:47,547 -  databasetable.py[line:42] - WARNING: here showRate equals to 27.2%
+2020-01-28 21:03:47,547 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 11414.40
+2020-01-28 21:03:47,547 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 25400.0
+2020-01-28 21:03:47,548 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 25400.0
+2020-01-28 21:03:47,548 -  databasetable.py[line:42] - WARNING: here showView equals to 72
+2020-01-28 21:03:47,548 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:03:47,548 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#1
+2020-01-28 21:03:47,549 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:03:47,552 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'sql_mode'
+2020-01-28 21:03:47,552 -  log.py[line:110] - INFO: {}
+2020-01-28 21:03:47,555 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-01-28 21:03:47,556 -  log.py[line:110] - INFO: {}
+2020-01-28 21:03:47,558 -  log.py[line:110] - INFO: SELECT DATABASE()
+2020-01-28 21:03:47,559 -  log.py[line:110] - INFO: {}
+2020-01-28 21:03:47,560 -  log.py[line:110] - INFO: show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-01-28 21:03:47,560 -  log.py[line:110] - INFO: {}
+2020-01-28 21:03:47,564 -  log.py[line:110] - INFO: SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-01-28 21:03:47,564 -  log.py[line:110] - INFO: {}
+2020-01-28 21:03:47,565 -  log.py[line:110] - INFO: SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-01-28 21:03:47,565 -  log.py[line:110] - INFO: {}
+2020-01-28 21:03:47,566 -  log.py[line:110] - INFO: SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-01-28 21:03:47,566 -  log.py[line:110] - INFO: {}
+2020-01-28 21:03:47,568 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-01-28 21:03:47,571 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-01-28 21:03:47,571 -  log.py[line:110] - INFO: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}
+2020-01-28 21:03:47,572 -  log.py[line:110] - INFO: ROLLBACK
+2020-01-28 21:03:47,573 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['11414.40'],
+ 'boxRate': ['32.5%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [247300],
+ 'movieName': ['唐人街探案'],
+ 'releaseInfo': ['上映2天'],
+ 'seatRate': ['61.6%'],
+ 'showInfo': ['50239'],
+ 'showRate': ['27.2%'],
+ 'showView': ['72'],
+ 'splitBoxInfo': ['11414.40'],
+ 'splitSumBoxInfo': ['25400.0'],
+ 'sumBoxInfo': ['25400.0'],
+ 'yearRate': ['2016-01-01#1']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1084, in _emit_insert_statements
+    c = cached_connections[connection].execute(statement, multiparams)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-01-28 21:04:49,661 -  movie_spider.py[line:113] - WARNING: get 2 movie info, named 老炮儿.
+2020-01-28 21:04:49,676 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:04:49,677 -  databasetable.py[line:42] - WARNING: here movieID equals to 246211
+2020-01-28 21:04:49,677 -  databasetable.py[line:42] - WARNING: here movieName equals to 老炮儿
+2020-01-28 21:04:49,678 -  databasetable.py[line:42] - WARNING: here seatRate equals to 72.4%
+2020-01-28 21:04:49,679 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 8592.53
+2020-01-28 21:04:49,679 -  databasetable.py[line:42] - WARNING: here boxRate equals to 24.5%
+2020-01-28 21:04:49,680 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映9天
+2020-01-28 21:04:49,680 -  databasetable.py[line:42] - WARNING: here showInfo equals to 32768
+2020-01-28 21:04:49,681 -  databasetable.py[line:42] - WARNING: here showRate equals to 17.7%
+2020-01-28 21:04:49,681 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 8592.53
+2020-01-28 21:04:49,682 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 55300.0
+2020-01-28 21:04:49,682 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 55300.0
+2020-01-28 21:04:49,683 -  databasetable.py[line:42] - WARNING: here showView equals to 83
+2020-01-28 21:04:49,683 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:04:49,684 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#2
+2020-01-28 21:04:49,684 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:04:49,686 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['8592.53'],
+ 'boxRate': ['24.5%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [246211],
+ 'movieName': ['老炮儿'],
+ 'releaseInfo': ['上映9天'],
+ 'seatRate': ['72.4%'],
+ 'showInfo': ['32768'],
+ 'showRate': ['17.7%'],
+ 'showView': ['83'],
+ 'splitBoxInfo': ['8592.53'],
+ 'splitSumBoxInfo': ['55300.0'],
+ 'sumBoxInfo': ['55300.0'],
+ 'yearRate': ['2016-01-01#2']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:04:49,692 -  logstats.py[line:48] - INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
+2020-01-28 21:06:04,078 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-01-28 21:06:27,059 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-01-28 21:06:27,065 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Linux-5.3.0-26-generic-x86_64-with-debian-buster-sid
+2020-01-28 21:06:27,076 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-01-28 21:06:27,089 -  telnet.py[line:60] - INFO: Telnet Password: 404a20af45e39356
+2020-01-28 21:06:27,111 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-01-28 21:06:27,170 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-01-28 21:06:27,370 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-01-28 21:06:27,386 -  pipelines.py[line:44] - ERROR: setting: custom boxOffice setting
+2020-01-28 21:06:27,422 -  pipelines.py[line:40] - ERROR: pipeline init
+2020-01-28 21:06:27,423 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-01-28 21:06:27,423 -  engine.py[line:257] - INFO: Spider opened
+2020-01-28 21:06:27,426 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-01-28 21:06:27,426 -  middlewares.py[line:65] - INFO: Spider opened: movie
+2020-01-28 21:06:27,428 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-01-28 21:06:27,435 -  movie_spider.py[line:71] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/second-box?
+2020-01-28 21:06:27,757 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/second-box?beginDate=20160101> (referer: None)
+2020-01-28 21:06:27,867 -  movie_spider.py[line:89] - ERROR: now crawl url : http://piaofang.maoyan.com/second-box?beginDate=20160101
+2020-01-28 21:06:27,880 -  movie_spider.py[line:113] - WARNING: get 1 movie info, named 唐人街探案.
+2020-01-28 21:06:27,885 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:27,892 -  databasetable.py[line:42] - WARNING: here movieID equals to 247300
+2020-01-28 21:06:27,893 -  databasetable.py[line:42] - WARNING: here movieName equals to 唐人街探案
+2020-01-28 21:06:27,893 -  databasetable.py[line:42] - WARNING: here seatRate equals to 61.6%
+2020-01-28 21:06:27,893 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 11414.40
+2020-01-28 21:06:27,894 -  databasetable.py[line:42] - WARNING: here boxRate equals to 32.5%
+2020-01-28 21:06:27,894 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映2天
+2020-01-28 21:06:27,894 -  databasetable.py[line:42] - WARNING: here showInfo equals to 50239
+2020-01-28 21:06:27,894 -  databasetable.py[line:42] - WARNING: here showRate equals to 27.2%
+2020-01-28 21:06:27,895 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 11414.40
+2020-01-28 21:06:27,895 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 25400.0
+2020-01-28 21:06:27,895 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 25400.0
+2020-01-28 21:06:27,895 -  databasetable.py[line:42] - WARNING: here showView equals to 72
+2020-01-28 21:06:27,896 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:27,896 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#1
+2020-01-28 21:06:27,896 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:27,899 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'sql_mode'
+2020-01-28 21:06:27,899 -  log.py[line:110] - INFO: {}
+2020-01-28 21:06:27,902 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-01-28 21:06:27,902 -  log.py[line:110] - INFO: {}
+2020-01-28 21:06:27,904 -  log.py[line:110] - INFO: SELECT DATABASE()
+2020-01-28 21:06:27,905 -  log.py[line:110] - INFO: {}
+2020-01-28 21:06:27,906 -  log.py[line:110] - INFO: show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-01-28 21:06:27,906 -  log.py[line:110] - INFO: {}
+2020-01-28 21:06:27,909 -  log.py[line:110] - INFO: SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-01-28 21:06:27,910 -  log.py[line:110] - INFO: {}
+2020-01-28 21:06:27,910 -  log.py[line:110] - INFO: SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-01-28 21:06:27,911 -  log.py[line:110] - INFO: {}
+2020-01-28 21:06:27,912 -  log.py[line:110] - INFO: SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-01-28 21:06:27,912 -  log.py[line:110] - INFO: {}
+2020-01-28 21:06:27,914 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-01-28 21:06:27,917 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-01-28 21:06:27,917 -  log.py[line:110] - INFO: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}
+2020-01-28 21:06:27,918 -  log.py[line:110] - INFO: ROLLBACK
+2020-01-28 21:06:27,919 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['11414.40'],
+ 'boxRate': ['32.5%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [247300],
+ 'movieName': ['唐人街探案'],
+ 'releaseInfo': ['上映2天'],
+ 'seatRate': ['61.6%'],
+ 'showInfo': ['50239'],
+ 'showRate': ['27.2%'],
+ 'showView': ['72'],
+ 'splitBoxInfo': ['11414.40'],
+ 'splitSumBoxInfo': ['25400.0'],
+ 'sumBoxInfo': ['25400.0'],
+ 'yearRate': ['2016-01-01#1']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1084, in _emit_insert_statements
+    c = cached_connections[connection].execute(statement, multiparams)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-01-28 21:06:27,928 -  movie_spider.py[line:113] - WARNING: get 2 movie info, named 老炮儿.
+2020-01-28 21:06:27,930 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:27,930 -  databasetable.py[line:42] - WARNING: here movieID equals to 246211
+2020-01-28 21:06:27,930 -  databasetable.py[line:42] - WARNING: here movieName equals to 老炮儿
+2020-01-28 21:06:27,930 -  databasetable.py[line:42] - WARNING: here seatRate equals to 72.4%
+2020-01-28 21:06:27,930 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 8592.53
+2020-01-28 21:06:27,930 -  databasetable.py[line:42] - WARNING: here boxRate equals to 24.5%
+2020-01-28 21:06:27,931 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映9天
+2020-01-28 21:06:27,931 -  databasetable.py[line:42] - WARNING: here showInfo equals to 32768
+2020-01-28 21:06:27,931 -  databasetable.py[line:42] - WARNING: here showRate equals to 17.7%
+2020-01-28 21:06:27,931 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 8592.53
+2020-01-28 21:06:27,931 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 55300.0
+2020-01-28 21:06:27,931 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 55300.0
+2020-01-28 21:06:27,931 -  databasetable.py[line:42] - WARNING: here showView equals to 83
+2020-01-28 21:06:27,932 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:27,932 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#2
+2020-01-28 21:06:27,932 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:27,932 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['8592.53'],
+ 'boxRate': ['24.5%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [246211],
+ 'movieName': ['老炮儿'],
+ 'releaseInfo': ['上映9天'],
+ 'seatRate': ['72.4%'],
+ 'showInfo': ['32768'],
+ 'showRate': ['17.7%'],
+ 'showView': ['83'],
+ 'splitBoxInfo': ['8592.53'],
+ 'splitSumBoxInfo': ['55300.0'],
+ 'sumBoxInfo': ['55300.0'],
+ 'yearRate': ['2016-01-01#2']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:27,985 -  movie_spider.py[line:113] - WARNING: get 3 movie info, named 寻龙诀.
+2020-01-28 21:06:27,987 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:27,987 -  databasetable.py[line:42] - WARNING: here movieID equals to 78701
+2020-01-28 21:06:27,987 -  databasetable.py[line:42] - WARNING: here movieName equals to 寻龙诀
+2020-01-28 21:06:27,987 -  databasetable.py[line:42] - WARNING: here seatRate equals to 64.1%
+2020-01-28 21:06:27,988 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 7311.86
+2020-01-28 21:06:27,988 -  databasetable.py[line:42] - WARNING: here boxRate equals to 20.8%
+2020-01-28 21:06:27,988 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映15天
+2020-01-28 21:06:27,988 -  databasetable.py[line:42] - WARNING: here showInfo equals to 24309
+2020-01-28 21:06:27,988 -  databasetable.py[line:42] - WARNING: here showRate equals to 13.2%
+2020-01-28 21:06:27,988 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 7311.86
+2020-01-28 21:06:27,989 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 144400.0
+2020-01-28 21:06:27,989 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 144400.0
+2020-01-28 21:06:27,989 -  databasetable.py[line:42] - WARNING: here showView equals to 80
+2020-01-28 21:06:27,989 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:27,989 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#3
+2020-01-28 21:06:27,989 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:27,990 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['7311.86'],
+ 'boxRate': ['20.8%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [78701],
+ 'movieName': ['寻龙诀'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['64.1%'],
+ 'showInfo': ['24309'],
+ 'showRate': ['13.2%'],
+ 'showView': ['80'],
+ 'splitBoxInfo': ['7311.86'],
+ 'splitSumBoxInfo': ['144400.0'],
+ 'sumBoxInfo': ['144400.0'],
+ 'yearRate': ['2016-01-01#3']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:27,994 -  movie_spider.py[line:113] - WARNING: get 4 movie info, named 小门神.
+2020-01-28 21:06:27,996 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:27,996 -  databasetable.py[line:42] - WARNING: here movieID equals to 247899
+2020-01-28 21:06:27,996 -  databasetable.py[line:42] - WARNING: here movieName equals to 小门神
+2020-01-28 21:06:27,997 -  databasetable.py[line:42] - WARNING: here seatRate equals to 45.4%
+2020-01-28 21:06:27,997 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 2806.61
+2020-01-28 21:06:27,997 -  databasetable.py[line:42] - WARNING: here boxRate equals to 8.0%
+2020-01-28 21:06:27,997 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映首日
+2020-01-28 21:06:27,998 -  databasetable.py[line:42] - WARNING: here showInfo equals to 21088
+2020-01-28 21:06:27,998 -  databasetable.py[line:42] - WARNING: here showRate equals to 11.4%
+2020-01-28 21:06:27,998 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 2806.61
+2020-01-28 21:06:27,998 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 3393.4
+2020-01-28 21:06:27,998 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 3393.4
+2020-01-28 21:06:27,999 -  databasetable.py[line:42] - WARNING: here showView equals to 43
+2020-01-28 21:06:27,999 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:27,999 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#4
+2020-01-28 21:06:27,999 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,000 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['2806.61'],
+ 'boxRate': ['8.0%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [247899],
+ 'movieName': ['小门神'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['45.4%'],
+ 'showInfo': ['21088'],
+ 'showRate': ['11.4%'],
+ 'showView': ['43'],
+ 'splitBoxInfo': ['2806.61'],
+ 'splitSumBoxInfo': ['3393.4'],
+ 'sumBoxInfo': ['3393.4'],
+ 'yearRate': ['2016-01-01#4']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,004 -  movie_spider.py[line:113] - WARNING: get 5 movie info, named 一念天堂.
+2020-01-28 21:06:28,006 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,006 -  databasetable.py[line:42] - WARNING: here movieID equals to 342758
+2020-01-28 21:06:28,006 -  databasetable.py[line:42] - WARNING: here movieName equals to 一念天堂
+2020-01-28 21:06:28,007 -  databasetable.py[line:42] - WARNING: here seatRate equals to 33.1%
+2020-01-28 21:06:28,007 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 2170.17
+2020-01-28 21:06:28,007 -  databasetable.py[line:42] - WARNING: here boxRate equals to 6.1%
+2020-01-28 21:06:28,008 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映2天
+2020-01-28 21:06:28,008 -  databasetable.py[line:42] - WARNING: here showInfo equals to 23122
+2020-01-28 21:06:28,008 -  databasetable.py[line:42] - WARNING: here showRate equals to 12.5%
+2020-01-28 21:06:28,009 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 2170.17
+2020-01-28 21:06:28,009 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 5342.2
+2020-01-28 21:06:28,009 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 5342.2
+2020-01-28 21:06:28,009 -  databasetable.py[line:42] - WARNING: here showView equals to 34
+2020-01-28 21:06:28,009 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,010 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#5
+2020-01-28 21:06:28,010 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,011 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['2170.17'],
+ 'boxRate': ['6.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [342758],
+ 'movieName': ['一念天堂'],
+ 'releaseInfo': ['上映2天'],
+ 'seatRate': ['33.1%'],
+ 'showInfo': ['23122'],
+ 'showRate': ['12.5%'],
+ 'showView': ['34'],
+ 'splitBoxInfo': ['2170.17'],
+ 'splitSumBoxInfo': ['5342.2'],
+ 'sumBoxInfo': ['5342.2'],
+ 'yearRate': ['2016-01-01#5']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,066 -  movie_spider.py[line:113] - WARNING: get 6 movie info, named 恶棍天使.
+2020-01-28 21:06:28,068 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,068 -  databasetable.py[line:42] - WARNING: here movieID equals to 246581
+2020-01-28 21:06:28,068 -  databasetable.py[line:42] - WARNING: here movieName equals to 恶棍天使
+2020-01-28 21:06:28,068 -  databasetable.py[line:42] - WARNING: here seatRate equals to 60.5%
+2020-01-28 21:06:28,068 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 1650.96
+2020-01-28 21:06:28,069 -  databasetable.py[line:42] - WARNING: here boxRate equals to 4.7%
+2020-01-28 21:06:28,069 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映9天
+2020-01-28 21:06:28,069 -  databasetable.py[line:42] - WARNING: here showInfo equals to 12511
+2020-01-28 21:06:28,069 -  databasetable.py[line:42] - WARNING: here showRate equals to 6.7%
+2020-01-28 21:06:28,069 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 1650.96
+2020-01-28 21:06:28,069 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 61200.0
+2020-01-28 21:06:28,070 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 61200.0
+2020-01-28 21:06:28,070 -  databasetable.py[line:42] - WARNING: here showView equals to 44
+2020-01-28 21:06:28,070 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,070 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#6
+2020-01-28 21:06:28,070 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,071 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['1650.96'],
+ 'boxRate': ['4.7%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [246581],
+ 'movieName': ['恶棍天使'],
+ 'releaseInfo': ['上映9天'],
+ 'seatRate': ['60.5%'],
+ 'showInfo': ['12511'],
+ 'showRate': ['6.7%'],
+ 'showView': ['44'],
+ 'splitBoxInfo': ['1650.96'],
+ 'splitSumBoxInfo': ['61200.0'],
+ 'sumBoxInfo': ['61200.0'],
+ 'yearRate': ['2016-01-01#6']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,107 -  movie_spider.py[line:113] - WARNING: get 7 movie info, named 一切都好.
+2020-01-28 21:06:28,109 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,109 -  databasetable.py[line:42] - WARNING: here movieID equals to 341056
+2020-01-28 21:06:28,109 -  databasetable.py[line:42] - WARNING: here movieName equals to 一切都好
+2020-01-28 21:06:28,109 -  databasetable.py[line:42] - WARNING: here seatRate equals to 23.8%
+2020-01-28 21:06:28,109 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 842.19
+2020-01-28 21:06:28,110 -  databasetable.py[line:42] - WARNING: here boxRate equals to 2.4%
+2020-01-28 21:06:28,110 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映首日
+2020-01-28 21:06:28,110 -  databasetable.py[line:42] - WARNING: here showInfo equals to 13781
+2020-01-28 21:06:28,110 -  databasetable.py[line:42] - WARNING: here showRate equals to 7.4%
+2020-01-28 21:06:28,110 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 842.19
+2020-01-28 21:06:28,110 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 1518.5
+2020-01-28 21:06:28,111 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 1518.5
+2020-01-28 21:06:28,111 -  databasetable.py[line:42] - WARNING: here showView equals to 21
+2020-01-28 21:06:28,111 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,111 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#7
+2020-01-28 21:06:28,111 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,112 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['842.19'],
+ 'boxRate': ['2.4%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [341056],
+ 'movieName': ['一切都好'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['23.8%'],
+ 'showInfo': ['13781'],
+ 'showRate': ['7.4%'],
+ 'showView': ['21'],
+ 'splitBoxInfo': ['842.19'],
+ 'splitSumBoxInfo': ['1518.5'],
+ 'sumBoxInfo': ['1518.5'],
+ 'yearRate': ['2016-01-01#7']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,144 -  movie_spider.py[line:113] - WARNING: get 8 movie info, named 分手再说我爱你.
+2020-01-28 21:06:28,147 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,148 -  databasetable.py[line:42] - WARNING: here movieID equals to 344687
+2020-01-28 21:06:28,148 -  databasetable.py[line:42] - WARNING: here movieName equals to 分手再说我爱你
+2020-01-28 21:06:28,149 -  databasetable.py[line:42] - WARNING: here seatRate equals to 46.3%
+2020-01-28 21:06:28,149 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 73.51
+2020-01-28 21:06:28,149 -  databasetable.py[line:42] - WARNING: here boxRate equals to 0.2%
+2020-01-28 21:06:28,149 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映9天
+2020-01-28 21:06:28,149 -  databasetable.py[line:42] - WARNING: here showInfo equals to 565
+2020-01-28 21:06:28,150 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.3%
+2020-01-28 21:06:28,150 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 73.51
+2020-01-28 21:06:28,150 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 980.4
+2020-01-28 21:06:28,151 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 980.4
+2020-01-28 21:06:28,151 -  databasetable.py[line:42] - WARNING: here showView equals to 42
+2020-01-28 21:06:28,151 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,152 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#8
+2020-01-28 21:06:28,152 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,153 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['73.51'],
+ 'boxRate': ['0.2%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [344687],
+ 'movieName': ['分手再说我爱你'],
+ 'releaseInfo': ['上映9天'],
+ 'seatRate': ['46.3%'],
+ 'showInfo': ['565'],
+ 'showRate': ['0.3%'],
+ 'showView': ['42'],
+ 'splitBoxInfo': ['73.51'],
+ 'splitSumBoxInfo': ['980.4'],
+ 'sumBoxInfo': ['980.4'],
+ 'yearRate': ['2016-01-01#8']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,183 -  movie_spider.py[line:113] - WARNING: get 9 movie info, named 索命暹罗之按摩师.
+2020-01-28 21:06:28,185 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,185 -  databasetable.py[line:42] - WARNING: here movieID equals to 336731
+2020-01-28 21:06:28,185 -  databasetable.py[line:42] - WARNING: here movieName equals to 索命暹罗之按摩师
+2020-01-28 21:06:28,185 -  databasetable.py[line:42] - WARNING: here seatRate equals to 15.1%
+2020-01-28 21:06:28,186 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 36.42
+2020-01-28 21:06:28,186 -  databasetable.py[line:42] - WARNING: here boxRate equals to 0.1%
+2020-01-28 21:06:28,186 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映2天
+2020-01-28 21:06:28,186 -  databasetable.py[line:42] - WARNING: here showInfo equals to 1569
+2020-01-28 21:06:28,186 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.8%
+2020-01-28 21:06:28,186 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 36.42
+2020-01-28 21:06:28,186 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 116.6
+2020-01-28 21:06:28,187 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 116.6
+2020-01-28 21:06:28,187 -  databasetable.py[line:42] - WARNING: here showView equals to 10
+2020-01-28 21:06:28,187 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,187 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#9
+2020-01-28 21:06:28,187 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,188 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['36.42'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [336731],
+ 'movieName': ['索命暹罗之按摩师'],
+ 'releaseInfo': ['上映2天'],
+ 'seatRate': ['15.1%'],
+ 'showInfo': ['1569'],
+ 'showRate': ['0.8%'],
+ 'showView': ['10'],
+ 'splitBoxInfo': ['36.42'],
+ 'splitSumBoxInfo': ['116.6'],
+ 'sumBoxInfo': ['116.6'],
+ 'yearRate': ['2016-01-01#9']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,221 -  movie_spider.py[line:113] - WARNING: get 10 movie info, named 万万没想到.
+2020-01-28 21:06:28,223 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,223 -  databasetable.py[line:42] - WARNING: here movieID equals to 248213
+2020-01-28 21:06:28,223 -  databasetable.py[line:42] - WARNING: here movieName equals to 万万没想到
+2020-01-28 21:06:28,223 -  databasetable.py[line:42] - WARNING: here seatRate equals to 26.3%
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 31.22
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映15天
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here showInfo equals to 697
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.3%
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 31.22
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 32100.0
+2020-01-28 21:06:28,224 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 32100.0
+2020-01-28 21:06:28,225 -  databasetable.py[line:42] - WARNING: here showView equals to 16
+2020-01-28 21:06:28,225 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,225 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#10
+2020-01-28 21:06:28,225 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,226 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['31.22'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [248213],
+ 'movieName': ['万万没想到'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['26.3%'],
+ 'showInfo': ['697'],
+ 'showRate': ['0.3%'],
+ 'showView': ['16'],
+ 'splitBoxInfo': ['31.22'],
+ 'splitSumBoxInfo': ['32100.0'],
+ 'sumBoxInfo': ['32100.0'],
+ 'yearRate': ['2016-01-01#10']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,230 -  movie_spider.py[line:113] - WARNING: get 11 movie info, named 咕噜咕噜美人鱼.
+2020-01-28 21:06:28,232 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,232 -  databasetable.py[line:42] - WARNING: here movieID equals to 342109
+2020-01-28 21:06:28,232 -  databasetable.py[line:42] - WARNING: here movieName equals to 咕噜咕噜美人鱼
+2020-01-28 21:06:28,232 -  databasetable.py[line:42] - WARNING: here seatRate equals to 35.5%
+2020-01-28 21:06:28,232 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 21.51
+2020-01-28 21:06:28,233 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,233 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映21天
+2020-01-28 21:06:28,233 -  databasetable.py[line:42] - WARNING: here showInfo equals to 463
+2020-01-28 21:06:28,233 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.2%
+2020-01-28 21:06:28,233 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 21.51
+2020-01-28 21:06:28,233 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 944.3
+2020-01-28 21:06:28,233 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 944.3
+2020-01-28 21:06:28,234 -  databasetable.py[line:42] - WARNING: here showView equals to 18
+2020-01-28 21:06:28,234 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,234 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#11
+2020-01-28 21:06:28,234 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,235 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['21.51'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [342109],
+ 'movieName': ['咕噜咕噜美人鱼'],
+ 'releaseInfo': ['上映21天'],
+ 'seatRate': ['35.5%'],
+ 'showInfo': ['463'],
+ 'showRate': ['0.2%'],
+ 'showView': ['18'],
+ 'splitBoxInfo': ['21.51'],
+ 'splitSumBoxInfo': ['944.3'],
+ 'sumBoxInfo': ['944.3'],
+ 'yearRate': ['2016-01-01#11']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,244 -  movie_spider.py[line:113] - WARNING: get 12 movie info, named 皇帝的新装之圣诞大明星.
+2020-01-28 21:06:28,246 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,246 -  databasetable.py[line:42] - WARNING: here movieID equals to 344992
+2020-01-28 21:06:28,246 -  databasetable.py[line:42] - WARNING: here movieName equals to 皇帝的新装之圣诞大明星
+2020-01-28 21:06:28,247 -  databasetable.py[line:42] - WARNING: here seatRate equals to 13.5%
+2020-01-28 21:06:28,247 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 21.09
+2020-01-28 21:06:28,247 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,247 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映首日
+2020-01-28 21:06:28,247 -  databasetable.py[line:42] - WARNING: here showInfo equals to 894
+2020-01-28 21:06:28,247 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.4%
+2020-01-28 21:06:28,247 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 21.09
+2020-01-28 21:06:28,248 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 39.7
+2020-01-28 21:06:28,248 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 39.7
+2020-01-28 21:06:28,248 -  databasetable.py[line:42] - WARNING: here showView equals to 9
+2020-01-28 21:06:28,248 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,248 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#12
+2020-01-28 21:06:28,248 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,249 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['21.09'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [344992],
+ 'movieName': ['皇帝的新装之圣诞大明星'],
+ 'releaseInfo': ['上映首日'],
+ 'seatRate': ['13.5%'],
+ 'showInfo': ['894'],
+ 'showRate': ['0.4%'],
+ 'showView': ['9'],
+ 'splitBoxInfo': ['21.09'],
+ 'splitSumBoxInfo': ['39.7'],
+ 'sumBoxInfo': ['39.7'],
+ 'yearRate': ['2016-01-01#12']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,253 -  movie_spider.py[line:113] - WARNING: get 13 movie info, named 诡娃娃.
+2020-01-28 21:06:28,255 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,255 -  databasetable.py[line:42] - WARNING: here movieID equals to 343767
+2020-01-28 21:06:28,255 -  databasetable.py[line:42] - WARNING: here movieName equals to 诡娃娃
+2020-01-28 21:06:28,255 -  databasetable.py[line:42] - WARNING: here seatRate equals to 55.2%
+2020-01-28 21:06:28,255 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 13.44
+2020-01-28 21:06:28,256 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,256 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映15天
+2020-01-28 21:06:28,256 -  databasetable.py[line:42] - WARNING: here showInfo equals to 272
+2020-01-28 21:06:28,256 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.1%
+2020-01-28 21:06:28,256 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 13.44
+2020-01-28 21:06:28,256 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 191.8
+2020-01-28 21:06:28,256 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 191.8
+2020-01-28 21:06:28,257 -  databasetable.py[line:42] - WARNING: here showView equals to 23
+2020-01-28 21:06:28,257 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,257 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#13
+2020-01-28 21:06:28,257 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,258 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['13.44'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [343767],
+ 'movieName': ['诡娃娃'],
+ 'releaseInfo': ['上映15天'],
+ 'seatRate': ['55.2%'],
+ 'showInfo': ['272'],
+ 'showRate': ['0.1%'],
+ 'showView': ['23'],
+ 'splitBoxInfo': ['13.44'],
+ 'splitSumBoxInfo': ['191.8'],
+ 'sumBoxInfo': ['191.8'],
+ 'yearRate': ['2016-01-01#13']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,264 -  movie_spider.py[line:113] - WARNING: get 14 movie info, named 极盗者.
+2020-01-28 21:06:28,267 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,267 -  databasetable.py[line:42] - WARNING: here movieID equals to 249141
+2020-01-28 21:06:28,267 -  databasetable.py[line:42] - WARNING: here movieName equals to 极盗者
+2020-01-28 21:06:28,267 -  databasetable.py[line:42] - WARNING: here seatRate equals to 41.7%
+2020-01-28 21:06:28,267 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 8.98
+2020-01-28 21:06:28,267 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,268 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映29天
+2020-01-28 21:06:28,268 -  databasetable.py[line:42] - WARNING: here showInfo equals to 88
+2020-01-28 21:06:28,268 -  databasetable.py[line:42] - WARNING: here showRate equals to <0.1%
+2020-01-28 21:06:28,268 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 8.98
+2020-01-28 21:06:28,268 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 24700.0
+2020-01-28 21:06:28,268 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 24700.0
+2020-01-28 21:06:28,268 -  databasetable.py[line:42] - WARNING: here showView equals to 26
+2020-01-28 21:06:28,269 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,269 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#14
+2020-01-28 21:06:28,269 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,270 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['8.98'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [249141],
+ 'movieName': ['极盗者'],
+ 'releaseInfo': ['上映29天'],
+ 'seatRate': ['41.7%'],
+ 'showInfo': ['88'],
+ 'showRate': ['<0.1%'],
+ 'showView': ['26'],
+ 'splitBoxInfo': ['8.98'],
+ 'splitSumBoxInfo': ['24700.0'],
+ 'sumBoxInfo': ['24700.0'],
+ 'yearRate': ['2016-01-01#14']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,279 -  movie_spider.py[line:113] - WARNING: get 15 movie info, named 熊出没之熊心归来.
+2020-01-28 21:06:28,281 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,282 -  databasetable.py[line:42] - WARNING: here movieID equals to 341750
+2020-01-28 21:06:28,282 -  databasetable.py[line:42] - WARNING: here movieName equals to 熊出没之熊心归来
+2020-01-28 21:06:28,282 -  databasetable.py[line:42] - WARNING: here seatRate equals to 100%
+2020-01-28 21:06:28,282 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 6.46
+2020-01-28 21:06:28,282 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,283 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 点映
+2020-01-28 21:06:28,283 -  databasetable.py[line:42] - WARNING: here showInfo equals to 24
+2020-01-28 21:06:28,283 -  databasetable.py[line:42] - WARNING: here showRate equals to <0.1%
+2020-01-28 21:06:28,283 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 6.46
+2020-01-28 21:06:28,284 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 6.4
+2020-01-28 21:06:28,284 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 6.4
+2020-01-28 21:06:28,284 -  databasetable.py[line:42] - WARNING: here showView equals to 75
+2020-01-28 21:06:28,284 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,284 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#15
+2020-01-28 21:06:28,284 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,285 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['6.46'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [341750],
+ 'movieName': ['熊出没之熊心归来'],
+ 'releaseInfo': ['点映'],
+ 'seatRate': ['100%'],
+ 'showInfo': ['24'],
+ 'showRate': ['<0.1%'],
+ 'showView': ['75'],
+ 'splitBoxInfo': ['6.46'],
+ 'splitSumBoxInfo': ['6.4'],
+ 'sumBoxInfo': ['6.4'],
+ 'yearRate': ['2016-01-01#15']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,293 -  movie_spider.py[line:113] - WARNING: get 16 movie info, named 果宝特攻之水果大逃亡.
+2020-01-28 21:06:28,295 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,295 -  databasetable.py[line:42] - WARNING: here movieID equals to 246592
+2020-01-28 21:06:28,295 -  databasetable.py[line:42] - WARNING: here movieName equals to 果宝特攻之水果大逃亡
+2020-01-28 21:06:28,295 -  databasetable.py[line:42] - WARNING: here seatRate equals to 100%
+2020-01-28 21:06:28,295 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 4.74
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 点映
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here showInfo equals to 15
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here showRate equals to <0.1%
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 4.74
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 4.7
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 4.7
+2020-01-28 21:06:28,296 -  databasetable.py[line:42] - WARNING: here showView equals to 93
+2020-01-28 21:06:28,297 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,297 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#16
+2020-01-28 21:06:28,297 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,298 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['4.74'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [246592],
+ 'movieName': ['果宝特攻之水果大逃亡'],
+ 'releaseInfo': ['点映'],
+ 'seatRate': ['100%'],
+ 'showInfo': ['15'],
+ 'showRate': ['<0.1%'],
+ 'showView': ['93'],
+ 'splitBoxInfo': ['4.74'],
+ 'splitSumBoxInfo': ['4.7'],
+ 'sumBoxInfo': ['4.7'],
+ 'yearRate': ['2016-01-01#16']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,304 -  movie_spider.py[line:113] - WARNING: get 17 movie info, named 舌尖上的新年.
+2020-01-28 21:06:28,306 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,306 -  databasetable.py[line:42] - WARNING: here movieID equals to 337511
+2020-01-28 21:06:28,306 -  databasetable.py[line:42] - WARNING: here movieName equals to 舌尖上的新年
+2020-01-28 21:06:28,306 -  databasetable.py[line:42] - WARNING: here seatRate equals to 100%
+2020-01-28 21:06:28,307 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 3.46
+2020-01-28 21:06:28,307 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,307 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 点映
+2020-01-28 21:06:28,307 -  databasetable.py[line:42] - WARNING: here showInfo equals to 8
+2020-01-28 21:06:28,307 -  databasetable.py[line:42] - WARNING: here showRate equals to <0.1%
+2020-01-28 21:06:28,307 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 3.46
+2020-01-28 21:06:28,308 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 6.2
+2020-01-28 21:06:28,308 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 6.2
+2020-01-28 21:06:28,308 -  databasetable.py[line:42] - WARNING: here showView equals to 126
+2020-01-28 21:06:28,308 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,308 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#17
+2020-01-28 21:06:28,309 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,310 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['3.46'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [337511],
+ 'movieName': ['舌尖上的新年'],
+ 'releaseInfo': ['点映'],
+ 'seatRate': ['100%'],
+ 'showInfo': ['8'],
+ 'showRate': ['<0.1%'],
+ 'showView': ['126'],
+ 'splitBoxInfo': ['3.46'],
+ 'splitSumBoxInfo': ['6.2'],
+ 'sumBoxInfo': ['6.2'],
+ 'yearRate': ['2016-01-01#17']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,317 -  movie_spider.py[line:113] - WARNING: get 18 movie info, named 探秘者.
+2020-01-28 21:06:28,320 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,320 -  databasetable.py[line:42] - WARNING: here movieID equals to 344774
+2020-01-28 21:06:28,320 -  databasetable.py[line:42] - WARNING: here movieName equals to 探秘者
+2020-01-28 21:06:28,321 -  databasetable.py[line:42] - WARNING: here seatRate equals to 6.7%
+2020-01-28 21:06:28,321 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 2.72
+2020-01-28 21:06:28,321 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,322 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映2天
+2020-01-28 21:06:28,322 -  databasetable.py[line:42] - WARNING: here showInfo equals to 242
+2020-01-28 21:06:28,322 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.1%
+2020-01-28 21:06:28,322 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 2.72
+2020-01-28 21:06:28,323 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 17.7
+2020-01-28 21:06:28,323 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 17.7
+2020-01-28 21:06:28,323 -  databasetable.py[line:42] - WARNING: here showView equals to 4
+2020-01-28 21:06:28,323 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,323 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#18
+2020-01-28 21:06:28,324 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,324 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['2.72'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [344774],
+ 'movieName': ['探秘者'],
+ 'releaseInfo': ['上映2天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': ['242'],
+ 'showRate': ['0.1%'],
+ 'showView': ['4'],
+ 'splitBoxInfo': ['2.72'],
+ 'splitSumBoxInfo': ['17.7'],
+ 'sumBoxInfo': ['17.7'],
+ 'yearRate': ['2016-01-01#18']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,330 -  movie_spider.py[line:113] - WARNING: get 19 movie info, named 胜利大阅兵.
+2020-01-28 21:06:28,332 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,332 -  databasetable.py[line:42] - WARNING: here movieID equals to 342965
+2020-01-28 21:06:28,332 -  databasetable.py[line:42] - WARNING: here movieName equals to 胜利大阅兵
+2020-01-28 21:06:28,333 -  databasetable.py[line:42] - WARNING: here seatRate equals to 48.7%
+2020-01-28 21:06:28,333 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 2.44
+2020-01-28 21:06:28,333 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,334 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映5天
+2020-01-28 21:06:28,334 -  databasetable.py[line:42] - WARNING: here showInfo equals to 33
+2020-01-28 21:06:28,334 -  databasetable.py[line:42] - WARNING: here showRate equals to <0.1%
+2020-01-28 21:06:28,334 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 2.44
+2020-01-28 21:06:28,335 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 19.0
+2020-01-28 21:06:28,335 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 19.0
+2020-01-28 21:06:28,335 -  databasetable.py[line:42] - WARNING: here showView equals to 25
+2020-01-28 21:06:28,335 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,335 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#19
+2020-01-28 21:06:28,336 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,336 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['2.44'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [342965],
+ 'movieName': ['胜利大阅兵'],
+ 'releaseInfo': ['上映5天'],
+ 'seatRate': ['48.7%'],
+ 'showInfo': ['33'],
+ 'showRate': ['<0.1%'],
+ 'showView': ['25'],
+ 'splitBoxInfo': ['2.44'],
+ 'splitSumBoxInfo': ['19.0'],
+ 'sumBoxInfo': ['19.0'],
+ 'yearRate': ['2016-01-01#19']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,347 -  movie_spider.py[line:113] - WARNING: get 20 movie info, named 圣诞大赢家.
+2020-01-28 21:06:28,349 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,349 -  databasetable.py[line:42] - WARNING: here movieID equals to 344043
+2020-01-28 21:06:28,350 -  databasetable.py[line:42] - WARNING: here movieName equals to 圣诞大赢家
+2020-01-28 21:06:28,350 -  databasetable.py[line:42] - WARNING: here seatRate equals to 15.3%
+2020-01-28 21:06:28,350 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 2.21
+2020-01-28 21:06:28,350 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,350 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映21天
+2020-01-28 21:06:28,350 -  databasetable.py[line:42] - WARNING: here showInfo equals to 188
+2020-01-28 21:06:28,350 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.1%
+2020-01-28 21:06:28,351 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 2.21
+2020-01-28 21:06:28,351 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 525.7
+2020-01-28 21:06:28,351 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 525.7
+2020-01-28 21:06:28,351 -  databasetable.py[line:42] - WARNING: here showView equals to 5
+2020-01-28 21:06:28,351 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,351 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#20
+2020-01-28 21:06:28,352 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,352 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['2.21'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [344043],
+ 'movieName': ['圣诞大赢家'],
+ 'releaseInfo': ['上映21天'],
+ 'seatRate': ['15.3%'],
+ 'showInfo': ['188'],
+ 'showRate': ['0.1%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['2.21'],
+ 'splitSumBoxInfo': ['525.7'],
+ 'sumBoxInfo': ['525.7'],
+ 'yearRate': ['2016-01-01#20']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,358 -  movie_spider.py[line:113] - WARNING: get 21 movie info, named 冰美人.
+2020-01-28 21:06:28,360 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,361 -  databasetable.py[line:42] - WARNING: here movieID equals to 344475
+2020-01-28 21:06:28,361 -  databasetable.py[line:42] - WARNING: here movieName equals to 冰美人
+2020-01-28 21:06:28,361 -  databasetable.py[line:42] - WARNING: here seatRate equals to 3.9%
+2020-01-28 21:06:28,361 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 1.40
+2020-01-28 21:06:28,361 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,361 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 点映
+2020-01-28 21:06:28,362 -  databasetable.py[line:42] - WARNING: here showInfo equals to 200
+2020-01-28 21:06:28,362 -  databasetable.py[line:42] - WARNING: here showRate equals to 0.1%
+2020-01-28 21:06:28,362 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 1.40
+2020-01-28 21:06:28,362 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 1.4
+2020-01-28 21:06:28,362 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 1.4
+2020-01-28 21:06:28,362 -  databasetable.py[line:42] - WARNING: here showView equals to 3
+2020-01-28 21:06:28,362 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,363 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#21
+2020-01-28 21:06:28,363 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,363 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['1.40'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [344475],
+ 'movieName': ['冰美人'],
+ 'releaseInfo': ['点映'],
+ 'seatRate': ['3.9%'],
+ 'showInfo': ['200'],
+ 'showRate': ['0.1%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['1.40'],
+ 'splitSumBoxInfo': ['1.4'],
+ 'sumBoxInfo': ['1.4'],
+ 'yearRate': ['2016-01-01#21']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,372 -  movie_spider.py[line:113] - WARNING: get 22 movie info, named 师父.
+2020-01-28 21:06:28,374 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,374 -  databasetable.py[line:42] - WARNING: here movieID equals to 246080
+2020-01-28 21:06:28,374 -  databasetable.py[line:42] - WARNING: here movieName equals to 师父
+2020-01-28 21:06:28,374 -  databasetable.py[line:42] - WARNING: here seatRate equals to 16.1%
+2020-01-28 21:06:28,375 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 1.39
+2020-01-28 21:06:28,375 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,375 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映23天
+2020-01-28 21:06:28,375 -  databasetable.py[line:42] - WARNING: here showInfo equals to 47
+2020-01-28 21:06:28,375 -  databasetable.py[line:42] - WARNING: here showRate equals to <0.1%
+2020-01-28 21:06:28,375 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 1.39
+2020-01-28 21:06:28,375 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 5461.6
+2020-01-28 21:06:28,376 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 5461.6
+2020-01-28 21:06:28,376 -  databasetable.py[line:42] - WARNING: here showView equals to 9
+2020-01-28 21:06:28,376 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,376 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#22
+2020-01-28 21:06:28,376 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,377 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['1.39'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [246080],
+ 'movieName': ['师父'],
+ 'releaseInfo': ['上映23天'],
+ 'seatRate': ['16.1%'],
+ 'showInfo': ['47'],
+ 'showRate': ['<0.1%'],
+ 'showView': ['9'],
+ 'splitBoxInfo': ['1.39'],
+ 'splitSumBoxInfo': ['5461.6'],
+ 'sumBoxInfo': ['5461.6'],
+ 'yearRate': ['2016-01-01#22']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,383 -  movie_spider.py[line:113] - WARNING: get 23 movie info, named 极速风流.
+2020-01-28 21:06:28,385 -  pipelines.py[line:56] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-01-28 21:06:28,385 -  databasetable.py[line:42] - WARNING: here movieID equals to 78279
+2020-01-28 21:06:28,386 -  databasetable.py[line:42] - WARNING: here movieName equals to 极速风流
+2020-01-28 21:06:28,386 -  databasetable.py[line:42] - WARNING: here seatRate equals to 15.9%
+2020-01-28 21:06:28,386 -  databasetable.py[line:42] - WARNING: here boxInfo equals to 1.01
+2020-01-28 21:06:28,386 -  databasetable.py[line:42] - WARNING: here boxRate equals to <0.1%
+2020-01-28 21:06:28,386 -  databasetable.py[line:42] - WARNING: here releaseInfo equals to 上映22天
+2020-01-28 21:06:28,386 -  databasetable.py[line:42] - WARNING: here showInfo equals to 129
+2020-01-28 21:06:28,387 -  databasetable.py[line:42] - WARNING: here showRate equals to <0.1%
+2020-01-28 21:06:28,387 -  databasetable.py[line:42] - WARNING: here splitBoxInfo equals to 1.01
+2020-01-28 21:06:28,387 -  databasetable.py[line:42] - WARNING: here splitSumBoxInfo equals to 1994.9
+2020-01-28 21:06:28,387 -  databasetable.py[line:42] - WARNING: here sumBoxInfo equals to 1994.9
+2020-01-28 21:06:28,387 -  databasetable.py[line:42] - WARNING: here showView equals to 3
+2020-01-28 21:06:28,387 -  databasetable.py[line:42] - WARNING: here crawlDate equals to 2020-01-28
+2020-01-28 21:06:28,387 -  databasetable.py[line:42] - WARNING: here yearRate equals to 2016-01-01#23
+2020-01-28 21:06:28,388 -  pipelines.py[line:63] - WARNING: insert database finished
+2020-01-28 21:06:28,388 -  scraper.py[line:236] - ERROR: Error processing {'boxInfo': ['1.01'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': [datetime.date(2020, 1, 28)],
+ 'movieID': [78279],
+ 'movieName': ['极速风流'],
+ 'releaseInfo': ['上映22天'],
+ 'seatRate': ['15.9%'],
+ 'showInfo': ['129'],
+ 'showRate': ['<0.1%'],
+ 'showView': ['3'],
+ 'splitBoxInfo': ['1.01'],
+ 'splitSumBoxInfo': ['1994.9'],
+ 'sumBoxInfo': ['1994.9'],
+ 'yearRate': ['2016-01-01#23']}
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/pipelines.py", line 64, in process_item
+    self.session.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self._assert_active(prepared_ok=True)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 295, in _assert_active
+    code="7s2a",
+sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (pymysql.err.IntegrityError) (1062, "Duplicate entry '2016-01-01#1' for key 'boxOffice.PRIMARY'")
+[SQL: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)]
+[parameters: {'movieID': 247300, 'movieName': '唐人街探案', 'seatRate': '61.6%', 'boxInfo': '11414.40', 'boxRate': '32.5%', 'releaseInfo': '上映2天', 'showInfo': '50239', 'showRate': '27.2%', 'splitBoxInfo': '11414.40', 'splitSumBoxInfo': '25400.0', 'sumBoxInfo': '25400.0', 'showView': '72', 'crawlDate': datetime.date(2020, 1, 28), 'yearRate': '2016-01-01#1'}]
+(Background on this error at: http://sqlalche.me/e/gkpj) (Background on this error at: http://sqlalche.me/e/7s2a)
+2020-01-28 21:06:28,392 -  movie_spider.py[line:124] - ERROR: boxOffice start parse
+2020-01-28 21:06:28,575 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E4%B8%80%E5%88%87%E9%83%BD%E5%A5%BD> (referer: http://piaofang.maoyan.com/second-box?beginDate=20160101)
+2020-01-28 21:06:28,604 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%AF%BB%E9%BE%99%E8%AF%80> (referer: http://piaofang.maoyan.com/second-box?beginDate=20160101)
+2020-01-28 21:06:28,631 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%94%90%E4%BA%BA%E8%A1%97%E6%8E%A2%E6%A1%88> (referer: http://piaofang.maoyan.com/second-box?beginDate=20160101)
+2020-01-28 21:06:28,660 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E7%82%AE%E5%84%BF> (referer: http://piaofang.maoyan.com/second-box?beginDate=20160101)
+2020-01-28 21:06:28,689 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E4%B8%80%E5%BF%B5%E5%A4%A9%E5%A0%82> (referer: http://piaofang.maoyan.com/second-box?beginDate=20160101)
+2020-01-28 21:06:28,715 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%88%86%E6%89%8B%E5%86%8D%E8%AF%B4%E6%88%91%E7%88%B1%E4%BD%A0> (referer: http://piaofang.maoyan.com/second-box?beginDate=20160101)
+2020-01-28 21:06:33,157 -  movie_spider.py[line:135] - ERROR: movie_name = 一切都好 and movie_year = 2016-01-01 and tpp_id = 341056
+2020-01-28 21:06:40,524 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 

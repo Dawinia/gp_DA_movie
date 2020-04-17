@@ -7,8 +7,13 @@
 
 from scrapy import signals
 import requests
-from movie.spiders.boxOffice_spider import logger
+from scrapy.exceptions import IgnoreRequest
+
+from movie.spiders.movie_spider import logger
+from movie.dao import RedisHelper
 import json
+from hashlib import md5
+from fake_useragent import UserAgent
 import random
 
 
@@ -108,11 +113,66 @@ class MovieDownloaderMiddleware(object):
 
 
 class CookiesMiddleware(object):
-    pass
+    """ 随机设置Cookies """
+    def __init__(self):
+        pass
+
+    def process_request(self):
+        pass
+
+    def process_response(self):
+        pass
+
+    def from_crawler(self):
+        pass
+
+
+class DuplicateMiddleware(object):
+    def __init__(self, redis_helper: RedisHelper, key):
+        self.conn = redis_helper.get_conn()
+        self.key = key
+
+    def process_request(self, request, spider):
+        """ 使用 md5 对 URL 进行加密，并加入 set， 若 set 中已存在，则不继续该请求 """
+        md5_obj = md5()
+        md5_obj.update(request.url.encode(encoding='utf-8'))
+        new_url = md5_obj.hexdigest()
+        if not self.conn.sadd(self.key, new_url):
+            raise IgnoreRequest(f"{request.url} has been crawled")
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        settings = crawler.settings
+        return cls(
+            RedisHelper(settings.get('REDIS_HOST'), settings.get('REDIS_PORT'), settings.get('REDIS_PASSWORD')),
+            settings.get('URL_SEEN')
+        )
+
+
+class UserAgentMiddleware(object):
+    """ 随机更换 User-Agent """
+
+    def __init__(self, crawler):
+        super(UserAgentMiddleware, self).__init__()
+        self.ua = UserAgent()
+        self.ua_type = crawler.settings.get("RANDOM_UserAgent_TYPE", "random")
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler)
+
+    def process_request(self, request, spider):
+        def get_ua():
+            return getattr(self.ua, self.ua_type)
+
+        request.headers.setdefault('User-Agent', get_ua())
 
 
 class ProxyMiddleware(object):
+    """ 随机获取代理 """
+
     def __init__(self, proxy_url: list):
+        super(ProxyMiddleware, self).__init__()
         self.proxy_url = proxy_url
 
     def get_random_proxy(self):
