@@ -129,16 +129,20 @@ class CookiesMiddleware(object):
 
 class DuplicateMiddleware(object):
     def __init__(self, redis_helper: RedisHelper, key):
+        logger.error(f"start to use judge duplicate")
         self.conn = redis_helper.get_conn()
         self.key = key
 
     def process_request(self, request, spider):
         """ 使用 md5 对 URL 进行加密，并加入 set， 若 set 中已存在，则不继续该请求 """
+        logger.error(f"into the process function of dm")
         md5_obj = md5()
         md5_obj.update(request.url.encode(encoding='utf-8'))
         new_url = md5_obj.hexdigest()
+        logger.error(f"{self.key} has been added!")
         if not self.conn.sadd(self.key, new_url):
             raise IgnoreRequest(f"{request.url} has been crawled")
+        return None
 
     @classmethod
     def from_crawler(cls, crawler):

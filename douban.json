@@ -1,0 +1,202 @@
+
+{
+  "@context": "http://schema.org",
+  "name": "小飞象 Dumbo",
+  "url": "/subject/25924056/",
+  "image": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2549234765.webp",
+  "director":
+  [
+    {
+      "@type": "Person",
+      "url": "/celebrity/1019002/",
+      "name": "蒂姆·波顿 Tim Burton"
+    }
+  ]
+,
+  "author":
+  [
+    {
+      "@type": "Person",
+      "url": "/celebrity/1027468/",
+      "name": "伊伦·克鲁格 Ehren Kruger"
+    }
+  ]
+,
+  "actor":
+  [
+    {
+      "@type": "Person",
+      "url": "/celebrity/1025155/",
+      "name": "伊娃·格林 Eva Green"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1084255/",
+      "name": "科林·法瑞尔 Colin Farrell"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1049486/",
+      "name": "迈克尔·基顿 Michael Keaton"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1405391/",
+      "name": "妮可·帕克 Nico Parker"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1413450/",
+      "name": "芬利·霍宾斯 Finley Hobbins"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1040516/",
+      "name": "丹尼·德维托 Danny DeVito"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1002730/",
+      "name": "艾伦·阿金 Alan Arkin"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1390233/",
+      "name": "卡米尔·雷米泽斯基 Kamil Lemieszewski"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1224212/",
+      "name": "约瑟夫·盖特 Joseph Gatt"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1389480/",
+      "name": "桑迪·马丁 Sandy Martin "
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1234671/",
+      "name": "乔·奥斯蒙德 Jo Osmond"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1331294/",
+      "name": "莎朗·鲁妮 Sharon Rooney"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1327342/",
+      "name": "拉斯·艾丁格 Lars Eidinger"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1137886/",
+      "name": "罗珊·塞斯 Roshan Seth"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1326517/",
+      "name": "道比·欧帕瑞 Deobia Oparei"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1041417/",
+      "name": "迈克尔·巴佛 Michael Buffer"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1392997/",
+      "name": "杰茜·维宁 Jessie Vinning"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1390686/",
+      "name": "伯纳多·桑托斯 Bernardo Santos	"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1394212/",
+      "name": "贝恩·科拉科 Bern Collaço"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1355308/",
+      "name": "文森特·阿德里安 Vincent Andriano"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1343593/",
+      "name": "菲利普·罗施 Philip Rosch"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1364116/",
+      "name": "露西·德维托 Lucy DeVito"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1392990/",
+      "name": "拉普洛斯·卡伦福佐斯 Lampros Kalfuntzos"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1086900/",
+      "name": "阿梅吉特·德尤 Amerjit Deu"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1145184/",
+      "name": "史蒂芬·萨姆森 Stephen Samson"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1367759/",
+      "name": "埃里克·海登 Erick Hayden"
+    }
+    ,
+    {
+      "@type": "Person",
+      "url": "/celebrity/1406075/",
+      "name": "赵明洲 Mingzhou Zhao"
+    }
+  ]
+,
+  "datePublished": "2019-03-29",
+  "genre": ["\u5947\u5e7b", "\u5192\u9669"],
+  "duration": "PT1H52M",
+  "description": "迪士尼影业荣誉出品，鬼才导演蒂姆·波顿执导，全新真人冒险电影《小飞象》为这个经典童话故事锦上添花，讲述了一个颂扬与众不同，珍视亲情家庭，梦想展翅翱翔的故事。在马戏团老板麦克斯·美第奇（丹尼·德维托饰）...",
+  "@type": "Movie",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingCount": "55426",
+    "bestRating": "10",
+    "worstRating": "2",
+    "ratingValue": "6.7"
+  }
+}

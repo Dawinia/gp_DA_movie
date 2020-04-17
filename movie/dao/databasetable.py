@@ -21,6 +21,7 @@ class BoxOfficeTableTemplate(base):
 
     __tablename__ = 'boxOffice'
 
+    id = Column(Integer, primary_key=True)
     movieID = Column(Integer)  # 电影ID,
     movieName = Column(String(32))  # 电影名称,
     seatRate = Column(String(5))  # 上座率,
@@ -34,7 +35,7 @@ class BoxOfficeTableTemplate(base):
     sumBoxInfo = Column(Float)  # 总综合票房,
     showView = Column(SmallInteger)  # 场均人次,
     crawlDate = Column(Date)  # 爬取日期
-    yearRate = Column(String(13), primary_key=True)
+    yearRate = Column(String(13))
 
     def __init__(self, **items):
         for key in items:
@@ -47,7 +48,8 @@ class MovieInfoTableTemplate(base):
 
     __tablename__ = 'movieInfo'
 
-    dbMovieID = Column(Integer, primary_key=True)  # 豆瓣电影ID,
+    id = Column(Integer, primary_key=True)
+    dbMovieID = Column(Integer)  # 豆瓣电影ID,
     tppMovieID = Column(Integer)  # 淘票票电影ID,
     movieName = Column(String(32))  # 电影名称,
     directors = Column(String(64))  # 导演
@@ -59,6 +61,25 @@ class MovieInfoTableTemplate(base):
     publishedDate = Column(Date)  # 上映日期
     rateCount = Column(Integer)  # 评分人数
     doubanRate = Column(Float)  # 豆瓣评分
+
+    def __init__(self, **items):
+        for key in items:
+            if hasattr(self, key):
+                if isinstance(items[key], str):
+                    setattr(self, key, items[key])
+                else:
+                    setattr(self, key, items[key][0])
+
+
+class PersonTableTemplate(base):
+    """ the person database template """
+
+    __tablename__ = 'person'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(16))  # 名称
+    url = Column(String(20))  # url
+    identity = Column(String(8))  # 身份
 
     def __init__(self, **items):
         for key in items:

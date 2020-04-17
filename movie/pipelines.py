@@ -6,9 +6,9 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 from scrapy.exceptions import DropItem
 from movie.dao import MySQLHelper
-from movie.dao.databasetable import BoxOfficeTableTemplate, MovieInfoTableTemplate
+from movie.dao.databasetable import BoxOfficeTableTemplate, MovieInfoTableTemplate, PersonTableTemplate
 from movie.spiders.movie_spider import logger
-from movie.items import BoxOfficeItem, MovieCommentItem, MovieInfoItem
+from movie.items import BoxOfficeItem, MovieCommentItem, MovieInfoItem, PersonInfoItem
 
 
 class BoxOfficePipeline(object):
@@ -58,6 +58,8 @@ class MySQLPipeline(object):
             self.session.add(BoxOfficeTableTemplate(**item))
         elif isinstance(item, MovieInfoItem):
             self.session.add(MovieInfoTableTemplate(**item))
+        elif isinstance(item, PersonInfoItem):
+            self.session.add(PersonTableTemplate(**item))
         # elif isinstance(item, MovieCommentItem):
         #     self.session.add(MovieCommentTableTemplate(**item))
         logger.warning(f"insert database finished")

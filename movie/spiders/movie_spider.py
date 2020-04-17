@@ -4,7 +4,7 @@ from urllib.parse import urlencode
 import scrapy
 import logging
 from scrapy.loader import ItemLoader
-from movie.items import BoxOfficeItem, MovieCommentItem
+from movie.items import BoxOfficeItem, MovieCommentItem, MovieInfoItem, PersonInfoItem
 import datetime
 import time
 import json
@@ -60,6 +60,31 @@ class MovieSpider(scrapy.Spider):
         super(MovieSpider, self).__init__(*args, **kwargs)
         self.proxies = settings.get('PROXY_URL')
         self.headers = get_random_headers()
+        self.cookies = {
+                'll': '"108288"',
+                'bid': 'rQ_4eLifMgk',
+                '__yadk_uid': 'haNwNJD1SOvT7N2GUhsgUDGtkZEUq7g7',
+                '_vwo_uuid_v2': 'D44C636A7D0473EA64ED8C40CC931ADA5|6967f27cc44f600b5a095023c436bfec',
+                'trc_cookie_storage': 'taboola%2520global%253Auser-id%3D3887b9e3-3ebe-4d7d-9401-e4ca4225e9fe-tuct404d423',
+                'douban-fav-remind': '1',
+                '__utmv': '30149280.15543', 'viewed': '"23008813"',
+                'gr_user_id': '996ce25d-8d0b-408b-b8fd-80b4e71b20eb',
+                '__utmz': '30149280.1585738212.13.6.utmcsr=baidu|utmccn=(organic)|utmcmd=organic',
+                '__utma': '30149280.718043312.1579062981.1586961198.1587105742.15',
+                '__utmc': '30149280',
+                '__utmt': '1',
+                'ap_v': '0,6.0',
+                '__utmb': '30149280.4.10.1587105742',
+                '_pk_ref.100001.4cf6': '%5B%22%22%2C%22%22%2C1587105809%2C%22https%3A%2F%2Fwww.douban.com%2F%22%5D',
+                '_pk_ses.100001.4cf6': '*',
+                '__utma': '223695111.2040974979.1579062981.1580218194.1587105809.13',
+                '__utmb': '223695111.0.10.1587105809',
+                '__utmc': '223695111',
+                '__utmz': '223695111.1587105809.13.10.utmcsr=douban.com|utmccn=(referral)|utmcmd=referral|utmcct=/',
+                'dbcl2': '"155437982:twOTXHGvmUg"',
+                'ck': '-c5o',
+                '_pk_id.100001.4cf6': '20e2b7b939cde70d.1579062981.13.1587105873.1580218193.',
+                'push_noty_num': '0', 'push_doumail_num': '0'}
 
     # start_urls = ['http://piaofang.maoyan.com/second-box?beginDate=20160101', ]
     search_base_url = "https://movie.douban.com/j/subject_suggest?q="
@@ -67,12 +92,12 @@ class MovieSpider(scrapy.Spider):
 
     def start_requests(self):
         data = {'beginDate': 20160101}
-        base_url = 'http://piaofang.maoyan.com/second-box?'
+        base_url = 'http://piaofang.maoyan.com/dashboard-ajax/movie?'
         logger.error(f"boxOffice start request for url = {base_url}")
         for date in range(self.settings.get('BEGIN_DATE'), self.settings.get('END_DATE') + 1):
             if not is_legal_date(str(date)):
                 continue
-            data['beginDate'] = date
+            data['showDate'] = date
             params = urlencode(data)
             url = base_url + params
             yield scrapy.Request(url=url, callback=self.parse_box_info)
@@ -86,6 +111,7 @@ class MovieSpider(scrapy.Spider):
         :param response:
         :return:
         """
+        time.sleep(random.uniform(0, 1))
         logger.error(f"now crawl url : {response.url}")
         item_loader = ItemLoader(item=BoxOfficeItem(), response=response)
         text = json.loads(response.text)
@@ -120,7 +146,8 @@ class MovieSpider(scrapy.Spider):
 
             # 根据电影名称从豆瓣获取电影详情页链接
             search_url = self.search_base_url + movie_name
-            yield scrapy.Request(url=search_url, callback=self.parse_movie_info_url,
+
+            yield scrapy.Request(url=search_url, cookies=self.cookies, callback=self.parse_movie_info_url,
                                  cb_kwargs=dict(movie_name=movie_name, movie_year=query_date, tpp_id=movie_id))
 
         logger.error(f"boxOffice start parse")
@@ -139,42 +166,57 @@ class MovieSpider(scrapy.Spider):
             logger.error(f"kwargs not assign")
             return
         text = json.loads(response.text)
+        logger.error(f"the url is {response.url}")
         logger.error(f"len of text is {len(text)}")
         if len(text) == 0:
             logger.error(f"not response scraped")
             return
         movie_url = ""
         for detail in text:
-            if len(detail.get('episode')):
+            if 'episode' in detail and len(detail.get('episode')):
                 continue
-            if detail.get('title') == movie_name and detail.get('year') == movie_year[:4]:
+            if detail.get('title', '') == movie_name and detail.get('year', '') == movie_year[:4]:
                 movie_url = detail.get('url')
         if len(movie_url) == 0:
             logger.error(f"url wrong that url = {movie_url}")
             return
         logger.error(f"get movie info url = {movie_url}")
-        yield scrapy.Request(url=movie_url, callback=self.parse_movie_info, cb_kwargs=dict(tpp_id=tpp_id))
+        yield scrapy.Request(url=movie_url, cookies=self.cookies, callback=self.parse_movie_info, cb_kwargs=dict(tpp_id=tpp_id))
 
     def parse_movie_info(self, response, tpp_id):
-        item_loader = ItemLoader(item=MovieCommentItem, response=response)
-        data = response.xpath("//script[@type='application/ld+json']/text()")
-        text = json.loads(data)
+        logger.critical(f"crawled movie info of {response.url}")
+        item_loader = ItemLoader(item=MovieInfoItem(), response=response)
+        person_item_loader = ItemLoader(item=PersonInfoItem(), response=response)
+        data = response.xpath("//script[@type='application/ld+json']/text()").extract()[0]
+        logger.critical(f"type of data is {type(data)}")
+        try:
+            text = json.loads(data)
+        except json.decoder.JSONDecodeError:
+            logger.error(f"json decode error in url = {response.url}")
+        finally:
+            text = json.loads(data)
 
+        logger.error(f"len of movie info = {len(text)}")
         item_loader.replace_value('movieName', text.get('name'))
         item_loader.replace_value('dbMovieID', text.get('url')[9: -1])
         item_loader.replace_value('tppMovieID', tpp_id)
 
         def get_name_list(parent):
-            return [child.get('name').split(' ')[0] for child in text.get(parent)]
+            for detail in text.get(parent):
+                person_item_loader.replace_value('name', detail.get('name'))
+                person_item_loader.replace_value('url', detail.get('url'))
+                person_item_loader.replace_value('identity', parent)
+                yield person_item_loader.load_item()
+            return [child.get('name').split(' ')[0] for child in text.get(parent)][:10]
 
-        item_loader.replace_value('directors', get_name_list('directors'))
-        item_loader.replace_value('writers', get_name_list('writers'))
-        item_loader.replace_value('actors', get_name_list('actors'))
+        item_loader.replace_value('directors', get_name_list('director'))
+        item_loader.replace_value('writers', get_name_list('author'))
+        item_loader.replace_value('actors', get_name_list('actor'))
 
         item_loader.replace_value('genre', text.get('genre'))
 
         info = response.xpath('//*[@id="info"]').get()
-        pattern = '<span class="pl">制片国家/地区:</span>(.*?)<br/>'
+        pattern = '<span class="pl">制片国家/地区:</span>(.*?)<br>'
         item_loader.replace_value('area', re.findall(pattern, info))
         item_loader.replace_value('duration', text.get('duration'))
         item_loader.replace_value('publishedDate', text.get('datePublished'))

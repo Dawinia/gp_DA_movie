@@ -6,9 +6,8 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from scrapy.loader import ItemLoader
-from scrapy.loader import processors
 from scrapy.loader.processors import Join, MapCompose
+import re
 
 
 def get_minute(time: str):
@@ -17,9 +16,13 @@ def get_minute(time: str):
     :param time: 时间表达式，格式为 PTaHbM， a为小时数，b为分钟数
     :return: 返回分钟数
     """
-    hour_pos = time.find('H')
-    minute_pos = time.find('M')
-    return time[hour_pos - 1: hour_pos] * 60 + time[hour_pos + 1: minute_pos]
+    time_list = re.findall('\d+', time)
+    time_num = len(time_list)
+    ans = 0
+    for t in time_list:
+        ans += int(t) * (60 ** (time_num - 1))
+        time_num -= 1
+    return ans
 
 
 def remove_unit(box: list):
@@ -77,5 +80,8 @@ class MovieInfoItem(scrapy.Item):
     doubanRate = scrapy.Field()  # 豆瓣评分
 
 
-class MovieItemLoader(ItemLoader):
-    default_output_processor = processors.TakeFirst()
+class PersonInfoItem(scrapy.Item):
+    """ the field of the person info """
+    name = scrapy.Field()
+    url = scrapy.Field()
+    identity = scrapy.Field()
