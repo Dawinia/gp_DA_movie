@@ -12,3 +12,10 @@ REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_PASSWORD = None
 REDIS_KEY = 'proxies'
+
+LOG_FILE = 'proxy.log'
+
+HEADER = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)   '
+                  'Chrome/45.0.2454.101 Safari/537.36',
+}
