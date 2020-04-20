@@ -6,29 +6,32 @@
 @desc: 
 """
 import redis
-from ProxyPool.settings import REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, REDIS_KEY
+from ProxyPool.settings import REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, REDIS_KEY, MAX_SCORE, INITIAL_SCORE
+from ProxyPool.scheme.Proxy import Proxy
 
 
 class RedisClient:
     def __init__(self, host=REDIS_HOST, port=REDIS_PORT, password=REDIS_PASSWORD):
         self.con = redis.StrictRedis(host=host, port=port, password=password)
 
-    def add(self, score, proxy) -> bool:
+    def add(self, proxy, score=INITIAL_SCORE) -> bool:
         """
         add a proxy with score
         :param score: score
         :param proxy: proxy
         :return: success or not
         """
-        if not self.con.zscore(REDIS_KEY, proxy):
-            return self.con.zadd(REDIS_KEY, score, proxy)
+        if not self.con.zscore(REDIS_KEY, proxy.string()):
+            return self.con.zadd(REDIS_KEY, {proxy.string(): score})
 
-    def random_proxy(self):
+    def random_proxy(self) -> Proxy:
         """
         random get proxy
         :return:
         """
-        pass
+        proxies = self.con.zrangebyscore(REDIS_KEY, MAX_SCORE, MAX_SCORE)
+        print(proxies)
+        return proxies[0]
 
     def deduction(self, proxy):
         """
@@ -38,10 +41,13 @@ class RedisClient:
         """
         pass
 
-    def exists(self, proxy):
+    def exists(self, proxy) -> bool:
         """
         judge a proxy exists or not
         :param proxy:
         :return: bool
         """
         pass
+
+    def count(self):
+        return self.con.zcard(REDIS_KEY)

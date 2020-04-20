@@ -5,11 +5,10 @@
 @file: XiciCrawler.py
 @desc: 
 """
-import requests
 import logging
-from ProxyPool.settings import LOG_FILE, HEADER
-from lxml import etree
-from ProxyPool.scheme import Proxy
+from ProxyPool.settings import LOG_FILE
+from ProxyPool.scheme.Proxy import Proxy
+from ProxyPool.crawlers.BaseCrawler import BaseCrawler
 
 BASE_URL = 'https://www.xicidaili.com/wn/{page}'
 
@@ -20,22 +19,22 @@ logging.basicConfig(
 logger = logging.getLogger('proxyPoolLogger')
 
 
-class XiciCrawler:
+class XiciCrawler(BaseCrawler):
     def __init__(self):
+        super().__init__()
         self.urls = [BASE_URL.format(page=i) for i in range(1, 5)]
-        self.headers = HEADER
 
-    def crawl(self):
-        """
-        get proxy from xicidaili
-        :return:
-        """
-        for url in self.urls:
-            logger.debug(f"crawl url = {url}")
-            response = requests.get(url, headers=self.headers)
-            html = etree.HTML(response.text)
-            for proxy in self.parse(html):
-                yield proxy
+    # def crawl(self):
+    #     """
+    #     get proxy from xicidaili
+    #     :return:
+    #     """
+    #     for url in self.urls:
+    #         logger.debug(f"crawl url = {url}")
+    #         response = requests.get(url, headers=self.headers)
+    #         html = etree.HTML(response.text)
+    #         for proxy in self.parse(html):
+    #             yield proxy
 
     def parse(self, html) -> str:
         """
@@ -54,4 +53,4 @@ class XiciCrawler:
 if __name__ == '__main__':
     crawl = XiciCrawler()
     for proxy in crawl.crawl():
-        print(f"proxy: {proxy}")
+        print(f"proxy: {proxy.string()}")

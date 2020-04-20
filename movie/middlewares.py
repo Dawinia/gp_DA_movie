@@ -62,7 +62,7 @@ class MovieSpiderMiddleware(object):
             yield r
 
     def spider_opened(self, spider):
-        spider.logger.info('Spider opened: %s' % spider.name)
+        spider.logger.info('Spider opened: %s' % spider.module_name)
 
 
 class MovieDownloaderMiddleware(object):
@@ -109,7 +109,7 @@ class MovieDownloaderMiddleware(object):
         pass
 
     def spider_opened(self, spider):
-        spider.logger.info('Spider opened: %s' % spider.name)
+        spider.logger.info('Spider opened: %s' % spider.module_name)
 
 
 class CookiesMiddleware(object):
