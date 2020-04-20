@@ -111,18 +111,16 @@ RANDOM_UserAgent_TYPE = 'random'
 BEGIN_DATE = 20190418
 END_DATE = 20190419
 
-DATABASE_USER = "root"
-DATABASE_PASSWORD = "ws.748264"
+DATABASE_USER = "movie"
+DATABASE_PASSWORD = "movie"
 DATABASE_PORT = "3306"
 DATABASE_NAME = "movie"
 
 REDIS_HOST = "127.0.0.1"
 REDIS_PORT = 6379
+REDIS_PASSWORD = "movie"
 
 URL_SEEN = "url_seen"
-
-
-REDIS_PASSWORD = "movie"
 SET_TEST = "global setting"
 
 COMMANDS_MODULE = 'movie.commands'
