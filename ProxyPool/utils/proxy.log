@@ -1,0 +1,17 @@
+2020-04-21 19:57:25,576 -  getter.py[line:58] - ERROR: proxy error with 223.241.118.200:8010
+2020-04-21 19:57:37,667 -  getter.py[line:58] - ERROR: proxy error with 180.117.234.56:8118
+2020-04-21 19:57:43,189 -  getter.py[line:58] - ERROR: proxy error with 60.191.11.229:3128
+2020-04-21 19:59:54,465 -  getter.py[line:58] - ERROR: proxy error with 223.241.118.200:8010
+2020-04-21 19:59:54,795 -  getter.py[line:58] - ERROR: proxy error with 180.117.234.56:8118
+2020-04-21 19:59:56,838 -  getter.py[line:58] - ERROR: proxy error with 60.191.11.229:3128
+2020-04-21 19:59:58,843 -  getter.py[line:60] - ERROR: ConnectTimeout with 60.5.254.169:8081
+2020-04-21 19:59:58,881 -  getter.py[line:58] - ERROR: proxy error with 119.129.203.140:8118
+2020-04-21 19:59:59,013 -  getter.py[line:58] - ERROR: proxy error with 221.193.94.18:8118
+2020-04-21 19:59:59,595 -  getter.py[line:58] - ERROR: proxy error with 36.22.208.248:8118
+2020-04-21 20:01:19,131 -  getter.py[line:58] - ERROR: proxy error with 223.241.118.200:8010
+2020-04-21 20:01:19,199 -  getter.py[line:58] - ERROR: proxy error with 180.117.234.56:8118
+2020-04-21 20:01:19,524 -  getter.py[line:58] - ERROR: proxy error with 60.191.11.229:3128
+2020-04-21 20:01:21,586 -  getter.py[line:58] - ERROR: proxy error with 60.5.254.169:8081
+2020-04-21 20:01:23,594 -  getter.py[line:60] - ERROR: ConnectTimeout with 119.129.203.140:8118
+2020-04-21 20:01:23,735 -  getter.py[line:58] - ERROR: proxy error with 221.193.94.18:8118
+2020-04-21 20:01:24,645 -  getter.py[line:58] - ERROR: proxy error with 36.22.208.248:8118

@@ -50,9 +50,14 @@ class Getter:
 
     def run(self):
         def usable(proxy) -> bool:
-            proxies = {'https': 'http://' + proxy}
-            if requests.get('https://movie.douban.com/', proxies=proxies, cookies=self.cookies, timeout=2, headers=self.headers).status_code == 200:
-                return True
+            proxies = {'https': 'https://' + proxy}
+            try:
+                if requests.get('https://movie.douban.com/', proxies=proxies, cookies=self.cookies, timeout=2, headers=self.headers).status_code == 200:
+                    return True
+            except requests.exceptions.ProxyError:
+                logger.error(f"proxy error with {proxy}")
+            except requests.exceptions.ConnectTimeout:
+                logger.error(f"ConnectTimeout with {proxy}")
             return False
 
         if self.full():
