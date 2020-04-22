@@ -64,9 +64,8 @@ class Getter:
             return
         for crawler in self.crawlers:
             for proxy in crawler.crawl():
-                if usable(proxy.string()) and self.con.add(proxy):
-                    print("test")
-                    logger.warn(f"proxy {proxy.string()} been added")
+                if self.con.add(proxy):
+                    logger.info(f"proxy {proxy.string()} been added")
 
 
 if __name__ == '__main__':

@@ -5,24 +5,20 @@
 @file: XiciCrawler.py
 @desc: 
 """
-import logging
-from ProxyPool.settings import LOG_FILE
+from random import randint
+
+from ProxyPool.utils.logger import logger
 from ProxyPool.scheme.Proxy import Proxy
 from ProxyPool.crawlers.BaseCrawler import BaseCrawler
 
 BASE_URL = 'https://www.xicidaili.com/wn/{page}'
 
-logging.basicConfig(
-    filename=LOG_FILE,
-    level=logging.WARNING,
-    format='%(asctime)s -  %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
-logger = logging.getLogger('proxyPoolLogger')
-
 
 class XiciCrawler(BaseCrawler):
     def __init__(self):
         super().__init__()
-        self.urls = [BASE_URL.format(page=i) for i in range(1, 5)]
+        start = randint(0, 5)
+        self.urls = [BASE_URL.format(page=i) for i in range(start, start + 5)]
 
     # def crawl(self):
     #     """
@@ -47,7 +43,7 @@ class XiciCrawler(BaseCrawler):
         port_list = content[0].xpath('./tr/td[3]/text()')
         proxies = list(map(lambda x, y: (x, y), host_list, port_list))
         for host, port in proxies:
-            yield Proxy(host, port)
+            yield Proxy(host=host, port=int(port))
 
 
 if __name__ == '__main__':
