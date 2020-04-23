@@ -2127,3 +2127,1070 @@ sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate en
  'scheduler/enqueued/memory': 40,
  'start_time': datetime.datetime(2020, 4, 17, 17, 12, 27, 141550)}
 2020-04-18 01:12:29,810 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-24 00:44:31,271 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 00:44:31,301 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 00:44:31,305 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 00:44:31,795 -  telnet.py[line:60] - INFO: Telnet Password: 01cc96ff7557e3d7
+2020-04-24 00:44:32,997 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 00:44:43,088 -  utils.py[line:80] - DEBUG: Error occurred during fetching https://www.w3schools.com/browsers/default.asp
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 707, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+2020-04-24 00:44:43,116 -  utils.py[line:88] - DEBUG: Sleeping for 0.1 seconds
+2020-04-24 00:44:53,233 -  utils.py[line:80] - DEBUG: Error occurred during fetching https://www.w3schools.com/browsers/default.asp
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 707, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+2020-04-24 00:44:53,233 -  utils.py[line:184] - WARNING: Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 707, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+2020-04-24 00:45:03,253 -  utils.py[line:80] - DEBUG: Error occurred during fetching https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 707, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 707, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+2020-04-24 00:45:03,253 -  utils.py[line:88] - DEBUG: Sleeping for 0.1 seconds
+2020-04-24 00:45:20,815 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-24 00:45:23,570 -  crawler.py[line:283] - INFO: Received SIGINT twice, forcing unclean shutdown
+2020-04-24 00:45:25,263 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 00:45:25,284 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 00:45:25,319 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 00:45:25,319 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 00:45:25,463 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 00:45:25,464 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 00:45:25,464 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 00:45:25,470 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 00:45:25,471 -  signal.py[line:57] - ERROR: Error caught on signal handler: <bound method MovieDownloaderMiddleware.spider_opened of <movie.middlewares.MovieDownloaderMiddleware object at 0x7f86401f8b90>>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 112, in spider_opened
+    spider.logger.info('Spider opened: %s' % spider.module_name)
+AttributeError: 'MovieSpider' object has no attribute 'module_name'
+2020-04-24 00:45:25,501 -  signal.py[line:57] - ERROR: Error caught on signal handler: <bound method MovieSpiderMiddleware.spider_opened of <movie.middlewares.MovieSpiderMiddleware object at 0x7f86401c9890>>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 65, in spider_opened
+    spider.logger.info('Spider opened: %s' % spider.module_name)
+AttributeError: 'MovieSpider' object has no attribute 'module_name'
+2020-04-24 00:45:25,504 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 00:45:25,523 -  engine.py[line:296] - INFO: Closing spider (shutdown)
+2020-04-24 00:45:25,525 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.054225,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2020, 4, 23, 16, 45, 25, 524501),
+ 'log_count/ERROR': 5,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 74948608,
+ 'memusage/startup': 74948608,
+ 'start_time': datetime.datetime(2020, 4, 23, 16, 45, 25, 470276)}
+2020-04-24 00:45:25,525 -  engine.py[line:327] - INFO: Spider closed (shutdown)
+2020-04-24 00:46:34,880 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 00:46:34,883 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 00:46:34,886 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 00:46:34,894 -  telnet.py[line:60] - INFO: Telnet Password: 2da1d5268136f348
+2020-04-24 00:46:34,903 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 00:46:35,005 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 00:46:35,007 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 00:46:35,013 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 00:46:35,013 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 00:46:35,026 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 00:46:35,026 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 00:46:35,026 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 00:46:35,028 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 00:46:35,028 -  signal.py[line:57] - ERROR: Error caught on signal handler: <bound method MovieDownloaderMiddleware.spider_opened of <movie.middlewares.MovieDownloaderMiddleware object at 0x7fee9be92210>>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 113, in spider_opened
+    spider.logger.info('Spider opened: %s' % spider.module_name)
+AttributeError: 'MovieSpider' object has no attribute 'module_name'
+2020-04-24 00:46:35,030 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 00:46:35,032 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 00:46:35,168 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 38, in process_request
+    response = yield method(request=request, spider=spider)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 196, in process_request
+    proxy = request.get('http://localhost:21642/random')
+AttributeError: 'Request' object has no attribute 'get'
+2020-04-24 00:46:35,185 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 38, in process_request
+    response = yield method(request=request, spider=spider)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 196, in process_request
+    proxy = request.get('http://localhost:21642/random')
+AttributeError: 'Request' object has no attribute 'get'
+2020-04-24 00:46:35,287 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-24 00:46:35,289 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/builtins.AttributeError': 2,
+ 'elapsed_time_seconds': 0.260277,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 23, 16, 46, 35, 288703),
+ 'log_count/ERROR': 7,
+ 'memusage/max': 73699328,
+ 'memusage/startup': 73699328,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 4, 23, 16, 46, 35, 28426)}
+2020-04-24 00:46:35,289 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-24 00:46:53,543 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 00:46:53,547 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 00:46:53,550 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 00:46:53,557 -  telnet.py[line:60] - INFO: Telnet Password: 7f763ec4b7333077
+2020-04-24 00:46:53,566 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 00:46:53,667 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 00:46:53,669 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 00:46:53,677 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 00:46:53,677 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 00:46:53,691 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 00:46:53,691 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 00:46:53,691 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 00:46:53,693 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 00:46:53,694 -  signal.py[line:57] - ERROR: Error caught on signal handler: <bound method MovieDownloaderMiddleware.spider_opened of <movie.middlewares.MovieDownloaderMiddleware object at 0x7efd585372d0>>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 113, in spider_opened
+    spider.logger.info('Spider opened: %s' % spider.module_name)
+AttributeError: 'MovieSpider' object has no attribute 'module_name'
+2020-04-24 00:46:53,695 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 00:46:53,697 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 00:46:53,701 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 00:46:53,704 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 20
+2020-04-24 00:46:53,707 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 00:46:53,711 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 24
+2020-04-24 00:46:53,806 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 38, in process_request
+    response = yield method(request=request, spider=spider)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 199, in process_request
+    logger.debug('使用代理 ' + proxy)
+TypeError: can only concatenate str (not "Response") to str
+2020-04-24 00:46:53,813 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 38, in process_request
+    response = yield method(request=request, spider=spider)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 199, in process_request
+    logger.debug('使用代理 ' + proxy)
+TypeError: can only concatenate str (not "Response") to str
+2020-04-24 00:46:53,914 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-24 00:46:53,915 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/builtins.TypeError': 2,
+ 'elapsed_time_seconds': 0.221626,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 23, 16, 46, 53, 915202),
+ 'log_count/ERROR': 7,
+ 'memusage/max': 73818112,
+ 'memusage/startup': 73818112,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 4, 23, 16, 46, 53, 693576)}
+2020-04-24 00:46:53,915 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-24 01:00:07,111 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 01:00:07,136 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 01:00:07,139 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 01:00:07,147 -  telnet.py[line:60] - INFO: Telnet Password: 6f281e4485ecda78
+2020-04-24 01:00:07,156 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 01:00:07,258 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 01:00:07,260 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 01:00:07,266 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 01:00:07,267 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 01:00:07,280 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 01:00:07,280 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 01:00:07,280 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 01:00:07,281 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:00:07,281 -  signal.py[line:57] - ERROR: Error caught on signal handler: <bound method MovieDownloaderMiddleware.spider_opened of <movie.middlewares.MovieDownloaderMiddleware object at 0x7f059dbc4310>>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 113, in spider_opened
+    spider.logger.info('Spider opened: %s' % spider.module_name)
+AttributeError: 'MovieSpider' object has no attribute 'module_name'
+2020-04-24 01:00:07,283 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 01:00:07,285 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 01:00:07,288 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:00:07,292 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 20
+2020-04-24 01:00:07,293 -  middlewares.py[line:198] - DEBUG: 使用代理 b'60.31.213.115':808
+2020-04-24 01:00:07,296 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:00:07,299 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 22
+2020-04-24 01:00:07,300 -  middlewares.py[line:198] - DEBUG: 使用代理 b'36.112.139.146':3128
+2020-04-24 01:00:07,496 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/utils/defer.py", line 45, in mustbe_deferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/__init__.py", line 71, in download_request
+    return handler.download_request(request, spider)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 75, in download_request
+    return agent.download_request(request)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 345, in download_request
+    d = agent.request(method, to_bytes(url, encoding='ascii'), headers, bodyproducer)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 254, in request
+    endpoint=self._getEndpoint(self._proxyURI),
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1721, in _getEndpoint
+    return self._endpointFactory.endpointForURI(uri)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1599, in endpointForURI
+    raise SchemeNotSupported("Unsupported scheme: %r" % (uri.scheme,))
+twisted.web.error.SchemeNotSupported: Unsupported scheme: b''
+2020-04-24 01:00:07,564 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/utils/defer.py", line 45, in mustbe_deferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/__init__.py", line 71, in download_request
+    return handler.download_request(request, spider)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 75, in download_request
+    return agent.download_request(request)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 345, in download_request
+    d = agent.request(method, to_bytes(url, encoding='ascii'), headers, bodyproducer)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 254, in request
+    endpoint=self._getEndpoint(self._proxyURI),
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1721, in _getEndpoint
+    return self._endpointFactory.endpointForURI(uri)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1599, in endpointForURI
+    raise SchemeNotSupported("Unsupported scheme: %r" % (uri.scheme,))
+twisted.web.error.SchemeNotSupported: Unsupported scheme: b''
+2020-04-24 01:00:07,667 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-24 01:00:07,669 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/twisted.web.error.SchemeNotSupported': 2,
+ 'downloader/request_bytes': 576,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'elapsed_time_seconds': 0.386641,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 23, 17, 0, 7, 668311),
+ 'log_count/ERROR': 7,
+ 'memusage/max': 73658368,
+ 'memusage/startup': 73658368,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 4, 23, 17, 0, 7, 281670)}
+2020-04-24 01:00:07,669 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-24 01:05:58,782 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 01:05:58,785 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 01:05:58,788 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 01:05:58,795 -  telnet.py[line:60] - INFO: Telnet Password: 5de6b4abc4d9f3c6
+2020-04-24 01:05:58,804 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 01:05:59,001 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 01:05:59,003 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 01:05:59,010 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 01:05:59,010 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 01:05:59,023 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 01:05:59,023 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 01:05:59,023 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 01:05:59,025 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:05:59,025 -  signal.py[line:57] - ERROR: Error caught on signal handler: <bound method MovieDownloaderMiddleware.spider_opened of <movie.middlewares.MovieDownloaderMiddleware object at 0x7f20b4f7b310>>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 114, in spider_opened
+    spider.logger.info('Spider opened: %s' % spider.module_name)
+AttributeError: 'MovieSpider' object has no attribute 'module_name'
+2020-04-24 01:05:59,026 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 01:05:59,029 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 01:05:59,032 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:05:59,037 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 23
+2020-04-24 01:05:59,039 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:05:59,042 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 23
+2020-04-24 01:05:59,139 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 38, in process_request
+    response = yield method(request=request, spider=spider)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 201, in process_request
+    logger.debug('使用代理 ' + proxy)
+TypeError: can only concatenate str (not "Proxy") to str
+2020-04-24 01:05:59,144 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 38, in process_request
+    response = yield method(request=request, spider=spider)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 201, in process_request
+    logger.debug('使用代理 ' + proxy)
+TypeError: can only concatenate str (not "Proxy") to str
+2020-04-24 01:05:59,246 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-24 01:05:59,248 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/builtins.TypeError': 2,
+ 'elapsed_time_seconds': 0.222738,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 23, 17, 5, 59, 247937),
+ 'log_count/ERROR': 7,
+ 'memusage/max': 73777152,
+ 'memusage/startup': 73777152,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 4, 23, 17, 5, 59, 25199)}
+2020-04-24 01:05:59,249 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-24 01:06:20,957 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 01:06:20,961 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 01:06:20,963 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 01:06:20,971 -  telnet.py[line:60] - INFO: Telnet Password: dcb724ffe7339044
+2020-04-24 01:06:20,980 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 01:06:21,085 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 01:06:21,087 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 01:06:21,093 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 01:06:21,094 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 01:06:21,106 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 01:06:21,107 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 01:06:21,107 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 01:06:21,108 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:06:21,108 -  signal.py[line:57] - ERROR: Error caught on signal handler: <bound method MovieDownloaderMiddleware.spider_opened of <movie.middlewares.MovieDownloaderMiddleware object at 0x7f28a72661d0>>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/middlewares.py", line 114, in spider_opened
+    spider.logger.info('Spider opened: %s' % spider.module_name)
+AttributeError: 'MovieSpider' object has no attribute 'module_name'
+2020-04-24 01:06:21,109 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 01:06:21,111 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 01:06:21,115 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:06:21,119 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 20
+2020-04-24 01:06:21,120 -  middlewares.py[line:201] - DEBUG: 使用代理 36.6.89.143:65309
+2020-04-24 01:06:21,122 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:06:21,126 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 22
+2020-04-24 01:06:21,126 -  middlewares.py[line:201] - DEBUG: 使用代理 27.154.34.146:31527
+2020-04-24 01:06:21,370 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/utils/defer.py", line 45, in mustbe_deferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/__init__.py", line 71, in download_request
+    return handler.download_request(request, spider)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 75, in download_request
+    return agent.download_request(request)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 345, in download_request
+    d = agent.request(method, to_bytes(url, encoding='ascii'), headers, bodyproducer)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 254, in request
+    endpoint=self._getEndpoint(self._proxyURI),
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1721, in _getEndpoint
+    return self._endpointFactory.endpointForURI(uri)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1599, in endpointForURI
+    raise SchemeNotSupported("Unsupported scheme: %r" % (uri.scheme,))
+twisted.web.error.SchemeNotSupported: Unsupported scheme: b''
+2020-04-24 01:06:21,372 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/utils/defer.py", line 45, in mustbe_deferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/__init__.py", line 71, in download_request
+    return handler.download_request(request, spider)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 75, in download_request
+    return agent.download_request(request)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 345, in download_request
+    d = agent.request(method, to_bytes(url, encoding='ascii'), headers, bodyproducer)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 254, in request
+    endpoint=self._getEndpoint(self._proxyURI),
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1721, in _getEndpoint
+    return self._endpointFactory.endpointForURI(uri)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1599, in endpointForURI
+    raise SchemeNotSupported("Unsupported scheme: %r" % (uri.scheme,))
+twisted.web.error.SchemeNotSupported: Unsupported scheme: b''
+2020-04-24 01:06:21,473 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-24 01:06:21,475 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/twisted.web.error.SchemeNotSupported': 2,
+ 'downloader/request_bytes': 576,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'elapsed_time_seconds': 0.366111,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 23, 17, 6, 21, 474390),
+ 'log_count/ERROR': 7,
+ 'memusage/max': 73621504,
+ 'memusage/startup': 73621504,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 4, 23, 17, 6, 21, 108279)}
+2020-04-24 01:06:21,475 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-24 01:08:10,421 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 01:08:10,425 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 01:08:10,428 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 01:08:10,435 -  telnet.py[line:60] - INFO: Telnet Password: 5dd0f149c44e2014
+2020-04-24 01:08:10,444 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 01:08:10,550 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 01:08:10,552 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 01:08:10,560 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 01:08:10,560 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 01:08:10,573 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 01:08:10,573 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 01:08:10,573 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 01:08:10,574 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:08:10,575 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 01:08:10,577 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 01:08:10,582 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:08:10,586 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 20
+2020-04-24 01:08:10,587 -  middlewares.py[line:202] - DEBUG: 使用代理 59.38.62.183:9797
+2020-04-24 01:08:10,589 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:08:10,593 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 21
+2020-04-24 01:08:10,593 -  middlewares.py[line:202] - DEBUG: 使用代理 223.241.79.75:8010
+2020-04-24 01:08:10,790 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/utils/defer.py", line 45, in mustbe_deferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/__init__.py", line 71, in download_request
+    return handler.download_request(request, spider)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 75, in download_request
+    return agent.download_request(request)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 345, in download_request
+    d = agent.request(method, to_bytes(url, encoding='ascii'), headers, bodyproducer)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 254, in request
+    endpoint=self._getEndpoint(self._proxyURI),
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1721, in _getEndpoint
+    return self._endpointFactory.endpointForURI(uri)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1599, in endpointForURI
+    raise SchemeNotSupported("Unsupported scheme: %r" % (uri.scheme,))
+twisted.web.error.SchemeNotSupported: Unsupported scheme: b''
+2020-04-24 01:08:10,815 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/utils/defer.py", line 45, in mustbe_deferred
+    result = f(*args, **kw)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/__init__.py", line 71, in download_request
+    return handler.download_request(request, spider)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 75, in download_request
+    return agent.download_request(request)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 345, in download_request
+    d = agent.request(method, to_bytes(url, encoding='ascii'), headers, bodyproducer)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 254, in request
+    endpoint=self._getEndpoint(self._proxyURI),
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1721, in _getEndpoint
+    return self._endpointFactory.endpointForURI(uri)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/web/client.py", line 1599, in endpointForURI
+    raise SchemeNotSupported("Unsupported scheme: %r" % (uri.scheme,))
+twisted.web.error.SchemeNotSupported: Unsupported scheme: b''
+2020-04-24 01:08:10,916 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-24 01:08:10,918 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/twisted.web.error.SchemeNotSupported': 2,
+ 'downloader/request_bytes': 576,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'elapsed_time_seconds': 0.343155,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 23, 17, 8, 10, 917649),
+ 'log_count/ERROR': 6,
+ 'memusage/max': 73457664,
+ 'memusage/startup': 73457664,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 4, 23, 17, 8, 10, 574494)}
+2020-04-24 01:08:10,918 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-24 01:09:17,450 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 01:09:17,454 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 01:09:17,458 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 01:09:17,465 -  telnet.py[line:60] - INFO: Telnet Password: c6a01365630113c9
+2020-04-24 01:09:17,478 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 01:09:18,017 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 01:09:18,019 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 01:09:18,026 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 01:09:18,026 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 01:09:18,040 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 01:09:18,040 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 01:09:18,040 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 01:09:18,041 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:09:18,042 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 01:09:18,044 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 01:09:18,048 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:09:18,053 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 24
+2020-04-24 01:09:18,054 -  middlewares.py[line:202] - DEBUG: 使用代理 http://223.241.116.201:18118
+2020-04-24 01:09:18,057 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:09:18,060 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 21
+2020-04-24 01:09:18,061 -  middlewares.py[line:202] - DEBUG: 使用代理 http://58.61.154.153:8080
+2020-04-24 01:10:18,042 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:11:09,089 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-24 01:11:09,090 -  engine.py[line:296] - INFO: Closing spider (shutdown)
+2020-04-24 01:11:18,042 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:11:29,101 -  retry.py[line:73] - DEBUG: Retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424> (failed 1 times): TCP connection timed out: 110: Connection timed out.
+2020-04-24 01:11:51,903 -  crawler.py[line:283] - INFO: Received SIGINT twice, forcing unclean shutdown
+2020-04-24 01:11:52,182 -  http11.py[line:496] - WARNING: Got data loss in http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-04-24 01:11:52,183 -  retry.py[line:73] - DEBUG: Retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: >]
+2020-04-24 01:11:52,186 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/twisted.internet.error.TCPTimedOutError': 1,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseFailed': 1,
+ 'downloader/request_bytes': 576,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'elapsed_time_seconds': 154.143823,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2020, 4, 23, 17, 11, 52, 185360),
+ 'log_count/ERROR': 4,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 74395648,
+ 'memusage/startup': 73551872,
+ 'retry/count': 2,
+ 'retry/reason_count/twisted.internet.error.TCPTimedOutError': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseFailed': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2020, 4, 23, 17, 9, 18, 41537)}
+2020-04-24 01:11:52,186 -  engine.py[line:327] - INFO: Spider closed (shutdown)
+2020-04-24 01:13:37,086 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-24 01:13:37,089 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid
+2020-04-24 01:13:37,092 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-24 01:13:37,099 -  telnet.py[line:60] - INFO: Telnet Password: 40204656fd2d24b3
+2020-04-24 01:13:37,109 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-24 01:13:37,211 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.ProxyMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-24 01:13:37,213 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-24 01:13:37,220 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-24 01:13:37,220 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-24 01:13:37,232 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-24 01:13:37,233 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-24 01:13:37,233 -  engine.py[line:257] - INFO: Spider opened
+2020-04-24 01:13:37,234 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:13:37,235 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-24 01:13:37,237 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-24 01:13:37,240 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:13:37,244 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 20
+2020-04-24 01:13:37,245 -  middlewares.py[line:202] - DEBUG: 使用代理 http://49.75.223.20:8010
+2020-04-24 01:13:37,248 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:13:37,252 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 22
+2020-04-24 01:13:37,252 -  middlewares.py[line:202] - DEBUG: 使用代理 http://36.112.128.235:3128
+2020-04-24 01:13:37,577 -  retry.py[line:73] - DEBUG: Retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424> (failed 1 times): Connection was refused by other side: 111: Connection refused.
+2020-04-24 01:13:37,584 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:13:37,594 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 24
+2020-04-24 01:13:37,595 -  middlewares.py[line:202] - DEBUG: 使用代理 http://223.241.117.118:18118
+2020-04-24 01:14:37,235 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:15:37,235 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:15:47,144 -  retry.py[line:73] - DEBUG: Retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425> (failed 1 times): TCP connection timed out: 110: Connection timed out.
+2020-04-24 01:15:47,145 -  retry.py[line:73] - DEBUG: Retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424> (failed 2 times): TCP connection timed out: 110: Connection timed out.
+2020-04-24 01:15:47,147 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:15:47,150 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 21
+2020-04-24 01:15:47,151 -  middlewares.py[line:202] - DEBUG: 使用代理 http://61.164.39.69:53281
+2020-04-24 01:15:47,154 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:15:47,157 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 22
+2020-04-24 01:15:47,158 -  middlewares.py[line:202] - DEBUG: 使用代理 http://223.245.38.18:65309
+2020-04-24 01:15:47,460 -  retry.py[line:89] - DEBUG: Gave up retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424> (failed 3 times): Connection was refused by other side: 111: Connection refused.
+2020-04-24 01:15:47,561 -  scraper.py[line:209] - ERROR: Error downloading <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190424>
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+twisted.internet.error.ConnectionRefusedError: Connection was refused by other side: 111: Connection refused.
+2020-04-24 01:16:37,235 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:17:37,235 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-24 01:17:58,216 -  retry.py[line:73] - DEBUG: Retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425> (failed 2 times): TCP connection timed out: 110: Connection timed out.
+2020-04-24 01:17:58,222 -  connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): localhost:21642
+2020-04-24 01:17:58,235 -  connectionpool.py[line:437] - DEBUG: http://localhost:21642 "GET /random HTTP/1.1" 200 20
+2020-04-24 01:17:58,236 -  middlewares.py[line:202] - DEBUG: 使用代理 http://27.184.125.7:8118
+2020-04-24 01:18:33,340 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-24 01:18:33,340 -  engine.py[line:296] - INFO: Closing spider (shutdown)
+2020-04-24 01:18:35,096 -  crawler.py[line:283] - INFO: Received SIGINT twice, forcing unclean shutdown
+2020-04-24 01:18:35,098 -  retry.py[line:89] - DEBUG: Gave up retrying <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190425> (failed 3 times): An error occurred while connecting: [Failure instance: Traceback (failure with no frames): <class 'twisted.internet.error.ConnectionLost'>: Connection to the other side was lost in a non-clean fashion: Connection lost.
+].

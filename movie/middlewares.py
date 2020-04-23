@@ -9,6 +9,7 @@ from scrapy import signals
 import requests
 from scrapy.exceptions import IgnoreRequest
 
+from ProxyPool.scheme.Proxy import Proxy
 from movie.spiders.movie_spider import logger
 from movie.dao import RedisHelper
 import json
@@ -62,7 +63,8 @@ class MovieSpiderMiddleware(object):
             yield r
 
     def spider_opened(self, spider):
-        spider.logger.info('Spider opened: %s' % spider.module_name)
+        pass
+        # spider.logger.info('Spider opened: %s' % spider.module_name)
 
 
 class MovieDownloaderMiddleware(object):
@@ -109,7 +111,8 @@ class MovieDownloaderMiddleware(object):
         pass
 
     def spider_opened(self, spider):
-        spider.logger.info('Spider opened: %s' % spider.module_name)
+        pass
+        # spider.logger.info('Spider opened: %s' % spider.module_name)
 
 
 class CookiesMiddleware(object):
@@ -191,7 +194,10 @@ class ProxyMiddleware(object):
 
     def process_request(self, request, spider):
         # if request.meta.get('retry_times'):
-        proxy = random.choice(self.proxy_url)
+        proxy = requests.get('http://localhost:21642/random').text.strip()
+        proxy = proxy[1:].split(':')
+        proxy = 'http://' + Proxy(proxy[0][1:-1], int(proxy[1])).string()
+        print(proxy)
         if proxy:
             logger.debug('使用代理 ' + proxy)
             request.meta['proxy'] = proxy

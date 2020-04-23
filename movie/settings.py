@@ -56,7 +56,7 @@ SPIDER_MIDDLEWARES = {
 DOWNLOADER_MIDDLEWARES = {
     # 'movie.middlewares.DuplicateMiddleware': 540,
     'movie.middlewares.UserAgentMiddleware': 541,
-    # 'movie.middlewares.ProxyMiddleware': 542,
+    'movie.middlewares.ProxyMiddleware': 542,
     'movie.middlewares.MovieDownloaderMiddleware': 543,
 }
 
@@ -108,8 +108,8 @@ PROXY_URL = [
 
 RANDOM_UserAgent_TYPE = 'random'
 
-BEGIN_DATE = 20190418
-END_DATE = 20190419
+BEGIN_DATE = 20190424
+END_DATE = 20190425
 
 DATABASE_USER = "movie"
 DATABASE_PASSWORD = "movie"
