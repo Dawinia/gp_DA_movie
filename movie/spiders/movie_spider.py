@@ -18,7 +18,7 @@ settings = get_project_settings()
 
 logging.basicConfig(
     filename=settings['BOXOFFICE_LOG_FILE'],
-    level=logging.WARNING,
+    level=logging.INFO,
     format='%(asctime)s -  %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
 logger = logging.getLogger('boxOfficeLogger')
 
@@ -147,6 +147,8 @@ class MovieSpider(scrapy.Spider):
             # 根据电影名称从豆瓣获取电影详情页链接
             search_url = self.search_base_url + movie_name
 
+            time.sleep(random.uniform(0, 1))
+
             yield scrapy.Request(url=search_url, cookies=self.cookies, callback=self.parse_movie_info_url,
                                  cb_kwargs=dict(movie_name=movie_name, movie_year=query_date, tpp_id=movie_id))
 
@@ -161,13 +163,13 @@ class MovieSpider(scrapy.Spider):
         :param response:
         :return:
         """
-        logger.error(f"movie_name = {movie_name} and movie_year = {movie_year} and tpp_id = {tpp_id}")
+        logger.info(f"movie_name = {movie_name} and movie_year = {movie_year} and tpp_id = {tpp_id}")
         if len(movie_name) == 0 or len(movie_year) == 0:
             logger.error(f"kwargs not assign")
             return
         text = json.loads(response.text)
-        logger.error(f"the url is {response.url}")
-        logger.error(f"len of text is {len(text)}")
+        logger.info(f"the url is {response.url}")
+        logger.info(f"len of text is {len(text)}")
         if len(text) == 0:
             logger.error(f"not response scraped")
             return
@@ -175,12 +177,14 @@ class MovieSpider(scrapy.Spider):
         for detail in text:
             if 'episode' in detail and len(detail.get('episode')):
                 continue
-            if detail.get('title', '') == movie_name and detail.get('year', '') == movie_year[:4]:
+            # if detail.get('title', '') == movie_name and detail.get('year', '') == movie_year[:4]:
+            if detail.get('title', '') == movie_name:
                 movie_url = detail.get('url')
         if len(movie_url) == 0:
             logger.error(f"url wrong that url = {movie_url}")
             return
         logger.error(f"get movie info url = {movie_url}")
+        time.sleep(random.uniform(0, 1))
         yield scrapy.Request(url=movie_url, cookies=self.cookies, callback=self.parse_movie_info, cb_kwargs=dict(tpp_id=tpp_id))
 
     def parse_movie_info(self, response, tpp_id):

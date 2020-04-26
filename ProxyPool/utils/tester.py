@@ -56,6 +56,8 @@ class Tester(object):
             except EXCEPTIONS:
                 self.redis.deduction(proxy)
                 logger.warn(f'proxy {proxy.string()} is invalid, decrease score')
+            finally:
+                await session.close()
 
     def run(self):
         """
