@@ -20234,3 +20234,2394 @@ sqlalchemy.exc.InvalidRequestError: This Session's transaction has been rolled b
 2020-04-29 17:35:29,639 -  movie_spider.py[line:173] - INFO: len of text is 6
 2020-04-29 17:35:29,639 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27185558/?suggest=%E5%9C%A8%E4%B9%8E%E4%BD%A0
 2020-04-29 17:35:32,361 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 18:43:03,194 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 18:43:03,207 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 18:43:03,220 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 18:43:03,235 -  telnet.py[line:60] - INFO: Telnet Password: 90745dc9cc693ad3
+2020-04-29 18:43:03,257 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 18:43:04,851 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 18:43:04,866 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 18:43:04,870 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 18:43:04,975 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 18:43:04,976 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 18:43:05,400 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 18:43:05,400 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 18:43:05,400 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 18:43:05,406 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:43:05,409 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 18:43:05,418 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 18:43:07,953 -  middlewares.py[line:147] - ERROR: url = http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 18:43:08,155 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429> (referer: None)
+2020-04-29 18:43:08,978 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 18:43:08,984 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-29 18:43:08,986 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#1
+{'boxInfo': ['12541.16'],
+ 'boxRate': ['87.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [248172],
+ 'movieName': ['复仇者联盟4：终局之战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['9.8%'],
+ 'showInfo': [202937],
+ 'showRate': ['73.4%'],
+ 'showView': ['13'],
+ 'splitBoxInfo': ['11958.72'],
+ 'splitSumBoxInfo': ['224100.0'],
+ 'sumBoxInfo': ['235800.0'],
+ 'yearRate': ['2019-04-29#1']}
+2020-04-29 18:43:12,507 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 18:43:28,431 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 18:43:28,436 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 18:43:28,449 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 18:43:28,464 -  telnet.py[line:60] - INFO: Telnet Password: 26e86476f62de426
+2020-04-29 18:43:28,488 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 18:43:28,731 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 18:43:28,740 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 18:43:28,744 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 18:43:28,761 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 18:43:28,762 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 18:43:28,795 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 18:43:28,795 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 18:43:28,795 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 18:43:28,798 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:43:28,800 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 18:43:28,806 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 18:43:28,811 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 18:43:29,014 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-29 18:43:29,019 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 1,
+ 'elapsed_time_seconds': 0.218516,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 29, 10, 43, 29, 16719),
+ 'log_count/ERROR': 6,
+ 'memusage/max': 1508364288,
+ 'memusage/startup': 1508364288,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2020, 4, 29, 10, 43, 28, 798203)}
+2020-04-29 18:43:29,019 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-29 18:44:10,772 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 18:44:10,777 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 18:44:10,791 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 18:44:10,806 -  telnet.py[line:60] - INFO: Telnet Password: a2074180beb6db03
+2020-04-29 18:44:10,828 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 18:44:11,070 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 18:44:11,079 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 18:44:11,083 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 18:44:11,100 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 18:44:11,101 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 18:44:11,135 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 18:44:11,136 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 18:44:11,136 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 18:44:11,138 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:44:11,140 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 18:44:11,146 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 18:44:11,151 -  middlewares.py[line:147] - ERROR: url = http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 18:44:11,371 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429> (referer: None)
+2020-04-29 18:44:12,101 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 18:44:12,114 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-29 18:44:12,125 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#1
+{'boxInfo': ['12541.16'],
+ 'boxRate': ['87.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [248172],
+ 'movieName': ['复仇者联盟4：终局之战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['9.8%'],
+ 'showInfo': [202937],
+ 'showRate': ['73.4%'],
+ 'showView': ['13'],
+ 'splitBoxInfo': ['11958.72'],
+ 'splitSumBoxInfo': ['224100.0'],
+ 'sumBoxInfo': ['235800.0'],
+ 'yearRate': ['2019-04-29#1']}
+2020-04-29 18:44:12,905 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 18:44:12,935 -  movie_spider.py[line:143] - WARNING: get 2 movie info, named None.
+2020-04-29 18:44:12,938 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#2
+{'boxInfo': ['1246.36'],
+ 'boxRate': ['8.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1218727],
+ 'movieName': ['何以为家'],
+ 'releaseInfo': ['重映首日'],
+ 'seatRate': ['13.1%'],
+ 'showInfo': [38913],
+ 'showRate': ['14.0%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['1136.83'],
+ 'splitSumBoxInfo': ['1204.7'],
+ 'sumBoxInfo': ['1319.9'],
+ 'yearRate': ['2019-04-29#2']}
+2020-04-29 18:44:13,113 -  movie_spider.py[line:143] - WARNING: get 3 movie info, named None.
+2020-04-29 18:44:13,116 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#3
+{'boxInfo': ['181.36'],
+ 'boxRate': ['1.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映26天'],
+ 'seatRate': ['6.0%'],
+ 'showInfo': [11771],
+ 'showRate': ['4.2%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['169.18'],
+ 'splitSumBoxInfo': ['72200.0'],
+ 'sumBoxInfo': ['78200.0'],
+ 'yearRate': ['2019-04-29#3']}
+2020-04-29 18:44:13,566 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 18:44:13,627 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 18:44:13,654 -  movie_spider.py[line:143] - WARNING: get 4 movie info, named None.
+2020-04-29 18:44:13,657 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#4
+{'boxInfo': ['93.30'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映27天'],
+ 'seatRate': ['6.9%'],
+ 'showInfo': [5596],
+ 'showRate': ['2.0%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['85.12'],
+ 'splitSumBoxInfo': ['28300.0'],
+ 'sumBoxInfo': ['31400.0'],
+ 'yearRate': ['2019-04-29#4']}
+2020-04-29 18:44:14,034 -  movie_spider.py[line:143] - WARNING: get 5 movie info, named None.
+2020-04-29 18:44:14,042 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#5
+{'boxInfo': ['93.14'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1230152],
+ 'movieName': ['撞死了一只羊'],
+ 'releaseInfo': ['上映4天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [4140],
+ 'showRate': ['1.4%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['90.39'],
+ 'splitSumBoxInfo': ['580.4'],
+ 'sumBoxInfo': ['604.4'],
+ 'yearRate': ['2019-04-29#5']}
+2020-04-29 18:44:14,047 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 18:44:14,611 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 18:44:14,668 -  movie_spider.py[line:143] - WARNING: get 6 movie info, named None.
+2020-04-29 18:44:14,670 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#6
+{'boxInfo': ['17.92'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['25.4%'],
+ 'showInfo': [58],
+ 'showRate': ['<0.1%'],
+ 'showView': ['70'],
+ 'splitBoxInfo': ['17.92'],
+ 'splitSumBoxInfo': ['918.9'],
+ 'sumBoxInfo': ['923.5'],
+ 'yearRate': ['2019-04-29#6']}
+2020-04-29 18:44:15,335 -  movie_spider.py[line:143] - WARNING: get 7 movie info, named None.
+2020-04-29 18:44:15,337 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#7
+{'boxInfo': ['16.72'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['57.6%'],
+ 'showInfo': [69],
+ 'showRate': ['<0.1%'],
+ 'showView': ['67'],
+ 'splitBoxInfo': ['16.72'],
+ 'splitSumBoxInfo': ['2027.3'],
+ 'sumBoxInfo': ['2039.7'],
+ 'yearRate': ['2019-04-29#7']}
+2020-04-29 18:44:16,114 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 18:44:16,141 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 18:44:16,173 -  movie_spider.py[line:143] - WARNING: get 8 movie info, named None.
+2020-04-29 18:44:16,176 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#8
+{'boxInfo': ['16.47'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映18天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [989],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['15.10'],
+ 'splitSumBoxInfo': ['5985.0'],
+ 'sumBoxInfo': ['6619.5'],
+ 'yearRate': ['2019-04-29#8']}
+2020-04-29 18:44:16,672 -  movie_spider.py[line:143] - WARNING: get 9 movie info, named None.
+2020-04-29 18:44:16,674 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#9
+{'boxInfo': ['16.45'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映25天'],
+ 'seatRate': ['16.5%'],
+ 'showInfo': [92],
+ 'showRate': ['<0.1%'],
+ 'showView': ['25'],
+ 'splitBoxInfo': ['16.45'],
+ 'splitSumBoxInfo': ['995.4'],
+ 'sumBoxInfo': ['1051.7'],
+ 'yearRate': ['2019-04-29#9']}
+2020-04-29 18:44:17,278 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:44:17,307 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 18:44:17,337 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:44:17,344 -  movie_spider.py[line:143] - WARNING: get 10 movie info, named None.
+2020-04-29 18:44:17,346 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#10
+{'boxInfo': ['14.64'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映39天'],
+ 'seatRate': ['5.8%'],
+ 'showInfo': [1089],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['13.83'],
+ 'splitSumBoxInfo': ['32600.0'],
+ 'sumBoxInfo': ['35200.0'],
+ 'yearRate': ['2019-04-29#10']}
+2020-04-29 18:44:17,682 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 18:44:17,744 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:44:17,747 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:44:17,750 -  movie_spider.py[line:143] - WARNING: get 11 movie info, named None.
+2020-04-29 18:44:17,753 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#11
+{'boxInfo': ['12.83'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211412],
+ 'movieName': ['神奇乐园历险记'],
+ 'releaseInfo': ['上映11天'],
+ 'seatRate': ['3.4%'],
+ 'showInfo': [2567],
+ 'showRate': ['0.9%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['12.00'],
+ 'splitSumBoxInfo': ['2631.8'],
+ 'sumBoxInfo': ['2825.3'],
+ 'yearRate': ['2019-04-29#11']}
+2020-04-29 18:44:18,665 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:44:18,723 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:44:18,729 -  movie_spider.py[line:143] - WARNING: get 12 movie info, named None.
+2020-04-29 18:44:18,732 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#12
+{'boxInfo': ['11.14'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [165],
+ 'showRate': ['<0.1%'],
+ 'showView': ['23'],
+ 'splitBoxInfo': ['11.09'],
+ 'splitSumBoxInfo': ['1958.0'],
+ 'sumBoxInfo': ['1964.8'],
+ 'yearRate': ['2019-04-29#12']}
+2020-04-29 18:44:19,524 -  movie_spider.py[line:167] - INFO: movie_name = 复仇者联盟4：终局之战 and movie_year = 2019-04-29 and tpp_id = 248172
+2020-04-29 18:44:19,524 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 18:44:19,524 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:44:19,525 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26100958/?suggest=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 18:44:49,812 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 18:44:49,907 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-29 18:44:49,976 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:44:49,982 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:44:49,987 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:44:49,992 -  movie_spider.py[line:143] - WARNING: get 13 movie info, named None.
+2020-04-29 18:44:49,997 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#13
+{'boxInfo': ['10.27'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1263355],
+ 'movieName': ['狗眼看人心'],
+ 'releaseInfo': ['上映10天'],
+ 'seatRate': ['3.8%'],
+ 'showInfo': [1984],
+ 'showRate': ['0.7%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['9.59'],
+ 'splitSumBoxInfo': ['1676.4'],
+ 'sumBoxInfo': ['1805.9'],
+ 'yearRate': ['2019-04-29#13']}
+2020-04-29 18:44:50,005 -  movie_spider.py[line:167] - INFO: movie_name = 反贪风暴4 and movie_year = 2019-04-29 and tpp_id = 1211727
+2020-04-29 18:44:50,006 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 18:44:50,006 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:44:50,006 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 18:46:43,260 -  movie_spider.py[line:167] - INFO: movie_name = 何以为家 and movie_year = 2019-04-29 and tpp_id = 1218727
+2020-04-29 18:46:43,262 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 18:46:43,263 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:46:43,264 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30170448/?suggest=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 18:46:51,887 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 18:47:14,727 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 18:47:14,732 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 18:47:14,745 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 18:47:14,760 -  telnet.py[line:60] - INFO: Telnet Password: 3a82cfcd573b350a
+2020-04-29 18:47:14,783 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 18:47:15,032 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 18:47:15,042 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 18:47:15,046 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 18:47:15,065 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 18:47:15,065 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 18:47:15,101 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 18:47:15,102 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 18:47:15,102 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 18:47:15,105 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:47:15,107 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 18:47:15,114 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 18:47:15,119 -  middlewares.py[line:147] - ERROR: url = http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 18:47:15,286 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429> (referer: None)
+2020-04-29 18:47:15,694 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 18:47:15,703 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-29 18:47:15,712 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#1
+{'boxInfo': ['12541.16'],
+ 'boxRate': ['87.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [248172],
+ 'movieName': ['复仇者联盟4：终局之战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['9.8%'],
+ 'showInfo': [202937],
+ 'showRate': ['73.4%'],
+ 'showView': ['13'],
+ 'splitBoxInfo': ['11958.72'],
+ 'splitSumBoxInfo': ['224100.0'],
+ 'sumBoxInfo': ['235800.0'],
+ 'yearRate': ['2019-04-29#1']}
+2020-04-29 18:47:16,322 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 18:47:16,384 -  movie_spider.py[line:143] - WARNING: get 2 movie info, named None.
+2020-04-29 18:47:16,387 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#2
+{'boxInfo': ['1246.36'],
+ 'boxRate': ['8.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1218727],
+ 'movieName': ['何以为家'],
+ 'releaseInfo': ['重映首日'],
+ 'seatRate': ['13.1%'],
+ 'showInfo': [38913],
+ 'showRate': ['14.0%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['1136.83'],
+ 'splitSumBoxInfo': ['1204.7'],
+ 'sumBoxInfo': ['1319.9'],
+ 'yearRate': ['2019-04-29#2']}
+2020-04-29 18:47:17,325 -  movie_spider.py[line:143] - WARNING: get 3 movie info, named None.
+2020-04-29 18:47:17,341 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#3
+{'boxInfo': ['181.36'],
+ 'boxRate': ['1.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映26天'],
+ 'seatRate': ['6.0%'],
+ 'showInfo': [11771],
+ 'showRate': ['4.2%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['169.18'],
+ 'splitSumBoxInfo': ['72200.0'],
+ 'sumBoxInfo': ['78200.0'],
+ 'yearRate': ['2019-04-29#3']}
+2020-04-29 18:47:17,347 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 18:47:17,732 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 18:47:17,778 -  movie_spider.py[line:143] - WARNING: get 4 movie info, named None.
+2020-04-29 18:47:17,780 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#4
+{'boxInfo': ['93.30'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映27天'],
+ 'seatRate': ['6.9%'],
+ 'showInfo': [5596],
+ 'showRate': ['2.0%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['85.12'],
+ 'splitSumBoxInfo': ['28300.0'],
+ 'sumBoxInfo': ['31400.0'],
+ 'yearRate': ['2019-04-29#4']}
+2020-04-29 18:47:18,440 -  movie_spider.py[line:143] - WARNING: get 5 movie info, named None.
+2020-04-29 18:47:18,450 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#5
+{'boxInfo': ['93.14'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1230152],
+ 'movieName': ['撞死了一只羊'],
+ 'releaseInfo': ['上映4天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [4140],
+ 'showRate': ['1.4%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['90.39'],
+ 'splitSumBoxInfo': ['580.4'],
+ 'sumBoxInfo': ['604.4'],
+ 'yearRate': ['2019-04-29#5']}
+2020-04-29 18:47:18,455 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 18:47:18,942 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 18:47:18,973 -  movie_spider.py[line:143] - WARNING: get 6 movie info, named None.
+2020-04-29 18:47:18,976 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#6
+{'boxInfo': ['17.92'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['25.4%'],
+ 'showInfo': [58],
+ 'showRate': ['<0.1%'],
+ 'showView': ['70'],
+ 'splitBoxInfo': ['17.92'],
+ 'splitSumBoxInfo': ['918.9'],
+ 'sumBoxInfo': ['923.5'],
+ 'yearRate': ['2019-04-29#6']}
+2020-04-29 18:47:19,259 -  movie_spider.py[line:143] - WARNING: get 7 movie info, named None.
+2020-04-29 18:47:19,266 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#7
+{'boxInfo': ['16.72'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['57.6%'],
+ 'showInfo': [69],
+ 'showRate': ['<0.1%'],
+ 'showView': ['67'],
+ 'splitBoxInfo': ['16.72'],
+ 'splitSumBoxInfo': ['2027.3'],
+ 'sumBoxInfo': ['2039.7'],
+ 'yearRate': ['2019-04-29#7']}
+2020-04-29 18:47:19,270 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 18:47:20,310 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:20,312 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 18:47:20,341 -  movie_spider.py[line:143] - WARNING: get 8 movie info, named None.
+2020-04-29 18:47:20,344 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#8
+{'boxInfo': ['16.47'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映18天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [989],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['15.10'],
+ 'splitSumBoxInfo': ['5985.0'],
+ 'sumBoxInfo': ['6619.5'],
+ 'yearRate': ['2019-04-29#8']}
+2020-04-29 18:47:21,313 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:21,319 -  movie_spider.py[line:143] - WARNING: get 9 movie info, named None.
+2020-04-29 18:47:21,321 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#9
+{'boxInfo': ['16.45'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映25天'],
+ 'seatRate': ['16.5%'],
+ 'showInfo': [92],
+ 'showRate': ['<0.1%'],
+ 'showView': ['25'],
+ 'splitBoxInfo': ['16.45'],
+ 'splitSumBoxInfo': ['995.4'],
+ 'sumBoxInfo': ['1051.7'],
+ 'yearRate': ['2019-04-29#9']}
+2020-04-29 18:47:21,609 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:47:21,668 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 18:47:21,696 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:21,700 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:21,702 -  movie_spider.py[line:143] - WARNING: get 10 movie info, named None.
+2020-04-29 18:47:21,704 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#10
+{'boxInfo': ['14.64'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映39天'],
+ 'seatRate': ['5.8%'],
+ 'showInfo': [1089],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['13.83'],
+ 'splitSumBoxInfo': ['32600.0'],
+ 'sumBoxInfo': ['35200.0'],
+ 'yearRate': ['2019-04-29#10']}
+2020-04-29 18:47:21,943 -  movie_spider.py[line:167] - INFO: movie_name = 复仇者联盟4：终局之战 and movie_year = 2019-04-29 and tpp_id = 248172
+2020-04-29 18:47:21,944 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 18:47:21,945 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:47:21,945 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26100958/?suggest=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 18:47:23,303 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 18:47:23,362 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 18:47:23,394 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:23,400 -  movie_spider.py[line:143] - WARNING: get 11 movie info, named None.
+2020-04-29 18:47:23,402 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#11
+{'boxInfo': ['12.83'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211412],
+ 'movieName': ['神奇乐园历险记'],
+ 'releaseInfo': ['上映11天'],
+ 'seatRate': ['3.4%'],
+ 'showInfo': [2567],
+ 'showRate': ['0.9%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['12.00'],
+ 'splitSumBoxInfo': ['2631.8'],
+ 'sumBoxInfo': ['2825.3'],
+ 'yearRate': ['2019-04-29#11']}
+2020-04-29 18:47:24,186 -  movie_spider.py[line:167] - INFO: movie_name = 何以为家 and movie_year = 2019-04-29 and tpp_id = 1218727
+2020-04-29 18:47:24,187 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 18:47:24,188 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:47:24,188 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30170448/?suggest=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 18:47:25,247 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:47:25,251 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:47:25,300 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:25,306 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98)
+2020-04-29 18:47:25,309 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:25,312 -  movie_spider.py[line:143] - WARNING: get 12 movie info, named None.
+2020-04-29 18:47:25,315 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#12
+{'boxInfo': ['11.14'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [165],
+ 'showRate': ['<0.1%'],
+ 'showView': ['23'],
+ 'splitBoxInfo': ['11.09'],
+ 'splitSumBoxInfo': ['1958.0'],
+ 'sumBoxInfo': ['1964.8'],
+ 'yearRate': ['2019-04-29#12']}
+2020-04-29 18:47:25,966 -  movie_spider.py[line:167] - INFO: movie_name = 反贪风暴4 and movie_year = 2019-04-29 and tpp_id = 1211727
+2020-04-29 18:47:25,967 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 18:47:25,967 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:47:25,967 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 18:47:27,876 -  movie_spider.py[line:167] - INFO: movie_name = 照相师 and movie_year = 2019-04-29 and tpp_id = 1228750
+2020-04-29 18:47:27,877 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 18:47:27,877 -  movie_spider.py[line:173] - INFO: len of text is 2
+2020-04-29 18:47:27,878 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 18:47:29,142 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:47:29,144 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:47:29,145 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-29 18:47:29,173 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:29,177 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:29,179 -  movie_spider.py[line:143] - WARNING: get 13 movie info, named None.
+2020-04-29 18:47:29,182 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#13
+{'boxInfo': ['10.27'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1263355],
+ 'movieName': ['狗眼看人心'],
+ 'releaseInfo': ['上映10天'],
+ 'seatRate': ['3.8%'],
+ 'showInfo': [1984],
+ 'showRate': ['0.7%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['9.59'],
+ 'splitSumBoxInfo': ['1676.4'],
+ 'sumBoxInfo': ['1805.9'],
+ 'yearRate': ['2019-04-29#13']}
+2020-04-29 18:47:29,829 -  movie_spider.py[line:167] - INFO: movie_name = 青蛙王子历险记 and movie_year = 2019-04-29 and tpp_id = 1229702
+2020-04-29 18:47:29,830 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:47:29,830 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:47:29,831 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30288751/?suggest=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:47:31,155 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:47:31,160 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%8B%97%E7%9C%BC%E7%9C%8B%E4%BA%BA%E5%BF%83
+2020-04-29 18:47:31,202 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:47:31,205 -  movie_spider.py[line:143] - WARNING: get 14 movie info, named None.
+2020-04-29 18:47:31,207 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#14
+{'boxInfo': ['9.71'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1213175],
+ 'movieName': ['在乎你'],
+ 'releaseInfo': ['上映18天'],
+ 'seatRate': ['2.4%'],
+ 'showInfo': [55],
+ 'showRate': ['<0.1%'],
+ 'showView': ['26'],
+ 'splitBoxInfo': ['9.70'],
+ 'splitSumBoxInfo': ['671.7'],
+ 'sumBoxInfo': ['703.5'],
+ 'yearRate': ['2019-04-29#14']}
+2020-04-29 18:47:31,993 -  movie_spider.py[line:167] - INFO: movie_name = 调音师 and movie_year = 2019-04-29 and tpp_id = 1239544
+2020-04-29 18:47:31,993 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 18:47:31,993 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 18:47:31,993 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/3326889/?suggest=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 18:47:52,465 -  movie_spider.py[line:194] - CRITICAL: crawled movie info of https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 18:48:05,878 -  movie_spider.py[line:198] - CRITICAL: type of data is <class 'str'>
+2020-04-29 18:48:17,453 -  movie_spider.py[line:206] - ERROR: len of movie info = 13
+2020-04-29 18:51:38,433 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :34970135
+{'area': ' 中国大陆',
+ 'dbMovieID': ['34970135'],
+ 'doubanRate': [''],
+ 'duration': [4],
+ 'genre': '短片',
+ 'movieName': ['照相师'],
+ 'publishedDate': [''],
+ 'rateCount': ['0'],
+ 'tppMovieID': [248172]}
+2020-04-29 18:51:38,446 -  movie_spider.py[line:167] - INFO: movie_name = 老师·好 and movie_year = 2019-04-29 and tpp_id = 1212492
+2020-04-29 18:51:38,448 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 18:51:38,449 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 18:51:38,450 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27663742/?suggest=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 18:51:40,040 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:51:40,044 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:51:40,048 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0
+2020-04-29 18:51:40,121 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:51:40,129 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%8B%97%E7%9C%BC%E7%9C%8B%E4%BA%BA%E5%BF%83> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:51:40,137 -  movie_spider.py[line:143] - WARNING: get 15 movie info, named None.
+2020-04-29 18:51:40,142 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#15
+{'boxInfo': ['8.33'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1238775],
+ 'movieName': ['特别追踪'],
+ 'releaseInfo': [''],
+ 'seatRate': ['41.3%'],
+ 'showInfo': [48],
+ 'showRate': ['<0.1%'],
+ 'showView': ['35'],
+ 'splitBoxInfo': ['8.31'],
+ 'splitSumBoxInfo': ['452.0'],
+ 'sumBoxInfo': ['452.2'],
+ 'yearRate': ['2019-04-29#15']}
+2020-04-29 18:51:40,150 -  movie_spider.py[line:167] - INFO: movie_name = 撞死了一只羊 and movie_year = 2019-04-29 and tpp_id = 1230152
+2020-04-29 18:51:40,150 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 18:51:40,150 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:51:40,151 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30283179/?suggest=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 18:51:41,336 -  movie_spider.py[line:167] - INFO: movie_name = 神奇乐园历险记 and movie_year = 2019-04-29 and tpp_id = 1211412
+2020-04-29 18:51:41,338 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:51:41,339 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:51:41,340 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26662282/?suggest=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 18:51:43,026 -  logstats.py[line:48] - INFO: Crawled 14 pages (at 14 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:51:43,028 -  retry.py[line:73] - DEBUG: Retrying <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6> (failed 1 times): User timeout caused connection failure: Getting https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6 took longer than 180.0 seconds..
+2020-04-29 18:52:08,369 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:08,372 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:08,373 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6 has been crawled
+2020-04-29 18:52:08,882 -  movie_spider.py[line:167] - INFO: movie_name = 我和神马查干 and movie_year = 2019-04-29 and tpp_id = 330115
+2020-04-29 18:52:08,883 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-29 18:52:08,884 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:08,884 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/20438453/?suggest=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-29 18:52:10,145 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:10,147 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA
+2020-04-29 18:52:10,222 -  movie_spider.py[line:143] - WARNING: get 16 movie info, named None.
+2020-04-29 18:52:10,227 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#16
+{'boxInfo': ['7.63'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [643506],
+ 'movieName': ['古镇画情'],
+ 'releaseInfo': ['展映'],
+ 'seatRate': ['--'],
+ 'showInfo': [68],
+ 'showRate': ['<0.1%'],
+ 'showView': ['29'],
+ 'splitBoxInfo': ['7.61'],
+ 'splitSumBoxInfo': ['1084.1'],
+ 'sumBoxInfo': ['1086.9'],
+ 'yearRate': ['2019-04-29#16']}
+2020-04-29 18:52:10,237 -  movie_spider.py[line:167] - INFO: movie_name = 远去的牧歌 and movie_year = 2019-04-29 and tpp_id = 1236912
+2020-04-29 18:52:10,237 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 18:52:10,237 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:10,238 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30327768/?suggest=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 18:52:11,714 -  movie_spider.py[line:167] - INFO: movie_name = 狗眼看人心 and movie_year = 2019-04-29 and tpp_id = 1263355
+2020-04-29 18:52:11,715 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%8B%97%E7%9C%BC%E7%9C%8B%E4%BA%BA%E5%BF%83
+2020-04-29 18:52:11,715 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:11,715 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30479973/?suggest=%E7%8B%97%E7%9C%BC%E7%9C%8B%E4%BA%BA%E5%BF%83
+2020-04-29 18:52:12,763 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:12,765 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:12,851 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85
+2020-04-29 18:52:12,936 -  movie_spider.py[line:143] - WARNING: get 17 movie info, named None.
+2020-04-29 18:52:12,941 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:12,941 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:12,950 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:13,045 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'sql_mode'
+2020-04-29 18:52:13,046 -  log.py[line:110] - INFO: {}
+2020-04-29 18:52:13,105 -  log.py[line:110] - INFO: SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-04-29 18:52:13,106 -  log.py[line:110] - INFO: {}
+2020-04-29 18:52:13,119 -  log.py[line:110] - INFO: SELECT DATABASE()
+2020-04-29 18:52:13,120 -  log.py[line:110] - INFO: {}
+2020-04-29 18:52:13,141 -  log.py[line:110] - INFO: show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-04-29 18:52:13,143 -  log.py[line:110] - INFO: {}
+2020-04-29 18:52:13,164 -  log.py[line:110] - INFO: SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-04-29 18:52:13,165 -  log.py[line:110] - INFO: {}
+2020-04-29 18:52:13,172 -  log.py[line:110] - INFO: SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-04-29 18:52:13,172 -  log.py[line:110] - INFO: {}
+2020-04-29 18:52:13,177 -  log.py[line:110] - INFO: SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-04-29 18:52:13,178 -  log.py[line:110] - INFO: {}
+2020-04-29 18:52:13,184 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:13,191 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:13,192 -  log.py[line:110] - INFO: {'movieID': 1238926, 'movieName': '我们的爱情', 'seatRate': '47.9%', 'boxInfo': '7.38', 'boxRate': '<0.1%', 'releaseInfo': '上映53天', 'showInfo': 30, 'showRate': '<0.1%', 'splitBoxInfo': '7.38', 'splitSumBoxInfo': '69.8', 'sumBoxInfo': '70.1', 'showView': '83', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#17'}
+2020-04-29 18:52:13,201 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:13,620 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:13,817 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1%E6%83%85
+2020-04-29 18:52:13,899 -  movie_spider.py[line:143] - WARNING: get 18 movie info, named None.
+2020-04-29 18:52:13,904 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:13,904 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:13,905 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:13,906 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:13,907 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:13,907 -  log.py[line:110] - INFO: {'movieID': 1230119, 'movieName': '难以置信', 'seatRate': '52.3%', 'boxInfo': '6.60', 'boxRate': '<0.1%', 'releaseInfo': '上映19天', 'showInfo': 29, 'showRate': '<0.1%', 'splitBoxInfo': '6.60', 'splitSumBoxInfo': '145.6', 'sumBoxInfo': '146.8', 'showView': '57', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#18'}
+2020-04-29 18:52:14,056 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:14,353 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:14,717 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:14,733 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E9%9A%BE%E4%BB%A5%E7%BD%AE%E4%BF%A1
+2020-04-29 18:52:14,807 -  movie_spider.py[line:143] - WARNING: get 19 movie info, named None.
+2020-04-29 18:52:14,811 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:14,811 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:14,813 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:14,813 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:14,814 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:14,815 -  log.py[line:110] - INFO: {'movieID': 1207260, 'movieName': '如影随心', 'seatRate': '2.9%', 'boxInfo': '3.71', 'boxRate': '<0.1%', 'releaseInfo': '上映11天', 'showInfo': 1255, 'showRate': '0.4%', 'splitBoxInfo': '3.48', 'splitSumBoxInfo': '2202.1', 'sumBoxInfo': '2355.2', 'showView': '1', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#19'}
+2020-04-29 18:52:14,817 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:14,949 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:14,967 -  movie_spider.py[line:167] - INFO: movie_name = 在乎你 and movie_year = 2019-04-29 and tpp_id = 1213175
+2020-04-29 18:52:14,967 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0
+2020-04-29 18:52:14,968 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 18:52:14,968 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27185558/?suggest=%E5%9C%A8%E4%B9%8E%E4%BD%A0
+2020-04-29 18:52:16,447 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:16,455 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BF%83
+2020-04-29 18:52:16,548 -  movie_spider.py[line:143] - WARNING: get 20 movie info, named None.
+2020-04-29 18:52:16,552 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:16,552 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:16,553 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:16,554 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:16,555 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:16,555 -  log.py[line:110] - INFO: {'movieID': 1216383, 'movieName': '比悲伤更悲伤的故事', 'seatRate': '4.4%', 'boxInfo': '3.49', 'boxRate': '<0.1%', 'releaseInfo': '上映47天', 'showInfo': 528, 'showRate': '0.1%', 'splitBoxInfo': '3.23', 'splitSumBoxInfo': '85800.0', 'sumBoxInfo': '95700.0', 'showView': '3', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#20'}
+2020-04-29 18:52:16,557 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:16,678 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:16,712 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:16,723 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9A%BE%E4%BB%A5%E7%BD%AE%E4%BF%A1> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:16,724 -  logstats.py[line:48] - INFO: Crawled 17 pages (at 3 pages/min), scraped 4 items (at 4 items/min)
+2020-04-29 18:52:17,177 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%AF%94%E6%82%B2%E4%BC%A4%E6%9B%B4%E6%82%B2%E4%BC%A4%E7%9A%84%E6%95%85%E4%BA%8B
+2020-04-29 18:52:17,247 -  movie_spider.py[line:143] - WARNING: get 21 movie info, named None.
+2020-04-29 18:52:17,251 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:17,252 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:17,253 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:17,253 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:17,254 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:17,255 -  log.py[line:110] - INFO: {'movieID': 836, 'movieName': '毕业那年', 'seatRate': '--', 'boxInfo': '3.48', 'boxRate': '<0.1%', 'releaseInfo': '', 'showInfo': 39, 'showRate': '<0.1%', 'splitBoxInfo': '3.47', 'splitSumBoxInfo': '997.4', 'sumBoxInfo': '998.9', 'showView': '24', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#21'}
+2020-04-29 18:52:17,257 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:17,370 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:17,397 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:17,406 -  movie_spider.py[line:167] - INFO: movie_name = 特别追踪 and movie_year = 2019-04-29 and tpp_id = 1238775
+2020-04-29 18:52:17,407 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA
+2020-04-29 18:52:17,407 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:17,408 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30327877/?suggest=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA
+2020-04-29 18:52:19,373 -  movie_spider.py[line:167] - INFO: movie_name = 难以置信 and movie_year = 2019-04-29 and tpp_id = 1230119
+2020-04-29 18:52:19,374 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E9%9A%BE%E4%BB%A5%E7%BD%AE%E4%BF%A1
+2020-04-29 18:52:19,374 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 18:52:19,375 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26871442/?suggest=%E9%9A%BE%E4%BB%A5%E7%BD%AE%E4%BF%A1
+2020-04-29 18:52:21,701 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%AF%95%E4%B8%9A%E9%82%A3%E5%B9%B4
+2020-04-29 18:52:21,799 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:21,801 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:21,808 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%AF%94%E6%82%B2%E4%BC%A4%E6%9B%B4%E6%82%B2%E4%BC%A4%E7%9A%84%E6%95%85%E4%BA%8B> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:21,831 -  movie_spider.py[line:143] - WARNING: get 22 movie info, named None.
+2020-04-29 18:52:21,836 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:21,836 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:21,837 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:21,838 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:21,839 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:21,839 -  log.py[line:110] - INFO: {'movieID': 1249315, 'movieName': '大路朝天', 'seatRate': '75.4%', 'boxInfo': '3.00', 'boxRate': '<0.1%', 'releaseInfo': '', 'showInfo': 18, 'showRate': '<0.1%', 'splitBoxInfo': '3.00', 'splitSumBoxInfo': '2591.6', 'sumBoxInfo': '2592.7', 'showView': '84', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#22'}
+2020-04-29 18:52:21,841 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:22,123 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:22,149 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1%E6%83%85> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:22,161 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%AF%95%E4%B8%9A%E9%82%A3%E5%B9%B4> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:22,163 -  movie_spider.py[line:167] - INFO: movie_name = 古镇画情 and movie_year = 2019-04-29 and tpp_id = 643506
+2020-04-29 18:52:22,163 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85
+2020-04-29 18:52:22,164 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:22,164 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/4006324/?suggest=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85
+2020-04-29 18:52:24,216 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%A4%A7%E8%B7%AF%E6%9C%9D%E5%A4%A9
+2020-04-29 18:52:24,281 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:24,299 -  movie_spider.py[line:167] - INFO: movie_name = 比悲伤更悲伤的故事 and movie_year = 2019-04-29 and tpp_id = 1216383
+2020-04-29 18:52:24,300 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%AF%94%E6%82%B2%E4%BC%A4%E6%9B%B4%E6%82%B2%E4%BC%A4%E7%9A%84%E6%95%85%E4%BA%8B
+2020-04-29 18:52:24,300 -  movie_spider.py[line:173] - INFO: len of text is 2
+2020-04-29 18:52:24,300 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/3805946/?suggest=%E6%AF%94%E6%82%B2%E4%BC%A4%E6%9B%B4%E6%82%B2%E4%BC%A4%E7%9A%84%E6%95%85%E4%BA%8B
+2020-04-29 18:52:25,485 -  movie_spider.py[line:143] - WARNING: get 23 movie info, named None.
+2020-04-29 18:52:25,499 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:25,499 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:25,501 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:25,503 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:25,504 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:25,504 -  log.py[line:110] - INFO: {'movieID': 1239281, 'movieName': '港珠澳大桥', 'seatRate': '49.6%', 'boxInfo': '2.65', 'boxRate': '<0.1%', 'releaseInfo': '点映', 'showInfo': 8, 'showRate': '<0.1%', 'splitBoxInfo': '2.65', 'splitSumBoxInfo': '7.6', 'sumBoxInfo': '7.6', 'showView': '86', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#23'}
+2020-04-29 18:52:25,507 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:25,619 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:25,624 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:25,651 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A4%A7%E8%B7%AF%E6%9C%9D%E5%A4%A9> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:25,653 -  movie_spider.py[line:167] - INFO: movie_name = 我们的爱情 and movie_year = 2019-04-29 and tpp_id = 1238926
+2020-04-29 18:52:25,653 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1%E6%83%85
+2020-04-29 18:52:25,654 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 18:52:25,654 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30378898/?suggest=%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1%E6%83%85
+2020-04-29 18:52:27,285 -  movie_spider.py[line:167] - INFO: movie_name = 毕业那年 and movie_year = 2019-04-29 and tpp_id = 836
+2020-04-29 18:52:27,287 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%AF%95%E4%B8%9A%E9%82%A3%E5%B9%B4
+2020-04-29 18:52:27,288 -  movie_spider.py[line:173] - INFO: len of text is 2
+2020-04-29 18:52:27,288 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/10759842/?suggest=%E6%AF%95%E4%B8%9A%E9%82%A3%E5%B9%B4
+2020-04-29 18:52:29,233 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%B8%AF%E7%8F%A0%E6%BE%B3%E5%A4%A7%E6%A1%A5
+2020-04-29 18:52:29,331 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:29,333 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:29,339 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BF%83> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:29,360 -  movie_spider.py[line:143] - WARNING: get 24 movie info, named None.
+2020-04-29 18:52:29,364 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:29,364 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:29,365 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:29,366 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:29,367 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:29,367 -  log.py[line:110] - INFO: {'movieID': 248906, 'movieName': '流浪地球', 'seatRate': '5.2%', 'boxInfo': '2.56', 'boxRate': '<0.1%', 'releaseInfo': '', 'showInfo': 178, 'showRate': '<0.1%', 'splitBoxInfo': '2.44', 'splitSumBoxInfo': '435400.0', 'sumBoxInfo': '468000.0', 'showView': '5', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#24'}
+2020-04-29 18:52:29,369 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:29,584 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:29,608 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%B8%AF%E7%8F%A0%E6%BE%B3%E5%A4%A7%E6%A1%A5> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:29,611 -  movie_spider.py[line:167] - INFO: movie_name = 大路朝天 and movie_year = 2019-04-29 and tpp_id = 1249315
+2020-04-29 18:52:29,612 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A4%A7%E8%B7%AF%E6%9C%9D%E5%A4%A9
+2020-04-29 18:52:29,613 -  movie_spider.py[line:173] - INFO: len of text is 5
+2020-04-29 18:52:29,613 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26575878/?suggest=%E5%A4%A7%E8%B7%AF%E6%9C%9D%E5%A4%A9
+2020-04-29 18:52:31,935 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83
+2020-04-29 18:52:32,001 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:32,013 -  movie_spider.py[line:167] - INFO: movie_name = 如影随心 and movie_year = 2019-04-29 and tpp_id = 1207260
+2020-04-29 18:52:32,014 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BF%83
+2020-04-29 18:52:32,014 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:32,014 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26871669/?suggest=%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BF%83
+2020-04-29 18:52:33,495 -  movie_spider.py[line:143] - WARNING: get 25 movie info, named None.
+2020-04-29 18:52:33,512 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:33,512 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:33,515 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:33,516 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:33,517 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:33,518 -  log.py[line:110] - INFO: {'movieID': 1167831, 'movieName': '波西米亚狂想曲', 'seatRate': '6.6%', 'boxInfo': '2.15', 'boxRate': '<0.1%', 'releaseInfo': '上映39天', 'showInfo': 108, 'showRate': '<0.1%', 'splitBoxInfo': '1.99', 'splitSumBoxInfo': '8929.1', 'sumBoxInfo': '9852.9', 'showView': '6', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#25'}
+2020-04-29 18:52:33,521 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:33,621 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:33,627 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:33,652 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:33,654 -  movie_spider.py[line:167] - INFO: movie_name = 港珠澳大桥 and movie_year = 2019-04-29 and tpp_id = 1239281
+2020-04-29 18:52:33,655 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%B8%AF%E7%8F%A0%E6%BE%B3%E5%A4%A7%E6%A1%A5
+2020-04-29 18:52:33,655 -  movie_spider.py[line:173] - INFO: len of text is 2
+2020-04-29 18:52:33,656 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30230160/?suggest=%E6%B8%AF%E7%8F%A0%E6%BE%B3%E5%A4%A7%E6%A1%A5
+2020-04-29 18:52:35,911 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2
+2020-04-29 18:52:36,010 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:36,032 -  movie_spider.py[line:143] - WARNING: get 26 movie info, named None.
+2020-04-29 18:52:36,038 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:36,039 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:36,040 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:36,041 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:36,042 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:36,042 -  log.py[line:110] - INFO: {'movieID': 342568, 'movieName': '诡梦凶铃', 'seatRate': '50.0%', 'boxInfo': '1.88', 'boxRate': '<0.1%', 'releaseInfo': '', 'showInfo': 2, 'showRate': '<0.1%', 'splitBoxInfo': '1.88', 'splitSumBoxInfo': '1111.8', 'sumBoxInfo': '1111.8', 'showView': '377', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#26'}
+2020-04-29 18:52:36,044 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:36,153 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:36,168 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:36,170 -  movie_spider.py[line:167] - INFO: movie_name = 流浪地球 and movie_year = 2019-04-29 and tpp_id = 248906
+2020-04-29 18:52:36,170 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83
+2020-04-29 18:52:36,170 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:36,171 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26266893/?suggest=%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83
+2020-04-29 18:52:38,417 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%AF%A1%E6%A2%A6%E5%87%B6%E9%93%83
+2020-04-29 18:52:38,517 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:38,535 -  movie_spider.py[line:143] - WARNING: get 27 movie info, named None.
+2020-04-29 18:52:38,539 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:38,540 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:38,541 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:38,542 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:38,543 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:38,543 -  log.py[line:110] - INFO: {'movieID': 1162868, 'movieName': '转型团伙', 'seatRate': '2.0%', 'boxInfo': '1.79', 'boxRate': '<0.1%', 'releaseInfo': '上映11天', 'showInfo': 920, 'showRate': '0.3%', 'splitBoxInfo': '1.69', 'splitSumBoxInfo': '1534.6', 'sumBoxInfo': '1670.6', 'showView': '1', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#27'}
+2020-04-29 18:52:38,545 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:38,651 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:38,678 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%AF%A1%E6%A2%A6%E5%87%B6%E9%93%83> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:38,680 -  movie_spider.py[line:167] - INFO: movie_name = 波西米亚狂想曲 and movie_year = 2019-04-29 and tpp_id = 1167831
+2020-04-29 18:52:38,681 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2
+2020-04-29 18:52:38,682 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:38,682 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/5300054/?suggest=%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E7%8B%82%E6%83%B3%E6%9B%B2
+2020-04-29 18:52:40,694 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%BD%AC%E5%9E%8B%E5%9B%A2%E4%BC%99
+2020-04-29 18:52:40,797 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:40,815 -  movie_spider.py[line:143] - WARNING: get 28 movie info, named None.
+2020-04-29 18:52:40,820 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:40,820 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:40,821 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:40,822 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:40,823 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:40,823 -  log.py[line:110] - INFO: {'movieID': 1257272, 'movieName': '暗语者', 'seatRate': '27.9%', 'boxInfo': '1.73', 'boxRate': '<0.1%', 'releaseInfo': '上映18天', 'showInfo': 10, 'showRate': '<0.1%', 'splitBoxInfo': '1.73', 'splitSumBoxInfo': '34.3', 'sumBoxInfo': '34.3', 'showView': '71', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#28'}
+2020-04-29 18:52:40,825 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:40,933 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:40,940 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%BD%AC%E5%9E%8B%E5%9B%A2%E4%BC%99> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:40,941 -  movie_spider.py[line:167] - INFO: movie_name = 诡梦凶铃 and movie_year = 2019-04-29 and tpp_id = 342568
+2020-04-29 18:52:40,942 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%AF%A1%E6%A2%A6%E5%87%B6%E9%93%83
+2020-04-29 18:52:40,942 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:40,942 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26582780/?suggest=%E8%AF%A1%E6%A2%A6%E5%87%B6%E9%93%83
+2020-04-29 18:52:43,230 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%9A%97%E8%AF%AD%E8%80%85
+2020-04-29 18:52:43,322 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:43,339 -  movie_spider.py[line:143] - WARNING: get 29 movie info, named None.
+2020-04-29 18:52:43,344 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:43,344 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:43,345 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:43,346 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:43,347 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:43,348 -  log.py[line:110] - INFO: {'movieID': 1239678, 'movieName': '原来如此', 'seatRate': '7.6%', 'boxInfo': '1.54', 'boxRate': '<0.1%', 'releaseInfo': '上映18天', 'showInfo': 194, 'showRate': '<0.1%', 'splitBoxInfo': '1.43', 'splitSumBoxInfo': '117.4', 'sumBoxInfo': '127.8', 'showView': '3', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#29'}
+2020-04-29 18:52:43,350 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:43,450 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:43,475 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%9A%97%E8%AF%AD%E8%80%85> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:43,477 -  movie_spider.py[line:167] - INFO: movie_name = 转型团伙 and movie_year = 2019-04-29 and tpp_id = 1162868
+2020-04-29 18:52:43,478 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%BD%AC%E5%9E%8B%E5%9B%A2%E4%BC%99
+2020-04-29 18:52:43,479 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:43,479 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26857654/?suggest=%E8%BD%AC%E5%9E%8B%E5%9B%A2%E4%BC%99
+2020-04-29 18:52:44,812 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8E%9F%E6%9D%A5%E5%A6%82%E6%AD%A4
+2020-04-29 18:52:44,910 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:44,926 -  movie_spider.py[line:143] - WARNING: get 30 movie info, named None.
+2020-04-29 18:52:44,931 -  pipelines.py[line:50] - INFO: item is new
+2020-04-29 18:52:44,931 -  pipelines.py[line:74] - CRITICAL: type of item is <class 'movie.items.BoxOfficeItem'>
+2020-04-29 18:52:44,932 -  pipelines.py[line:83] - WARNING: insert database finished
+2020-04-29 18:52:44,933 -  log.py[line:110] - INFO: BEGIN (implicit)
+2020-04-29 18:52:44,933 -  log.py[line:110] - INFO: INSERT INTO `boxOffice` (`movieID`, `movieName`, `seatRate`, `boxInfo`, `boxRate`, `releaseInfo`, `showInfo`, `showRate`, `splitBoxInfo`, `splitSumBoxInfo`, `sumBoxInfo`, `showView`, `crawlDate`, `yearRate`) VALUES (%(movieID)s, %(movieName)s, %(seatRate)s, %(boxInfo)s, %(boxRate)s, %(releaseInfo)s, %(showInfo)s, %(showRate)s, %(splitBoxInfo)s, %(splitSumBoxInfo)s, %(sumBoxInfo)s, %(showView)s, %(crawlDate)s, %(yearRate)s)
+2020-04-29 18:52:44,934 -  log.py[line:110] - INFO: {'movieID': 1215746, 'movieName': '海门深处', 'seatRate': '15.6%', 'boxInfo': '1.35', 'boxRate': '<0.1%', 'releaseInfo': '上映3天', 'showInfo': 39, 'showRate': '<0.1%', 'splitBoxInfo': '1.31', 'splitSumBoxInfo': '7.9', 'sumBoxInfo': '8.1', 'showView': '12', 'crawlDate': '2019-04-29', 'yearRate': '2019-04-29#30'}
+2020-04-29 18:52:44,936 -  log.py[line:110] - INFO: COMMIT
+2020-04-29 18:52:45,041 -  scraper.py[line:243] - DEBUG: Scraped from <200 http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429>
+None
+2020-04-29 18:52:45,061 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8E%9F%E6%9D%A5%E5%A6%82%E6%AD%A4> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:45,065 -  movie_spider.py[line:167] - INFO: movie_name = 暗语者 and movie_year = 2019-04-29 and tpp_id = 1257272
+2020-04-29 18:52:45,066 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%9A%97%E8%AF%AD%E8%80%85
+2020-04-29 18:52:45,067 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 18:52:45,067 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30335687/?suggest=%E6%9A%97%E8%AF%AD%E8%80%85
+2020-04-29 18:52:47,272 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%B5%B7%E9%97%A8%E6%B7%B1%E5%A4%84
+2020-04-29 18:52:47,349 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 18:52:47,361 -  movie_spider.py[line:156] - ERROR: boxOffice start parse
+2020-04-29 18:52:47,368 -  movie_spider.py[line:167] - INFO: movie_name = 原来如此 and movie_year = 2019-04-29 and tpp_id = 1239678
+2020-04-29 18:52:47,368 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8E%9F%E6%9D%A5%E5%A6%82%E6%AD%A4
+2020-04-29 18:52:47,368 -  movie_spider.py[line:173] - INFO: len of text is 0
+2020-04-29 18:52:47,368 -  movie_spider.py[line:175] - ERROR: not response scraped
+2020-04-29 18:52:47,412 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%B5%B7%E9%97%A8%E6%B7%B1%E5%A4%84> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 18:52:47,534 -  movie_spider.py[line:167] - INFO: movie_name = 海门深处 and movie_year = 2019-04-29 and tpp_id = 1215746
+2020-04-29 18:52:47,536 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%B5%B7%E9%97%A8%E6%B7%B1%E5%A4%84
+2020-04-29 18:52:47,536 -  movie_spider.py[line:173] - INFO: len of text is 0
+2020-04-29 18:52:47,537 -  movie_spider.py[line:175] - ERROR: not response scraped
+2020-04-29 18:52:47,559 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-29 18:52:47,566 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 28,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 27,
+ 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 1,
+ 'downloader/request_bytes': 39702,
+ 'downloader/request_count': 32,
+ 'downloader/request_method_count/GET': 32,
+ 'downloader/response_bytes': 39318,
+ 'downloader/response_count': 31,
+ 'downloader/response_status_count/200': 31,
+ 'elapsed_time_seconds': 332.455821,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 29, 10, 52, 47, 560913),
+ 'item_dropped_count': 17,
+ 'item_dropped_reasons_count/DropItem': 17,
+ 'item_scraped_count': 14,
+ 'log_count/CRITICAL': 16,
+ 'log_count/ERROR': 96,
+ 'log_count/WARNING': 61,
+ 'memusage/max': 1508364288,
+ 'memusage/startup': 1508364288,
+ 'request_depth_max': 2,
+ 'response_received_count': 31,
+ 'retry/count': 1,
+ 'retry/reason_count/twisted.internet.error.TimeoutError': 1,
+ 'scheduler/dequeued': 59,
+ 'scheduler/dequeued/memory': 59,
+ 'scheduler/enqueued': 59,
+ 'scheduler/enqueued/memory': 59,
+ 'start_time': datetime.datetime(2020, 4, 29, 10, 47, 15, 105092)}
+2020-04-29 18:52:47,566 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-29 18:53:18,403 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 18:54:42,741 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 18:54:42,747 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 18:54:42,760 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 18:54:42,775 -  telnet.py[line:60] - INFO: Telnet Password: 599712477130d75b
+2020-04-29 18:54:42,797 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 18:54:43,041 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 18:54:43,051 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 18:54:43,055 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 18:54:43,073 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 18:54:43,074 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 18:54:43,111 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 18:54:43,112 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 18:54:43,112 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 18:54:43,115 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:54:43,118 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 18:54:43,125 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 18:54:43,130 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 18:54:43,332 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-29 18:54:43,334 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 1,
+ 'elapsed_time_seconds': 0.217726,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 29, 10, 54, 43, 333477),
+ 'log_count/ERROR': 6,
+ 'memusage/max': 1508364288,
+ 'memusage/startup': 1508364288,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2020, 4, 29, 10, 54, 43, 115751)}
+2020-04-29 18:54:43,334 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-29 18:55:46,267 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 18:55:53,502 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 18:55:53,508 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 18:55:53,521 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 18:55:53,536 -  telnet.py[line:60] - INFO: Telnet Password: 92b9dfa7a2e58d6e
+2020-04-29 18:55:53,558 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 18:55:53,799 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 18:55:53,809 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 18:55:53,813 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 18:55:53,830 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 18:55:53,831 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 18:55:53,864 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 18:55:53,865 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 18:55:53,865 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 18:55:53,867 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:55:53,869 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 18:55:53,875 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 18:55:57,420 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 18:56:09,074 -  engine.py[line:296] - INFO: Closing spider (finished)
+2020-04-29 18:56:09,080 -  statscollectors.py[line:47] - INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 1,
+ 'elapsed_time_seconds': 15.210757,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 29, 10, 56, 9, 78457),
+ 'log_count/ERROR': 6,
+ 'memusage/max': 1508364288,
+ 'memusage/startup': 1508364288,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2020, 4, 29, 10, 55, 53, 867700)}
+2020-04-29 18:56:09,080 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-04-29 18:56:20,904 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 18:56:20,910 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 18:56:20,924 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 18:56:20,941 -  telnet.py[line:60] - INFO: Telnet Password: 960f0c03d21697af
+2020-04-29 18:56:20,966 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 18:56:21,230 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 18:56:21,240 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 18:56:21,244 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 18:56:21,262 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 18:56:21,263 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 18:56:21,300 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 18:56:21,300 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 18:56:21,300 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 18:56:21,303 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 18:56:21,305 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 18:56:21,312 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 18:56:23,441 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 18:59:17,922 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 19:00:27,081 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 19:00:27,088 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 19:00:27,105 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 19:00:27,123 -  telnet.py[line:60] - INFO: Telnet Password: 3f1dad86d4d2a579
+2020-04-29 19:00:27,148 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 19:00:27,436 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 19:00:27,456 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 19:00:27,461 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 19:00:27,479 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 19:00:27,480 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 19:00:27,514 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 19:00:27,515 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 19:00:27,515 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 19:00:27,518 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 19:00:27,520 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 19:00:27,526 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 19:00:30,547 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 19:00:31,711 -  middlewares.py[line:147] - ERROR: url = http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:00:33,143 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429> (referer: None)
+2020-04-29 19:00:33,759 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:00:33,767 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-29 19:00:33,772 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#1
+{'boxInfo': ['12541.16'],
+ 'boxRate': ['87.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [248172],
+ 'movieName': ['复仇者联盟4：终局之战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['9.8%'],
+ 'showInfo': [202937],
+ 'showRate': ['73.4%'],
+ 'showView': ['13'],
+ 'splitBoxInfo': ['11958.72'],
+ 'splitSumBoxInfo': ['224100.0'],
+ 'sumBoxInfo': ['235800.0'],
+ 'yearRate': ['2019-04-29#1']}
+2020-04-29 19:00:37,869 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 19:00:43,846 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 19:00:43,857 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 19:00:43,877 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 19:00:43,894 -  telnet.py[line:60] - INFO: Telnet Password: 9a744002766f8e01
+2020-04-29 19:00:43,918 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 19:00:44,182 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 19:00:44,192 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 19:00:44,196 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 19:00:44,214 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 19:00:44,215 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 19:00:44,251 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 19:00:44,252 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 19:00:44,252 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 19:00:44,259 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 19:00:44,262 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 19:00:44,269 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 19:00:44,275 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 19:00:44,275 -  middlewares.py[line:147] - ERROR: url = http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:00:44,490 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429> (referer: None)
+2020-04-29 19:00:44,672 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:00:44,681 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-29 19:00:44,686 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#1
+{'boxInfo': ['12541.16'],
+ 'boxRate': ['87.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [248172],
+ 'movieName': ['复仇者联盟4：终局之战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['9.8%'],
+ 'showInfo': [202937],
+ 'showRate': ['73.4%'],
+ 'showView': ['13'],
+ 'splitBoxInfo': ['11958.72'],
+ 'splitSumBoxInfo': ['224100.0'],
+ 'sumBoxInfo': ['235800.0'],
+ 'yearRate': ['2019-04-29#1']}
+2020-04-29 19:00:45,093 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98 has been crawled
+2020-04-29 19:00:45,093 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:00:45,135 -  movie_spider.py[line:143] - WARNING: get 2 movie info, named None.
+2020-04-29 19:00:45,138 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#2
+{'boxInfo': ['1246.36'],
+ 'boxRate': ['8.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1218727],
+ 'movieName': ['何以为家'],
+ 'releaseInfo': ['重映首日'],
+ 'seatRate': ['13.1%'],
+ 'showInfo': [38913],
+ 'showRate': ['14.0%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['1136.83'],
+ 'splitSumBoxInfo': ['1204.7'],
+ 'sumBoxInfo': ['1319.9'],
+ 'yearRate': ['2019-04-29#2']}
+2020-04-29 19:00:45,901 -  movie_spider.py[line:143] - WARNING: get 3 movie info, named None.
+2020-04-29 19:00:45,905 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#3
+{'boxInfo': ['181.36'],
+ 'boxRate': ['1.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映26天'],
+ 'seatRate': ['6.0%'],
+ 'showInfo': [11771],
+ 'showRate': ['4.2%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['169.18'],
+ 'splitSumBoxInfo': ['72200.0'],
+ 'sumBoxInfo': ['78200.0'],
+ 'yearRate': ['2019-04-29#3']}
+2020-04-29 19:00:45,909 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6 has been crawled
+2020-04-29 19:00:45,909 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:00:46,520 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44 has been crawled
+2020-04-29 19:00:46,521 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:00:46,569 -  movie_spider.py[line:143] - WARNING: get 4 movie info, named None.
+2020-04-29 19:00:46,572 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#4
+{'boxInfo': ['93.30'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映27天'],
+ 'seatRate': ['6.9%'],
+ 'showInfo': [5596],
+ 'showRate': ['2.0%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['85.12'],
+ 'splitSumBoxInfo': ['28300.0'],
+ 'sumBoxInfo': ['31400.0'],
+ 'yearRate': ['2019-04-29#4']}
+2020-04-29 19:00:47,564 -  movie_spider.py[line:143] - WARNING: get 5 movie info, named None.
+2020-04-29 19:00:47,574 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#5
+{'boxInfo': ['93.14'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1230152],
+ 'movieName': ['撞死了一只羊'],
+ 'releaseInfo': ['上映4天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [4140],
+ 'showRate': ['1.4%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['90.39'],
+ 'splitSumBoxInfo': ['580.4'],
+ 'sumBoxInfo': ['604.4'],
+ 'yearRate': ['2019-04-29#5']}
+2020-04-29 19:00:47,578 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88 has been crawled
+2020-04-29 19:00:47,578 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:00:48,009 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A has been crawled
+2020-04-29 19:00:48,009 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 19:00:48,059 -  movie_spider.py[line:143] - WARNING: get 6 movie info, named None.
+2020-04-29 19:00:48,064 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#6
+{'boxInfo': ['17.92'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['25.4%'],
+ 'showInfo': [58],
+ 'showRate': ['<0.1%'],
+ 'showView': ['70'],
+ 'splitBoxInfo': ['17.92'],
+ 'splitSumBoxInfo': ['918.9'],
+ 'sumBoxInfo': ['923.5'],
+ 'yearRate': ['2019-04-29#6']}
+2020-04-29 19:00:48,798 -  movie_spider.py[line:143] - WARNING: get 7 movie info, named None.
+2020-04-29 19:00:48,803 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#7
+{'boxInfo': ['16.72'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['57.6%'],
+ 'showInfo': [69],
+ 'showRate': ['<0.1%'],
+ 'showView': ['67'],
+ 'splitBoxInfo': ['16.72'],
+ 'splitSumBoxInfo': ['2027.3'],
+ 'sumBoxInfo': ['2039.7'],
+ 'yearRate': ['2019-04-29#7']}
+2020-04-29 19:00:48,808 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C has been crawled
+2020-04-29 19:00:48,808 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 19:00:49,161 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:00:49,182 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:00:49,182 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:00:49,221 -  movie_spider.py[line:143] - WARNING: get 8 movie info, named None.
+2020-04-29 19:00:49,223 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#8
+{'boxInfo': ['16.47'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映18天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [989],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['15.10'],
+ 'splitSumBoxInfo': ['5985.0'],
+ 'sumBoxInfo': ['6619.5'],
+ 'yearRate': ['2019-04-29#8']}
+2020-04-29 19:00:49,239 -  movie_spider.py[line:143] - WARNING: get 9 movie info, named None.
+2020-04-29 19:00:49,242 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#9
+{'boxInfo': ['16.45'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映25天'],
+ 'seatRate': ['16.5%'],
+ 'showInfo': [92],
+ 'showRate': ['<0.1%'],
+ 'showView': ['25'],
+ 'splitBoxInfo': ['16.45'],
+ 'splitSumBoxInfo': ['995.4'],
+ 'sumBoxInfo': ['1051.7'],
+ 'yearRate': ['2019-04-29#9']}
+2020-04-29 19:00:49,628 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0 has been crawled
+2020-04-29 19:00:49,629 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:00:49,687 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6 has been crawled
+2020-04-29 19:00:49,688 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 19:00:49,716 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:00:49,720 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:00:49,723 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:00:49,725 -  movie_spider.py[line:143] - WARNING: get 10 movie info, named None.
+2020-04-29 19:00:49,727 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#10
+{'boxInfo': ['14.64'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映39天'],
+ 'seatRate': ['5.8%'],
+ 'showInfo': [1089],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['13.83'],
+ 'splitSumBoxInfo': ['32600.0'],
+ 'sumBoxInfo': ['35200.0'],
+ 'yearRate': ['2019-04-29#10']}
+2020-04-29 19:00:49,873 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD has been crawled
+2020-04-29 19:00:49,873 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 19:00:49,924 -  movie_spider.py[line:143] - WARNING: get 11 movie info, named None.
+2020-04-29 19:00:49,927 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#11
+{'boxInfo': ['12.83'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211412],
+ 'movieName': ['神奇乐园历险记'],
+ 'releaseInfo': ['上映11天'],
+ 'seatRate': ['3.4%'],
+ 'showInfo': [2567],
+ 'showRate': ['0.9%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['12.00'],
+ 'splitSumBoxInfo': ['2631.8'],
+ 'sumBoxInfo': ['2825.3'],
+ 'yearRate': ['2019-04-29#11']}
+2020-04-29 19:00:49,965 -  movie_spider.py[line:167] - INFO: movie_name = 复仇者联盟4：终局之战 and movie_year = 2019-04-29 and tpp_id = 248172
+2020-04-29 19:00:49,965 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:00:49,966 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:00:49,966 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26100958/?suggest=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:00:51,844 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:00:51,859 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:00:51,873 -  movie_spider.py[line:143] - WARNING: get 12 movie info, named None.
+2020-04-29 19:00:51,877 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#12
+{'boxInfo': ['11.14'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [165],
+ 'showRate': ['<0.1%'],
+ 'showView': ['23'],
+ 'splitBoxInfo': ['11.09'],
+ 'splitSumBoxInfo': ['1958.0'],
+ 'sumBoxInfo': ['1964.8'],
+ 'yearRate': ['2019-04-29#12']}
+2020-04-29 19:00:51,977 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2 has been crawled
+2020-04-29 19:00:51,977 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-29 19:00:52,026 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:00:52,027 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:00:52,052 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0 has been crawled
+2020-04-29 19:00:52,052 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:00:52,083 -  movie_spider.py[line:167] - INFO: movie_name = 反贪风暴4 and movie_year = 2019-04-29 and tpp_id = 1211727
+2020-04-29 19:00:52,083 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:00:52,083 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:00:52,083 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:00:53,344 -  movie_spider.py[line:167] - INFO: movie_name = 照相师 and movie_year = 2019-04-29 and tpp_id = 1228750
+2020-04-29 19:00:53,344 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:00:53,345 -  movie_spider.py[line:173] - INFO: len of text is 2
+2020-04-29 19:00:53,345 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:00:54,356 -  movie_spider.py[line:167] - INFO: movie_name = 何以为家 and movie_year = 2019-04-29 and tpp_id = 1218727
+2020-04-29 19:00:54,356 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:00:54,357 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:00:54,357 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30170448/?suggest=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:00:55,978 -  movie_spider.py[line:143] - WARNING: get 13 movie info, named None.
+2020-04-29 19:00:55,987 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#13
+{'boxInfo': ['10.27'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1263355],
+ 'movieName': ['狗眼看人心'],
+ 'releaseInfo': ['上映10天'],
+ 'seatRate': ['3.8%'],
+ 'showInfo': [1984],
+ 'showRate': ['0.7%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['9.59'],
+ 'splitSumBoxInfo': ['1676.4'],
+ 'sumBoxInfo': ['1805.9'],
+ 'yearRate': ['2019-04-29#13']}
+2020-04-29 19:00:55,996 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:00:55,996 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:00:56,022 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:00:56,023 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:00:56,027 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:00:56,027 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:00:56,906 -  movie_spider.py[line:167] - INFO: movie_name = 调音师 and movie_year = 2019-04-29 and tpp_id = 1239544
+2020-04-29 19:00:56,907 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:00:56,907 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 19:00:56,907 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/3326889/?suggest=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:00:58,877 -  movie_spider.py[line:167] - INFO: movie_name = 老师·好 and movie_year = 2019-04-29 and tpp_id = 1212492
+2020-04-29 19:00:58,953 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 19:00:58,953 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 19:00:58,953 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27663742/?suggest=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 19:01:00,740 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:01:00,741 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:01:00,766 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:01:00,767 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:01:00,776 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%8B%97%E7%9C%BC%E7%9C%8B%E4%BA%BA%E5%BF%83 has been crawled
+2020-04-29 19:01:00,777 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%8B%97%E7%9C%BC%E7%9C%8B%E4%BA%BA%E5%BF%83
+2020-04-29 19:01:00,810 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:01:00,837 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6)
+2020-04-29 19:01:00,866 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:01:00,892 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:01:00,916 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:01:00,920 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98)
+2020-04-29 19:01:00,922 -  movie_spider.py[line:143] - WARNING: get 14 movie info, named None.
+2020-04-29 19:01:00,924 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#14
+{'boxInfo': ['9.71'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1213175],
+ 'movieName': ['在乎你'],
+ 'releaseInfo': ['上映18天'],
+ 'seatRate': ['2.4%'],
+ 'showInfo': [55],
+ 'showRate': ['<0.1%'],
+ 'showView': ['26'],
+ 'splitBoxInfo': ['9.70'],
+ 'splitSumBoxInfo': ['671.7'],
+ 'sumBoxInfo': ['703.5'],
+ 'yearRate': ['2019-04-29#14']}
+2020-04-29 19:01:01,748 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0 has been crawled
+2020-04-29 19:01:01,750 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0
+2020-04-29 19:01:01,798 -  movie_spider.py[line:143] - WARNING: get 15 movie info, named None.
+2020-04-29 19:01:01,801 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#15
+{'boxInfo': ['8.33'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1238775],
+ 'movieName': ['特别追踪'],
+ 'releaseInfo': [''],
+ 'seatRate': ['41.3%'],
+ 'showInfo': [48],
+ 'showRate': ['<0.1%'],
+ 'showView': ['35'],
+ 'splitBoxInfo': ['8.31'],
+ 'splitSumBoxInfo': ['452.0'],
+ 'sumBoxInfo': ['452.2'],
+ 'yearRate': ['2019-04-29#15']}
+2020-04-29 19:01:02,682 -  movie_spider.py[line:167] - INFO: movie_name = 远去的牧歌 and movie_year = 2019-04-29 and tpp_id = 1236912
+2020-04-29 19:01:02,683 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 19:01:02,683 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:01:02,683 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30327768/?suggest=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 19:01:04,357 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:01:04,373 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88)
+2020-04-29 19:01:04,382 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44)
+2020-04-29 19:01:04,388 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD)
+2020-04-29 19:01:04,392 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88)
+2020-04-29 19:01:04,396 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%8B%97%E7%9C%BC%E7%9C%8B%E4%BA%BA%E5%BF%83> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:01:04,399 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%9C%A8%E4%B9%8E%E4%BD%A0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:01:04,401 -  movie_spider.py[line:143] - WARNING: get 16 movie info, named None.
+2020-04-29 19:01:04,404 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#16
+{'boxInfo': ['7.63'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [643506],
+ 'movieName': ['古镇画情'],
+ 'releaseInfo': ['展映'],
+ 'seatRate': ['--'],
+ 'showInfo': [68],
+ 'showRate': ['<0.1%'],
+ 'showView': ['29'],
+ 'splitBoxInfo': ['7.61'],
+ 'splitSumBoxInfo': ['1084.1'],
+ 'sumBoxInfo': ['1086.9'],
+ 'yearRate': ['2019-04-29#16']}
+2020-04-29 19:01:05,188 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85 has been crawled
+2020-04-29 19:01:05,188 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8F%A4%E9%95%87%E7%94%BB%E6%83%85
+2020-04-29 19:01:05,229 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:01:05,229 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:01:05,257 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA has been crawled
+2020-04-29 19:01:05,258 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%89%B9%E5%88%AB%E8%BF%BD%E8%B8%AA
+2020-04-29 19:01:05,284 -  movie_spider.py[line:194] - CRITICAL: crawled movie info of https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:01:05,290 -  movie_spider.py[line:198] - CRITICAL: type of data is <class 'str'>
+2020-04-29 19:01:05,290 -  movie_spider.py[line:206] - ERROR: len of movie info = 13
+2020-04-29 19:08:56,584 -  movie_spider.py[line:222] - CRITICAL: items = []
+2020-04-29 19:14:39,500 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 19:15:33,624 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 19:15:33,629 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 19:15:33,643 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 19:15:33,664 -  telnet.py[line:60] - INFO: Telnet Password: 83988ac1424b5e3f
+2020-04-29 19:15:33,688 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 19:15:33,978 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 19:15:33,989 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 19:15:33,993 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 19:15:34,012 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 19:15:34,013 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 19:15:34,053 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 19:15:34,054 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 19:15:34,055 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 19:15:34,060 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 19:15:34,063 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 19:15:34,070 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 19:15:34,075 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 19:15:34,075 -  middlewares.py[line:147] - ERROR: url = http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:15:34,299 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429> (referer: None)
+2020-04-29 19:15:35,121 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:15:35,134 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-29 19:15:35,148 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#1
+{'boxInfo': ['12541.16'],
+ 'boxRate': ['87.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [248172],
+ 'movieName': ['复仇者联盟4：终局之战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['9.8%'],
+ 'showInfo': [202937],
+ 'showRate': ['73.4%'],
+ 'showView': ['13'],
+ 'splitBoxInfo': ['11958.72'],
+ 'splitSumBoxInfo': ['224100.0'],
+ 'sumBoxInfo': ['235800.0'],
+ 'yearRate': ['2019-04-29#1']}
+2020-04-29 19:15:35,740 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98 has been crawled
+2020-04-29 19:15:35,741 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:15:35,798 -  movie_spider.py[line:143] - WARNING: get 2 movie info, named None.
+2020-04-29 19:15:35,800 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#2
+{'boxInfo': ['1246.36'],
+ 'boxRate': ['8.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1218727],
+ 'movieName': ['何以为家'],
+ 'releaseInfo': ['重映首日'],
+ 'seatRate': ['13.1%'],
+ 'showInfo': [38913],
+ 'showRate': ['14.0%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['1136.83'],
+ 'splitSumBoxInfo': ['1204.7'],
+ 'sumBoxInfo': ['1319.9'],
+ 'yearRate': ['2019-04-29#2']}
+2020-04-29 19:15:36,350 -  movie_spider.py[line:143] - WARNING: get 3 movie info, named None.
+2020-04-29 19:15:36,365 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#3
+{'boxInfo': ['181.36'],
+ 'boxRate': ['1.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映26天'],
+ 'seatRate': ['6.0%'],
+ 'showInfo': [11771],
+ 'showRate': ['4.2%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['169.18'],
+ 'splitSumBoxInfo': ['72200.0'],
+ 'sumBoxInfo': ['78200.0'],
+ 'yearRate': ['2019-04-29#3']}
+2020-04-29 19:15:36,373 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6 has been crawled
+2020-04-29 19:15:36,373 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:15:36,543 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44 has been crawled
+2020-04-29 19:15:36,544 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:15:36,594 -  movie_spider.py[line:143] - WARNING: get 4 movie info, named None.
+2020-04-29 19:15:36,596 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#4
+{'boxInfo': ['93.30'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映27天'],
+ 'seatRate': ['6.9%'],
+ 'showInfo': [5596],
+ 'showRate': ['2.0%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['85.12'],
+ 'splitSumBoxInfo': ['28300.0'],
+ 'sumBoxInfo': ['31400.0'],
+ 'yearRate': ['2019-04-29#4']}
+2020-04-29 19:15:37,409 -  movie_spider.py[line:143] - WARNING: get 5 movie info, named None.
+2020-04-29 19:15:37,415 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#5
+{'boxInfo': ['93.14'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1230152],
+ 'movieName': ['撞死了一只羊'],
+ 'releaseInfo': ['上映4天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [4140],
+ 'showRate': ['1.4%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['90.39'],
+ 'splitSumBoxInfo': ['580.4'],
+ 'sumBoxInfo': ['604.4'],
+ 'yearRate': ['2019-04-29#5']}
+2020-04-29 19:15:37,420 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88 has been crawled
+2020-04-29 19:15:37,421 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:15:37,780 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A has been crawled
+2020-04-29 19:15:37,781 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 19:15:37,824 -  movie_spider.py[line:143] - WARNING: get 6 movie info, named None.
+2020-04-29 19:15:37,827 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#6
+{'boxInfo': ['17.92'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['25.4%'],
+ 'showInfo': [58],
+ 'showRate': ['<0.1%'],
+ 'showView': ['70'],
+ 'splitBoxInfo': ['17.92'],
+ 'splitSumBoxInfo': ['918.9'],
+ 'sumBoxInfo': ['923.5'],
+ 'yearRate': ['2019-04-29#6']}
+2020-04-29 19:15:37,869 -  movie_spider.py[line:143] - WARNING: get 7 movie info, named None.
+2020-04-29 19:15:37,872 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#7
+{'boxInfo': ['16.72'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['57.6%'],
+ 'showInfo': [69],
+ 'showRate': ['<0.1%'],
+ 'showView': ['67'],
+ 'splitBoxInfo': ['16.72'],
+ 'splitSumBoxInfo': ['2027.3'],
+ 'sumBoxInfo': ['2039.7'],
+ 'yearRate': ['2019-04-29#7']}
+2020-04-29 19:15:38,165 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:15:38,166 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:38,218 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C has been crawled
+2020-04-29 19:15:38,218 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 19:15:38,253 -  movie_spider.py[line:143] - WARNING: get 8 movie info, named None.
+2020-04-29 19:15:38,256 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#8
+{'boxInfo': ['16.47'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映18天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [989],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['15.10'],
+ 'splitSumBoxInfo': ['5985.0'],
+ 'sumBoxInfo': ['6619.5'],
+ 'yearRate': ['2019-04-29#8']}
+2020-04-29 19:15:39,048 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:39,066 -  movie_spider.py[line:143] - WARNING: get 9 movie info, named None.
+2020-04-29 19:15:39,076 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#9
+{'boxInfo': ['16.45'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映25天'],
+ 'seatRate': ['16.5%'],
+ 'showInfo': [92],
+ 'showRate': ['<0.1%'],
+ 'showView': ['25'],
+ 'splitBoxInfo': ['16.45'],
+ 'splitSumBoxInfo': ['995.4'],
+ 'sumBoxInfo': ['1051.7'],
+ 'yearRate': ['2019-04-29#9']}
+2020-04-29 19:15:39,083 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6 has been crawled
+2020-04-29 19:15:39,084 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 19:15:39,503 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:39,512 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:39,519 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:39,521 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0 has been crawled
+2020-04-29 19:15:39,521 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:15:39,561 -  movie_spider.py[line:143] - WARNING: get 10 movie info, named None.
+2020-04-29 19:15:39,564 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#10
+{'boxInfo': ['14.64'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映39天'],
+ 'seatRate': ['5.8%'],
+ 'showInfo': [1089],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['13.83'],
+ 'splitSumBoxInfo': ['32600.0'],
+ 'sumBoxInfo': ['35200.0'],
+ 'yearRate': ['2019-04-29#10']}
+2020-04-29 19:15:40,087 -  movie_spider.py[line:167] - INFO: movie_name = 复仇者联盟4：终局之战 and movie_year = 2019-04-29 and tpp_id = 248172
+2020-04-29 19:15:40,088 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:15:40,089 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:15:40,089 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26100958/?suggest=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:15:41,281 -  movie_spider.py[line:143] - WARNING: get 11 movie info, named None.
+2020-04-29 19:15:41,289 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#11
+{'boxInfo': ['12.83'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211412],
+ 'movieName': ['神奇乐园历险记'],
+ 'releaseInfo': ['上映11天'],
+ 'seatRate': ['3.4%'],
+ 'showInfo': [2567],
+ 'showRate': ['0.9%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['12.00'],
+ 'splitSumBoxInfo': ['2631.8'],
+ 'sumBoxInfo': ['2825.3'],
+ 'yearRate': ['2019-04-29#11']}
+2020-04-29 19:15:41,302 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:15:41,303 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:41,333 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD has been crawled
+2020-04-29 19:15:41,333 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 19:15:41,367 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:41,370 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:41,589 -  movie_spider.py[line:167] - INFO: movie_name = 反贪风暴4 and movie_year = 2019-04-29 and tpp_id = 1211727
+2020-04-29 19:15:41,590 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:15:41,590 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:15:41,590 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:15:43,500 -  movie_spider.py[line:167] - INFO: movie_name = 祈祷落幕时 and movie_year = 2019-04-29 and tpp_id = 1205909
+2020-04-29 19:15:43,500 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 19:15:43,501 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:15:43,501 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27040737/?suggest=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 19:15:44,888 -  movie_spider.py[line:167] - INFO: movie_name = 何以为家 and movie_year = 2019-04-29 and tpp_id = 1218727
+2020-04-29 19:15:44,889 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:15:44,889 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:15:44,889 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30170448/?suggest=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:15:46,608 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:15:46,609 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:46,669 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:15:46,669 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:46,695 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:15:46,695 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:46,721 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0 has been crawled
+2020-04-29 19:15:46,721 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:15:46,749 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:46,758 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98)
+2020-04-29 19:15:46,763 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:46,771 -  movie_spider.py[line:143] - WARNING: get 12 movie info, named None.
+2020-04-29 19:15:46,773 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#12
+{'boxInfo': ['11.14'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [165],
+ 'showRate': ['<0.1%'],
+ 'showView': ['23'],
+ 'splitBoxInfo': ['11.09'],
+ 'splitSumBoxInfo': ['1958.0'],
+ 'sumBoxInfo': ['1964.8'],
+ 'yearRate': ['2019-04-29#12']}
+2020-04-29 19:15:47,623 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2 has been crawled
+2020-04-29 19:15:47,623 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-29 19:15:47,663 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6)
+2020-04-29 19:15:47,671 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6)
+2020-04-29 19:15:47,672 -  movie_spider.py[line:167] - INFO: movie_name = 调音师 and movie_year = 2019-04-29 and tpp_id = 1239544
+2020-04-29 19:15:47,672 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:15:47,672 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 19:15:47,672 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/3326889/?suggest=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:15:49,530 -  movie_spider.py[line:167] - INFO: movie_name = 青蛙王子历险记 and movie_year = 2019-04-29 and tpp_id = 1229702
+2020-04-29 19:15:49,530 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:15:49,531 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:15:49,531 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30288751/?suggest=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:15:50,569 -  movie_spider.py[line:143] - WARNING: get 13 movie info, named None.
+2020-04-29 19:15:50,577 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#13
+{'boxInfo': ['10.27'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1263355],
+ 'movieName': ['狗眼看人心'],
+ 'releaseInfo': ['上映10天'],
+ 'seatRate': ['3.8%'],
+ 'showInfo': [1984],
+ 'showRate': ['0.7%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['9.59'],
+ 'splitSumBoxInfo': ['1676.4'],
+ 'sumBoxInfo': ['1805.9'],
+ 'yearRate': ['2019-04-29#13']}
+2020-04-29 19:15:50,597 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:15:50,598 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:50,629 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:15:50,630 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:50,661 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:50,664 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:50,667 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:50,670 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:15:50,821 -  movie_spider.py[line:167] - INFO: movie_name = 撞死了一只羊 and movie_year = 2019-04-29 and tpp_id = 1230152
+2020-04-29 19:15:50,822 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 19:15:50,822 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:15:50,822 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30283179/?suggest=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 19:15:52,554 -  movie_spider.py[line:194] - CRITICAL: crawled movie info of https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:15:52,578 -  movie_spider.py[line:198] - CRITICAL: type of data is <class 'str'>
+2020-04-29 19:15:52,579 -  movie_spider.py[line:206] - ERROR: len of movie info = 13
+2020-04-29 19:15:58,211 -  movie_spider.py[line:224] - CRITICAL: items = []
+2020-04-29 19:16:16,572 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-04-29 19:16:34,745 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-04-29 19:16:34,750 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-04-29 19:16:34,768 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-04-29 19:16:34,785 -  telnet.py[line:60] - INFO: Telnet Password: 129730ab00285bb9
+2020-04-29 19:16:34,808 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 19:16:35,082 -  middlewares.py[line:135] - ERROR: start to use judge duplicate
+2020-04-29 19:16:35,092 -  middleware.py[line:48] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movie.middlewares.DuplicateMiddleware',
+ 'movie.middlewares.UserAgentMiddleware',
+ 'movie.middlewares.MovieDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 19:16:35,096 -  middleware.py[line:48] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'movie.middlewares.MovieSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 19:16:35,114 -  pipelines.py[line:16] - ERROR: start to use judge duplicate
+2020-04-29 19:16:35,114 -  pipelines.py[line:62] - ERROR: setting: custom boxOffice setting
+2020-04-29 19:16:35,150 -  pipelines.py[line:58] - ERROR: pipeline init
+2020-04-29 19:16:35,150 -  middleware.py[line:48] - INFO: Enabled item pipelines:
+['movie.pipelines.BoxOfficePipeline', 'movie.pipelines.MySQLPipeline']
+2020-04-29 19:16:35,150 -  engine.py[line:257] - INFO: Spider opened
+2020-04-29 19:16:35,153 -  logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 19:16:35,155 -  telnet.py[line:74] - INFO: Telnet console listening on 127.0.0.1:6024
+2020-04-29 19:16:35,166 -  movie_spider.py[line:96] - ERROR: boxOffice start request for url = http://piaofang.maoyan.com/dashboard-ajax/movie?
+2020-04-29 19:16:35,171 -  middlewares.py[line:145] - ERROR: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429 has been crawled
+2020-04-29 19:16:35,171 -  middlewares.py[line:147] - ERROR: url = http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:16:35,446 -  engine.py[line:239] - DEBUG: Crawled (200) <GET http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429> (referer: None)
+2020-04-29 19:16:35,965 -  movie_spider.py[line:115] - ERROR: now crawl url : http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429
+2020-04-29 19:16:35,980 -  movie_spider.py[line:143] - WARNING: get 1 movie info, named None.
+2020-04-29 19:16:35,993 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#1
+{'boxInfo': ['12541.16'],
+ 'boxRate': ['87.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [248172],
+ 'movieName': ['复仇者联盟4：终局之战'],
+ 'releaseInfo': ['上映6天'],
+ 'seatRate': ['9.8%'],
+ 'showInfo': [202937],
+ 'showRate': ['73.4%'],
+ 'showView': ['13'],
+ 'splitBoxInfo': ['11958.72'],
+ 'splitSumBoxInfo': ['224100.0'],
+ 'sumBoxInfo': ['235800.0'],
+ 'yearRate': ['2019-04-29#1']}
+2020-04-29 19:16:36,287 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98 has been crawled
+2020-04-29 19:16:36,287 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:16:36,332 -  movie_spider.py[line:143] - WARNING: get 2 movie info, named None.
+2020-04-29 19:16:36,335 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#2
+{'boxInfo': ['1246.36'],
+ 'boxRate': ['8.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1218727],
+ 'movieName': ['何以为家'],
+ 'releaseInfo': ['重映首日'],
+ 'seatRate': ['13.1%'],
+ 'showInfo': [38913],
+ 'showRate': ['14.0%'],
+ 'showView': ['11'],
+ 'splitBoxInfo': ['1136.83'],
+ 'splitSumBoxInfo': ['1204.7'],
+ 'sumBoxInfo': ['1319.9'],
+ 'yearRate': ['2019-04-29#2']}
+2020-04-29 19:16:36,442 -  movie_spider.py[line:143] - WARNING: get 3 movie info, named None.
+2020-04-29 19:16:36,452 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#3
+{'boxInfo': ['181.36'],
+ 'boxRate': ['1.2%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211727],
+ 'movieName': ['反贪风暴4'],
+ 'releaseInfo': ['上映26天'],
+ 'seatRate': ['6.0%'],
+ 'showInfo': [11771],
+ 'showRate': ['4.2%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['169.18'],
+ 'splitSumBoxInfo': ['72200.0'],
+ 'sumBoxInfo': ['78200.0'],
+ 'yearRate': ['2019-04-29#3']}
+2020-04-29 19:16:36,466 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6 has been crawled
+2020-04-29 19:16:36,467 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:16:37,436 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44 has been crawled
+2020-04-29 19:16:37,436 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:16:37,488 -  movie_spider.py[line:143] - WARNING: get 4 movie info, named None.
+2020-04-29 19:16:37,491 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#4
+{'boxInfo': ['93.30'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1239544],
+ 'movieName': ['调音师'],
+ 'releaseInfo': ['上映27天'],
+ 'seatRate': ['6.9%'],
+ 'showInfo': [5596],
+ 'showRate': ['2.0%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['85.12'],
+ 'splitSumBoxInfo': ['28300.0'],
+ 'sumBoxInfo': ['31400.0'],
+ 'yearRate': ['2019-04-29#4']}
+2020-04-29 19:16:38,197 -  movie_spider.py[line:143] - WARNING: get 5 movie info, named None.
+2020-04-29 19:16:38,202 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#5
+{'boxInfo': ['93.14'],
+ 'boxRate': ['0.6%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1230152],
+ 'movieName': ['撞死了一只羊'],
+ 'releaseInfo': ['上映4天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [4140],
+ 'showRate': ['1.4%'],
+ 'showView': ['6'],
+ 'splitBoxInfo': ['90.39'],
+ 'splitSumBoxInfo': ['580.4'],
+ 'sumBoxInfo': ['604.4'],
+ 'yearRate': ['2019-04-29#5']}
+2020-04-29 19:16:38,208 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88 has been crawled
+2020-04-29 19:16:38,208 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:16:38,924 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A has been crawled
+2020-04-29 19:16:38,925 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 19:16:38,979 -  movie_spider.py[line:143] - WARNING: get 6 movie info, named None.
+2020-04-29 19:16:38,982 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#6
+{'boxInfo': ['17.92'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1236912],
+ 'movieName': ['远去的牧歌'],
+ 'releaseInfo': [''],
+ 'seatRate': ['25.4%'],
+ 'showInfo': [58],
+ 'showRate': ['<0.1%'],
+ 'showView': ['70'],
+ 'splitBoxInfo': ['17.92'],
+ 'splitSumBoxInfo': ['918.9'],
+ 'sumBoxInfo': ['923.5'],
+ 'yearRate': ['2019-04-29#6']}
+2020-04-29 19:16:39,341 -  movie_spider.py[line:143] - WARNING: get 7 movie info, named None.
+2020-04-29 19:16:39,347 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#7
+{'boxInfo': ['16.72'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1228750],
+ 'movieName': ['照相师'],
+ 'releaseInfo': [''],
+ 'seatRate': ['57.6%'],
+ 'showInfo': [69],
+ 'showRate': ['<0.1%'],
+ 'showView': ['67'],
+ 'splitBoxInfo': ['16.72'],
+ 'splitSumBoxInfo': ['2027.3'],
+ 'sumBoxInfo': ['2039.7'],
+ 'yearRate': ['2019-04-29#7']}
+2020-04-29 19:16:39,352 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C has been crawled
+2020-04-29 19:16:39,352 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C
+2020-04-29 19:16:39,776 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:39,784 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:16:39,785 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:39,820 -  movie_spider.py[line:143] - WARNING: get 8 movie info, named None.
+2020-04-29 19:16:39,822 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#8
+{'boxInfo': ['16.47'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1205909],
+ 'movieName': ['祈祷落幕时'],
+ 'releaseInfo': ['上映18天'],
+ 'seatRate': ['6.7%'],
+ 'showInfo': [989],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['15.10'],
+ 'splitSumBoxInfo': ['5985.0'],
+ 'sumBoxInfo': ['6619.5'],
+ 'yearRate': ['2019-04-29#8']}
+2020-04-29 19:16:40,729 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:40,745 -  movie_spider.py[line:143] - WARNING: get 9 movie info, named None.
+2020-04-29 19:16:40,751 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#9
+{'boxInfo': ['16.45'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1229702],
+ 'movieName': ['青蛙王子历险记'],
+ 'releaseInfo': ['上映25天'],
+ 'seatRate': ['16.5%'],
+ 'showInfo': [92],
+ 'showRate': ['<0.1%'],
+ 'showView': ['25'],
+ 'splitBoxInfo': ['16.45'],
+ 'splitSumBoxInfo': ['995.4'],
+ 'sumBoxInfo': ['1051.7'],
+ 'yearRate': ['2019-04-29#9']}
+2020-04-29 19:16:40,762 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6 has been crawled
+2020-04-29 19:16:40,763 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 19:16:40,956 -  movie_spider.py[line:167] - INFO: movie_name = 复仇者联盟4：终局之战 and movie_year = 2019-04-29 and tpp_id = 248172
+2020-04-29 19:16:40,957 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:16:40,957 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:16:40,958 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/26100958/?suggest=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98
+2020-04-29 19:16:42,212 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:42,217 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:42,221 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:42,226 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:16:42,226 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:42,257 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0 has been crawled
+2020-04-29 19:16:42,257 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:16:42,294 -  movie_spider.py[line:143] - WARNING: get 10 movie info, named None.
+2020-04-29 19:16:42,297 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#10
+{'boxInfo': ['14.64'],
+ 'boxRate': ['0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1212492],
+ 'movieName': ['老师·好'],
+ 'releaseInfo': ['重映39天'],
+ 'seatRate': ['5.8%'],
+ 'showInfo': [1089],
+ 'showRate': ['0.3%'],
+ 'showView': ['5'],
+ 'splitBoxInfo': ['13.83'],
+ 'splitSumBoxInfo': ['32600.0'],
+ 'sumBoxInfo': ['35200.0'],
+ 'yearRate': ['2019-04-29#10']}
+2020-04-29 19:16:42,996 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:42,998 -  movie_spider.py[line:167] - INFO: movie_name = 何以为家 and movie_year = 2019-04-29 and tpp_id = 1218727
+2020-04-29 19:16:42,998 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:16:42,999 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:16:42,999 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30170448/?suggest=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6
+2020-04-29 19:16:44,379 -  movie_spider.py[line:143] - WARNING: get 11 movie info, named None.
+2020-04-29 19:16:44,388 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#11
+{'boxInfo': ['12.83'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [1211412],
+ 'movieName': ['神奇乐园历险记'],
+ 'releaseInfo': ['上映11天'],
+ 'seatRate': ['3.4%'],
+ 'showInfo': [2567],
+ 'showRate': ['0.9%'],
+ 'showView': ['2'],
+ 'splitBoxInfo': ['12.00'],
+ 'splitSumBoxInfo': ['2631.8'],
+ 'sumBoxInfo': ['2825.3'],
+ 'yearRate': ['2019-04-29#11']}
+2020-04-29 19:16:44,402 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:16:44,402 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:44,431 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD has been crawled
+2020-04-29 19:16:44,431 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD
+2020-04-29 19:16:44,472 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:44,478 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F4%EF%BC%9A%E7%BB%88%E5%B1%80%E4%B9%8B%E6%88%98)
+2020-04-29 19:16:44,481 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90%E5%8E%86%E9%99%A9%E8%AE%B0> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:45,412 -  movie_spider.py[line:167] - INFO: movie_name = 祈祷落幕时 and movie_year = 2019-04-29 and tpp_id = 1205909
+2020-04-29 19:16:45,412 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 19:16:45,412 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:16:45,413 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27040737/?suggest=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6
+2020-04-29 19:16:47,111 -  movie_spider.py[line:167] - INFO: movie_name = 反贪风暴4 and movie_year = 2019-04-29 and tpp_id = 1211727
+2020-04-29 19:16:47,112 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:16:47,112 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:16:47,112 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/27202819/?suggest=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44
+2020-04-29 19:16:48,577 -  movie_spider.py[line:167] - INFO: movie_name = 照相师 and movie_year = 2019-04-29 and tpp_id = 1228750
+2020-04-29 19:16:48,578 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:48,579 -  movie_spider.py[line:173] - INFO: len of text is 2
+2020-04-29 19:16:48,579 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:50,023 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:16:50,023 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:50,077 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:16:50,077 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:50,103 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:16:50,103 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:50,129 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0 has been crawled
+2020-04-29 19:16:50,130 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E7%A5%9E%E5%A5%87%E4%B9%90%E5%9B%AD%E5%8E%86%E9%99%A9%E8%AE%B0
+2020-04-29 19:16:50,163 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6)
+2020-04-29 19:16:50,166 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%80%81%E5%B8%88%C2%B7%E5%A5%BD> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:50,167 -  movie_spider.py[line:167] - INFO: movie_name = 调音师 and movie_year = 2019-04-29 and tpp_id = 1239544
+2020-04-29 19:16:50,167 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:16:50,167 -  movie_spider.py[line:173] - INFO: len of text is 6
+2020-04-29 19:16:50,167 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/3326889/?suggest=%E8%B0%83%E9%9F%B3%E5%B8%88
+2020-04-29 19:16:51,196 -  movie_spider.py[line:143] - WARNING: get 12 movie info, named None.
+2020-04-29 19:16:51,198 -  scraper.py[line:229] - WARNING: Dropped: Duplicate item found :2019-04-29#12
+{'boxInfo': ['11.14'],
+ 'boxRate': ['<0.1%'],
+ 'crawlDate': ['2019-04-29'],
+ 'movieID': [330115],
+ 'movieName': ['我和神马查干'],
+ 'releaseInfo': [''],
+ 'seatRate': ['--'],
+ 'showInfo': [165],
+ 'showRate': ['<0.1%'],
+ 'showView': ['23'],
+ 'splitBoxInfo': ['11.09'],
+ 'splitSumBoxInfo': ['1958.0'],
+ 'sumBoxInfo': ['1964.8'],
+ 'yearRate': ['2019-04-29#12']}
+2020-04-29 19:16:51,564 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2 has been crawled
+2020-04-29 19:16:51,565 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/j/subject_suggest?q=%E6%88%91%E5%92%8C%E7%A5%9E%E9%A9%AC%E6%9F%A5%E5%B9%B2
+2020-04-29 19:16:51,599 -  middlewares.py[line:145] - ERROR: https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88 has been crawled
+2020-04-29 19:16:51,600 -  middlewares.py[line:147] - ERROR: url = https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:51,627 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/j/subject_suggest?q=%E8%BF%9C%E5%8E%BB%E7%9A%84%E7%89%A7%E6%AD%8C> (referer: http://piaofang.maoyan.com/dashboard-ajax/movie?showDate=20190429)
+2020-04-29 19:16:51,631 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E7%85%A7%E7%9B%B8%E5%B8%88)
+2020-04-29 19:16:51,634 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E5%8F%8D%E8%B4%AA%E9%A3%8E%E6%9A%B44)
+2020-04-29 19:16:51,637 -  engine.py[line:239] - DEBUG: Crawled (200) <GET https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88> (referer: https://movie.douban.com/j/subject_suggest?q=%E7%A5%88%E7%A5%B7%E8%90%BD%E5%B9%95%E6%97%B6)
+2020-04-29 19:16:51,653 -  movie_spider.py[line:167] - INFO: movie_name = 撞死了一只羊 and movie_year = 2019-04-29 and tpp_id = 1230152
+2020-04-29 19:16:51,653 -  movie_spider.py[line:172] - INFO: the url is https://movie.douban.com/j/subject_suggest?q=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 19:16:51,653 -  movie_spider.py[line:173] - INFO: len of text is 1
+2020-04-29 19:16:51,653 -  movie_spider.py[line:187] - ERROR: get movie info url = https://movie.douban.com/subject/30283179/?suggest=%E6%92%9E%E6%AD%BB%E4%BA%86%E4%B8%80%E5%8F%AA%E7%BE%8A
+2020-04-29 19:16:53,598 -  movie_spider.py[line:194] - CRITICAL: crawled movie info of https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88
+2020-04-29 19:16:53,609 -  movie_spider.py[line:198] - CRITICAL: type of data is <class 'str'>
+2020-04-29 19:16:53,609 -  movie_spider.py[line:206] - ERROR: len of movie info = 13
+2020-04-29 19:16:56,110 -  movie_spider.py[line:225] - CRITICAL: items = []
+2020-04-29 19:17:02,776 -  crawler.py[line:276] - INFO: Received SIGINT, shutting down gracefully. Send again to force 

@@ -50,6 +50,19 @@ def get_random_headers():
     return {'User-Agent': str(UserAgent().random)}
 
 
+def get_data_with_none(data, t):
+    def get_default(t):
+        if t is str:
+            return ""
+        elif t is int:
+            return 0
+        elif t is float:
+            return 0.0
+        elif t is list:
+            return []
+    return get_default(t) if data is None else data
+
+
 class MovieSpider(scrapy.Spider):
     name = "movie"
     custom_settings = {
@@ -116,8 +129,8 @@ class MovieSpider(scrapy.Spider):
         item_loader = ItemLoader(item=BoxOfficeItem(), response=response)
         text = json.loads(response.text)
 
-        query_date = text.get('calendar').get('selectDate')
-        for i, movie_info in enumerate(text.get('movieList').get('list')):
+        query_date = get_data_with_none(text.get('calendar').get('selectDate'), str)
+        for i, movie_info in enumerate(get_data_with_none(text.get('movieList').get('list'), list)):
             if i == 30:
                 break
             field_map = {
@@ -186,6 +199,7 @@ class MovieSpider(scrapy.Spider):
             return
         logger.error(f"get movie info url = {movie_url}")
         time.sleep(random.uniform(1, 2))
+        movie_url = 'https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88'
         yield scrapy.Request(url=movie_url, cookies=self.cookies, callback=self.parse_movie_info, dont_filter=True,
                              cb_kwargs=dict(tpp_id=tpp_id))
 
@@ -197,18 +211,22 @@ class MovieSpider(scrapy.Spider):
         logger.critical(f"type of data is {type(data)}")
         try:
             text = json.loads(data)
-        except json.decoder.JSONDecodeError:
-            logger.error(f"json decode error in url = {response.url}")
+        except json.decoder.JSONDecodeError as de:
+            logger.error(f"json decode error {de} in url = {response.url}")
         finally:
             text = json.loads(data)
 
         logger.error(f"len of movie info = {len(text)}")
         item_loader.replace_value('movieName', text.get('name'))
+        item_loader.replace_value('movieName', get_data_with_none(text.get('name'), str))
         item_loader.replace_value('dbMovieID', text.get('url')[9: -1])
         item_loader.replace_value('tppMovieID', tpp_id)
 
         def get_name_list(parent):
-            return [child.get('name').split(' ')[0] for child in text.get(parent)][:10]
+            if text.get(parent) is None:
+                return [""]
+            result = [child.get('name').split(' ')[0] for child in text.get(parent)][:10]
+            return result if len(result) else [""]
 
         def get_person_info(parent):
             logger.info(f"start to crawl person")
@@ -218,6 +236,8 @@ class MovieSpider(scrapy.Spider):
                 person_item_loader.replace_value('identity', parent)
                 yield person_item_loader.load_item()
 
+        logger.critical(f"items = {get_name_list('actor')}")
+        print(f"items = {get_name_list('actor')}")
         item_loader.replace_value('directors', get_name_list('director'))
         item_loader.replace_value('writers', get_name_list('author'))
         item_loader.replace_value('actors', get_name_list('actor'))
