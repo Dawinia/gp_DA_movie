@@ -114,7 +114,7 @@ class MovieSpider(scrapy.Spider):
         time.sleep(random.uniform(0, 1))
         logger.error(f"now crawl url : {response.url}")
         item_loader = ItemLoader(item=BoxOfficeItem(), response=response)
-        text = json.loads(response.text)
+        text = json.loads(response.text, strict=False)
 
         query_date = text.get('calendar', []).get('selectDate', "")
         for i, movie_info in enumerate(text.get('movieList', []).get('list', [])):
@@ -168,7 +168,7 @@ class MovieSpider(scrapy.Spider):
         if len(movie_name) == 0 or len(movie_year) == 0:
             logger.error(f"kwargs not assign")
             return
-        text = json.loads(response.text)
+        text = json.loads(response.text, strict=False)
         logger.info(f"the url is {response.url}")
         logger.info(f"len of text is {len(text)}")
         if len(text) == 0:
@@ -176,19 +176,18 @@ class MovieSpider(scrapy.Spider):
             return
         movie_url = ""
         for detail in text:
-            if 'episode' in detail and len(detail.get('episode', [])):
+            if len(detail.get('episode', '')):
                 continue
             # if detail.get('title', '') == movie_name and detail.get('year', '') == movie_year[:4]:
             if detail.get('title', '') == movie_name:
                 movie_url = detail.get('url', '')
-        if len(movie_url) == 0:
-            logger.error(f"url wrong that url = {movie_url}")
-            return
-        logger.error(f"get movie info url = {movie_url}")
-        time.sleep(random.uniform(1, 2))
-        movie_url = 'https://movie.douban.com/subject/34970135/?suggest=%E7%85%A7%E7%9B%B8%E5%B8%88'
-        yield scrapy.Request(url=movie_url, cookies=self.cookies, callback=self.parse_movie_info, dont_filter=True,
-                             cb_kwargs=dict(tpp_id=tpp_id))
+            if len(movie_url) == 0:
+                logger.error(f"url wrong that url = {movie_url}")
+                continue
+            logger.info(f"get movie info url = {movie_url}")
+            yield scrapy.Request(url=movie_url, cookies=self.cookies, callback=self.parse_movie_info, dont_filter=True,
+                                 cb_kwargs=dict(tpp_id=tpp_id))
+            time.sleep(random.uniform(1, 2))
 
     def parse_movie_info(self, response, tpp_id):
         logger.critical(f"crawled movie info of {response.url}")
@@ -197,11 +196,12 @@ class MovieSpider(scrapy.Spider):
         data = response.xpath("//script[@type='application/ld+json']/text()").extract()[0]
         logger.critical(f"type of data is {type(data)}")
         try:
-            text = json.loads(data)
+            text = json.loads(data, strict=False)
         except json.decoder.JSONDecodeError as de:
+            print(de)
             logger.error(f"json decode error {de} in url = {response.url}")
         finally:
-            text = json.loads(data)
+            text = json.loads(data, strict=False)
 
         logger.error(f"len of movie info = {len(text)}")
         item_loader.replace_value('movieName', text.get('name', ''))
@@ -234,8 +234,8 @@ class MovieSpider(scrapy.Spider):
         item_loader.replace_value('area', re.findall(pattern, info))
         item_loader.replace_value('duration', text.get('duration', ''))
         item_loader.replace_value('publishedDate', text.get('datePublished', ''))
-        item_loader.replace_value('rateCount', text.get('aggregateRating', []).get('ratingCount', ''))
-        item_loader.replace_value('doubanRate', text.get('aggregateRating', []).get('ratingValue', ''))
+        item_loader.replace_value('rateCount', text.get('aggregateRating', []).get('ratingCount', '0.0'))
+        item_loader.replace_value('doubanRate', text.get('aggregateRating', []).get('ratingValue', '0.0'))
 
         yield item_loader.load_item()
 

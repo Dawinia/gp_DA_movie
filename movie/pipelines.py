@@ -9,6 +9,8 @@ from movie.dao import MySQLHelper, RedisHelper
 from movie.dao.databasetable import BoxOfficeTableTemplate, MovieInfoTableTemplate, PersonTableTemplate
 from movie.spiders.movie_spider import logger
 from movie.items import BoxOfficeItem, MovieCommentItem, MovieInfoItem, PersonInfoItem
+from sqlalchemy.exc import InvalidRequestError
+from sqlalchemy.orm import session
 
 
 class BoxOfficePipeline(object):
@@ -53,7 +55,7 @@ class BoxOfficePipeline(object):
 
 class MySQLPipeline(object):
     def __init__(self, mysql_helper: MySQLHelper):
-        self.session = mysql_helper.get_session()
+        self.session: session = mysql_helper.get_session()
         self.id_seen = set()
         logger.error(f"pipeline init")
 
@@ -81,4 +83,8 @@ class MySQLPipeline(object):
         # elif isinstance(item, MovieCommentItem):
         #     self.session.add(MovieCommentTableTemplate(**item))
         logger.warning(f"insert database finished")
-        self.session.commit()
+        try:
+            self.session.commit()
+        except InvalidRequestError:
+            logger.error(f"something wrong occur, session rollback")
+            self.session.rollback()

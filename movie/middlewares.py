@@ -143,7 +143,7 @@ class DuplicateMiddleware(object):
         new_url = md5_obj.hexdigest()
         if self.conn.sadd(self.key, new_url) == 0:
             logger.error(f"{request.url} has been crawled")
-            # raise IgnoreRequest(f"{request.url} has been crawled")
+            raise IgnoreRequest(f"{request.url} has been crawled")
         logger.error(f"url = {request.url}")
         return None
 
