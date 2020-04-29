@@ -34,7 +34,7 @@ class BoxOfficePipeline(object):
         #     raise DropItem(f"Duplicate item found :{item}")
         # else:
         #     self.id_seen.add(item['movie_id'])
-        key, value = 'default', 'default'
+        # key, value = 'default', 'default'
         if isinstance(item, BoxOfficeItem):
             key, value = 'boxOffice', item['yearRate'][0]
         elif isinstance(item, MovieInfoItem):
@@ -45,7 +45,7 @@ class BoxOfficePipeline(object):
             key, value = 'default', 'default'
 
         if not self.conn.sadd(key, value):
-            raise DropItem(f"Duplicate item found :{item}")
+            raise DropItem(f"Duplicate item found :{value}")
         else:
             logger.info(f"item is new")
             return item

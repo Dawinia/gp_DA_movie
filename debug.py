@@ -28,8 +28,13 @@ def get_minute(time: str):
 print(get_minute('PT1H36M'))
 
 con = redis.StrictRedis(host='localhost', port=6379, password='movie')
-con.set('hello', 'world')
-if not con.sadd('movieInfo', '27663743'):
-    print(f"existed -- {con.smembers('movieInfo')}")
-else:
-    print(f"success")
+# con.set('hello', 'world')
+# if not con.sadd('movieInfo', '27663743'):
+#     print(f"existed -- {con.smembers('movieInfo')}")
+# else:
+#     print(f"success")
+print(f"{len(con.smembers('url_seen'))}")
+print(f"{con.sadd('url_seen', 'test')}")
+print(f"{len(con.smembers('url_seen'))}")
+print(f"{con.smembers('url_seen')}")
+

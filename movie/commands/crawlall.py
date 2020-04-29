@@ -51,7 +51,6 @@ class Command(ScrapyCommand):
         # for i in queue.get():
         #     print(i)
         d = self.run_spider("scrapy", "crawl", "boxOffice")
-        d = self.run_spider("scrapy", "crawl", "movieComment")
         # d.addCallback(lambda _: reactor.stop())
         reactor.run()
 
