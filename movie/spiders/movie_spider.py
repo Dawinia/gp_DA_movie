@@ -50,19 +50,6 @@ def get_random_headers():
     return {'User-Agent': str(UserAgent().random)}
 
 
-def get_data_with_none(data, t):
-    def get_default(t):
-        if t is str:
-            return ""
-        elif t is int:
-            return 0
-        elif t is float:
-            return 0.0
-        elif t is list:
-            return []
-    return get_default(t) if data is None else data
-
-
 class MovieSpider(scrapy.Spider):
     name = "movie"
     custom_settings = {
@@ -129,31 +116,31 @@ class MovieSpider(scrapy.Spider):
         item_loader = ItemLoader(item=BoxOfficeItem(), response=response)
         text = json.loads(response.text)
 
-        query_date = get_data_with_none(text.get('calendar').get('selectDate'), str)
-        for i, movie_info in enumerate(get_data_with_none(text.get('movieList').get('list'), list)):
+        query_date = text.get('calendar', []).get('selectDate', "")
+        for i, movie_info in enumerate(text.get('movieList', []).get('list', [])):
             if i == 30:
                 break
             field_map = {
                 'seatRate': 'avgSeatView',
                 'boxRate': 'boxRate',
-                'showInfo': 'showCount',
                 'showRate': 'showCountRate',
                 'splitSumBoxInfo': 'sumSplitBoxDesc',
                 'sumBoxInfo': 'sumBoxDesc',
                 'showView': 'avgShowView'
             }
-            movie_name = movie_info.get('movieInfo').get('movieName')
-            movie_id = movie_info.get('movieInfo').get('movieId')
+            movie_name = movie_info.get('movieInfo', []).get('movieName')
+            movie_id = movie_info.get('movieInfo', []).get('movieId')
             for field, json_attr in field_map.items():
-                item_loader.replace_value(field, movie_info.get(json_attr))
+                item_loader.replace_value(field, movie_info.get(json_attr, ''))
             item_loader.replace_value('movieID', movie_id)
             item_loader.replace_value('movieName', movie_name)
-            item_loader.replace_value('releaseInfo', movie_info.get('movieInfo').get('releaseInfo'))
-            item_loader.replace_value('boxInfo', movie_info.get('boxSplitUnit').get('num'))
-            item_loader.replace_value('splitBoxInfo', movie_info.get('splitBoxSplitUnit').get('num'))
+            item_loader.replace_value('releaseInfo', movie_info.get('movieInfo', []).get('releaseInfo', ""))
+            item_loader.replace_value('showInfo', movie_info.get('showCount', 0))
+            item_loader.replace_value('boxInfo', movie_info.get('boxSplitUnit', []).get('num', ""))
+            item_loader.replace_value('splitBoxInfo', movie_info.get('splitBoxSplitUnit', []).get('num', ""))
             item_loader.replace_value('crawlDate', query_date)
             item_loader.replace_value('yearRate', get_year_rate(query_date, i + 1))
-            logger.warning(f"get {i + 1} movie info, named {movie_info.get('movieName')}.")
+            logger.warning(f"get {i + 1} movie info, named {movie_info.get('movieName', '')}.")
             # logger.error(f"boxOffice spider put {movie_info.get('movieName')} into queue")
             yield item_loader.load_item()
 
@@ -189,11 +176,11 @@ class MovieSpider(scrapy.Spider):
             return
         movie_url = ""
         for detail in text:
-            if 'episode' in detail and len(detail.get('episode')):
+            if 'episode' in detail and len(detail.get('episode', [])):
                 continue
             # if detail.get('title', '') == movie_name and detail.get('year', '') == movie_year[:4]:
             if detail.get('title', '') == movie_name:
-                movie_url = detail.get('url')
+                movie_url = detail.get('url', '')
         if len(movie_url) == 0:
             logger.error(f"url wrong that url = {movie_url}")
             return
@@ -217,22 +204,20 @@ class MovieSpider(scrapy.Spider):
             text = json.loads(data)
 
         logger.error(f"len of movie info = {len(text)}")
-        item_loader.replace_value('movieName', text.get('name'))
-        item_loader.replace_value('movieName', get_data_with_none(text.get('name'), str))
-        item_loader.replace_value('dbMovieID', text.get('url')[9: -1])
+        item_loader.replace_value('movieName', text.get('name', ''))
+        item_loader.replace_value('movieName', text.get('name', ''))
+        item_loader.replace_value('dbMovieID', text.get('url', '')[9: -1])
         item_loader.replace_value('tppMovieID', tpp_id)
 
         def get_name_list(parent):
-            if text.get(parent) is None:
-                return [""]
-            result = [child.get('name').split(' ')[0] for child in text.get(parent)][:10]
+            result = [child.get('name', '').split(' ')[0] for child in text.get(parent, [])][:10]
             return result if len(result) else [""]
 
         def get_person_info(parent):
             logger.info(f"start to crawl person")
-            for detail in text.get(parent):
-                person_item_loader.replace_value('name', detail.get('name'))
-                person_item_loader.replace_value('url', detail.get('url'))
+            for detail in text.get(parent, []):
+                person_item_loader.replace_value('name', detail.get('name', ''))
+                person_item_loader.replace_value('url', detail.get('url', ''))
                 person_item_loader.replace_value('identity', parent)
                 yield person_item_loader.load_item()
 
@@ -242,15 +227,15 @@ class MovieSpider(scrapy.Spider):
         item_loader.replace_value('writers', get_name_list('author'))
         item_loader.replace_value('actors', get_name_list('actor'))
 
-        item_loader.replace_value('genre', text.get('genre'))
+        item_loader.replace_value('genre', text.get('genre', ''))
 
         info = response.xpath('//*[@id="info"]').get()
         pattern = '<span class="pl">制片国家/地区:</span>(.*?)<br>'
         item_loader.replace_value('area', re.findall(pattern, info))
-        item_loader.replace_value('duration', text.get('duration'))
-        item_loader.replace_value('publishedDate', text.get('datePublished'))
-        item_loader.replace_value('rateCount', text.get('aggregateRating').get('ratingCount'))
-        item_loader.replace_value('doubanRate', text.get('aggregateRating').get('ratingValue'))
+        item_loader.replace_value('duration', text.get('duration', ''))
+        item_loader.replace_value('publishedDate', text.get('datePublished', ''))
+        item_loader.replace_value('rateCount', text.get('aggregateRating', []).get('ratingCount', ''))
+        item_loader.replace_value('doubanRate', text.get('aggregateRating', []).get('ratingValue', ''))
 
         yield item_loader.load_item()
 
