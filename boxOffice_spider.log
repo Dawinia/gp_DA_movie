@@ -3161,3 +3161,472 @@ json.decoder.JSONDecodeError: Invalid control character at: line 271 column 71 (
  'scheduler/enqueued/memory': 1,
  'start_time': datetime.datetime(2020, 4, 29, 17, 8, 0, 78562)}
 2020-04-30 01:08:00,288 -  engine.py[line:327] - INFO: Spider closed (finished)
+2020-05-01 00:19:58,502 -  log.py[line:146] - INFO: Scrapy 1.8.0 started (bot: movie)
+2020-05-01 00:19:58,606 -  log.py[line:149] - INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48) - [GCC 7.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.8, Platform Linux-5.3.0-51-generic-x86_64-with-debian-buster-sid
+2020-05-01 00:19:58,619 -  crawler.py[line:49] - INFO: Overridden settings: {'BOT_NAME': 'movie', 'COMMANDS_MODULE': 'movie.commands', 'LOG_LEVEL': 'WARNING', 'NEWSPIDER_MODULE': 'movie.spiders', 'SPIDER_MODULES': ['movie.spiders']}
+2020-05-01 00:19:58,660 -  telnet.py[line:60] - INFO: Telnet Password: c9c30ed8df705d50
+2020-05-01 00:19:58,709 -  middleware.py[line:48] - INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-05-01 00:20:03,769 -  utils.py[line:80] - DEBUG: Error occurred during fetching https://www.w3schools.com/browsers/default.asp
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 101] Network is unreachable>
+2020-05-01 00:20:03,819 -  utils.py[line:88] - DEBUG: Sleeping for 0.1 seconds
+2020-05-01 00:20:08,949 -  utils.py[line:80] - DEBUG: Error occurred during fetching https://www.w3schools.com/browsers/default.asp
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 101] Network is unreachable>
+2020-05-01 00:20:08,950 -  utils.py[line:184] - WARNING: Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 101] Network is unreachable>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+2020-05-01 00:20:15,266 -  utils.py[line:80] - DEBUG: Error occurred during fetching https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 101] Network is unreachable>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1422, in connect
+    server_hostname=server_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 423, in wrap_socket
+    session=session
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 870, in _create
+    self.do_handshake()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1059: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error _ssl.c:1059: The handshake operation timed out>
+2020-05-01 00:20:15,287 -  utils.py[line:88] - DEBUG: Sleeping for 0.1 seconds
+2020-05-01 00:20:21,696 -  utils.py[line:80] - DEBUG: Error occurred during fetching https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 101] Network is unreachable>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1422, in connect
+    server_hostname=server_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 423, in wrap_socket
+    session=session
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 870, in _create
+    self.do_handshake()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1059: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error _ssl.c:1059: The handshake operation timed out>
+2020-05-01 00:20:21,739 -  _legacy.py[line:154] - CRITICAL: Unhandled error in Deferred:
+2020-05-01 00:20:21,814 -  _legacy.py[line:154] - CRITICAL: 
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1414, in connect
+    super().connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 938, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 101] Network is unreachable>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1319, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/http/client.py", line 1422, in connect
+    server_hostname=server_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 423, in wrap_socket
+    session=session
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 870, in _create
+    self.do_handshake()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1059: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1362, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/urllib/request.py", line 1321, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error _ssl.c:1059: The handshake operation timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/crawler.py", line 85, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/crawler.py", line 108, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/spiders/movie_spider.py", line 62, in __init__
+    self.headers = get_random_headers()
+  File "/home/dawinia/CodeBook/ScrapyProject/movie/movie/spiders/movie_spider.py", line 50, in get_random_headers
+    return {'User-Agent': str(UserAgent().random)}
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/fake.py", line 69, in __init__
+    self.load()
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/fake.py", line 78, in load
+    verify_ssl=self.verify_ssl,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 250, in load_cached
+    update(path, use_cache_server=use_cache_server, verify_ssl=verify_ssl)
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 245, in update
+    write(path, load(use_cache_server=use_cache_server, verify_ssl=verify_ssl))
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 189, in load
+    verify_ssl=verify_ssl,
+  File "/home/dawinia/anaconda3/envs/Scrapy/lib/python3.7/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached

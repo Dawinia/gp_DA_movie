@@ -47,7 +47,7 @@ def is_legal_date(date: str) -> bool:
 
 
 def get_random_headers():
-    return {'User-Agent': str(UserAgent().random)}
+    return {'User-Agent': str(UserAgent(use_cache_server=False).random)}
 
 
 class MovieSpider(scrapy.Spider):
