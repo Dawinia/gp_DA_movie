@@ -196,6 +196,8 @@ class MovieSpider(scrapy.Spider):
         item_loader.replace_value('dbMovieID', text.get('url', '')[9: -1])
         item_loader.replace_value('tppMovieID', tpp_id)
 
+        base_column = {'director': 'directors', 'author': 'writers', 'actor': 'actors'}
+
         def get_name_list(parent):
             result = [child.get('name', '').split(' ')[0] for child in text.get(parent, [])][:10]
             return result if len(result) else [""]
@@ -206,13 +208,16 @@ class MovieSpider(scrapy.Spider):
                 person_item_loader.replace_value('name', detail.get('name', ''))
                 person_item_loader.replace_value('url', detail.get('url', ''))
                 person_item_loader.replace_value('identity', parent)
+                logger.info(f"get person info with identity {parent}")
                 yield person_item_loader.load_item()
 
-        item_loader.replace_value('directors', get_name_list('director'))
-        item_loader.replace_value('writers', get_name_list('author'))
-        item_loader.replace_value('actors', get_name_list('actor'))
+        for column, item_name in base_column.items():
+            item_loader.replace_value(item_name, get_name_list(column))
+        # item_loader.replace_value('directors', get_name_list('director'))
+        # item_loader.replace_value('writers', get_name_list('author'))
+        # item_loader.replace_value('actors', get_name_list('actor'))
 
-        item_loader.replace_value('genre', text.get('genre', ''))
+        item_loader.replace_value('genre', text.get('genre', []))
 
         info = response.xpath('//*[@id="info"]').get()
         pattern = '<span class="pl">制片国家/地区:</span>(.*?)<br>'
@@ -222,15 +227,18 @@ class MovieSpider(scrapy.Spider):
         item_loader.replace_value('rateCount', text.get('aggregateRating', []).get('ratingCount', '0.0'))
         item_loader.replace_value('doubanRate', text.get('aggregateRating', []).get('ratingValue', '0.0'))
 
+        logger.info(f"finish parse one movie info, ready to parse person")
+
+        for column in base_column.keys():
+            for item in get_person_info(column):
+                pass
+        # next(get_person_info('director'))
+        # get_person_info('author')
+        # get_person_info('actor')
+
         yield item_loader.load_item()
 
         time.sleep(random.uniform(1, 2))
-
-        logger.info(f"finish parse one movie info, ready to parse person")
-        logger.info(f"test: {len(text)}")
-        get_person_info('director')
-        get_person_info('author')
-        get_person_info('actor')
 
         # yield scrapy.Request()
 
