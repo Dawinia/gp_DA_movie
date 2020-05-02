@@ -4,9 +4,9 @@
 
 from sqlalchemy import Column, Integer, String, SmallInteger, Date, Float
 from . import base
-from movie.spiders.movie_spider import logger
+from logger import Logger
 
-
+logger = Logger('boxOfficeLogger').getlog()
 # class BaseTableTemplate(base):
 #     """ the base database template """
 #

@@ -7,7 +7,7 @@
 """
 import asyncio
 import aiohttp
-from ProxyPool.utils.logger import logger
+from logger import Logger
 from ProxyPool.scheme.Proxy import Proxy
 from ProxyPool.storage.RedisClient import RedisClient
 from ProxyPool.settings import TEST_TIMEOUT, TEST_BATCH, TEST_URL, TEST_VALID_STATUS
@@ -22,6 +22,8 @@ EXCEPTIONS = (
     ClientOSError,
     ClientHttpProxyError
 )
+
+logger = Logger('proxyPoolLogger').getlog()
 
 
 class Tester(object):

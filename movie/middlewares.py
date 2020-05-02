@@ -7,15 +7,15 @@
 
 from scrapy import signals
 import requests
-from scrapy.exceptions import IgnoreRequest
 
 from ProxyPool.scheme.Proxy import Proxy
-from movie.spiders.movie_spider import logger
+from logger import Logger
 from movie.dao import RedisHelper
-import json
 from hashlib import md5
 from fake_useragent import UserAgent
 import random
+
+logger = Logger('boxOfficeLogger').getlog()
 
 
 class MovieSpiderMiddleware(object):
@@ -117,6 +117,7 @@ class MovieDownloaderMiddleware(object):
 
 class CookiesMiddleware(object):
     """ 随机设置Cookies """
+
     def __init__(self):
         pass
 
@@ -208,3 +209,11 @@ class ProxyMiddleware(object):
         return cls(
             proxy_url=settings.get('PROXY_URL')
         )
+
+
+class RefererMiddleware(object):
+    def process_request(self, request, spider):
+        # if request.meta.get('retry_times'):
+        referer = "https://movie.douban.com/"
+        if referer:
+            request.headers["referer"] = referer

@@ -7,7 +7,6 @@
 """
 from random import randint
 
-from ProxyPool.utils.logger import logger
 from ProxyPool.scheme.Proxy import Proxy
 from ProxyPool.crawlers.BaseCrawler import BaseCrawler
 

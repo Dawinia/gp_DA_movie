@@ -1,26 +1,20 @@
-from json import JSONDecodeError
 from urllib.parse import urlencode
 
 import scrapy
 import logging
 from scrapy.loader import ItemLoader
-from movie.items import BoxOfficeItem, MovieCommentItem, MovieInfoItem, PersonInfoItem
-import datetime
+from movie.items import BoxOfficeItem, MovieInfoItem, PersonInfoItem
 import time
 import json
 import re
-import requests
 from fake_useragent import UserAgent
 from scrapy.utils.project import get_project_settings
 import random
+from logger import Logger
 
 settings = get_project_settings()
 
-logging.basicConfig(
-    filename=settings['BOXOFFICE_LOG_FILE'],
-    level=logging.INFO,
-    format='%(asctime)s -  %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
-logger = logging.getLogger('boxOfficeLogger')
+logger = Logger('boxOfficeLogger').getlog()
 
 
 def get_year_rate(year, rate):
