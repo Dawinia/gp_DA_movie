@@ -8,9 +8,7 @@
 import requests
 from ProxyPool.storage.RedisClient import RedisClient
 from ProxyPool.crawlers import crawlers
-from logger import Logger
-
-logger = Logger('proxyPoolLogger').getlog()
+from logger import proxy_logger as logger
 
 
 class Getter:

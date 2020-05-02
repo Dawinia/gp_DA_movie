@@ -4,9 +4,7 @@
 
 from sqlalchemy import Column, Integer, String, SmallInteger, Date, Float
 from . import base
-from logger import Logger
-
-logger = Logger('boxOfficeLogger').getlog()
+from logger import spider_logger as logger
 # class BaseTableTemplate(base):
 #     """ the base database template """
 #

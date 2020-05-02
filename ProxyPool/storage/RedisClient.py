@@ -11,9 +11,7 @@ import redis
 from ProxyPool.settings import REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, REDIS_KEY, MAX_SCORE, INITIAL_SCORE, MIN_SCORE
 from ProxyPool.scheme.Proxy import Proxy
 from ProxyPool.utils.parse import convert
-from logger import Logger
-
-logger = Logger('proxyPoolLogger').getlog()
+from logger import proxy_logger as logger
 
 
 class RedisClient:

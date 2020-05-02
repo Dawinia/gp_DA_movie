@@ -9,13 +9,11 @@ from scrapy import signals
 import requests
 
 from ProxyPool.scheme.Proxy import Proxy
-from logger import Logger
+from logger import spider_logger as logger
 from movie.dao import RedisHelper
 from hashlib import md5
 from fake_useragent import UserAgent
 import random
-
-logger = Logger('boxOfficeLogger').getlog()
 
 
 class MovieSpiderMiddleware(object):
@@ -161,7 +159,7 @@ class UserAgentMiddleware(object):
 
     def __init__(self, crawler):
         super(UserAgentMiddleware, self).__init__()
-        self.ua = UserAgent()
+        self.ua = UserAgent(use_cache_server=False)
         self.ua_type = crawler.settings.get("RANDOM_UserAgent_TYPE", "random")
 
     @classmethod

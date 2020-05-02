@@ -3,12 +3,10 @@
 from scrapy.commands import ScrapyCommand
 import os
 from twisted.internet import defer, protocol, reactor
-from logger import Logger
+from logger import spider_logger as logger
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 from movie.commands.process import SpiderRunnerProtocol
-
-logger = Logger('boxOfficeLogger').getlog()
 
 
 class Command(ScrapyCommand):

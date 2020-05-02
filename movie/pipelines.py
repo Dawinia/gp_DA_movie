@@ -7,12 +7,10 @@
 from scrapy.exceptions import DropItem
 from movie.dao import MySQLHelper, RedisHelper
 from movie.dao.databasetable import BoxOfficeTableTemplate, MovieInfoTableTemplate, PersonTableTemplate
-from logger import Logger
+from logger import spider_logger as logger
 from movie.items import BoxOfficeItem, MovieCommentItem, MovieInfoItem, PersonInfoItem
 from sqlalchemy.exc import InvalidRequestError
 from sqlalchemy.orm import session
-
-logger = Logger('boxOfficeLogger').getlog()
 
 
 class ItemPipeline(object):

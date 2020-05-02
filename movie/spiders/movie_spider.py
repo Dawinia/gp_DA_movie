@@ -9,11 +9,9 @@ import re
 from fake_useragent import UserAgent
 from scrapy.utils.project import get_project_settings
 import random
-from logger import Logger
+from logger import spider_logger as logger
 
 settings = get_project_settings()
-
-logger = Logger('boxOfficeLogger').getlog()
 
 
 def get_year_rate(year, rate):
@@ -228,6 +226,8 @@ class MovieSpider(scrapy.Spider):
 
         time.sleep(random.uniform(1, 2))
 
+        logger.info(f"finish parse one movie info, ready to parse person")
+        logger.info(f"test: {len(text)}")
         get_person_info('director')
         get_person_info('author')
         get_person_info('actor')

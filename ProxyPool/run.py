@@ -11,9 +11,7 @@ from ProxyPool.api import app
 from ProxyPool.utils.getter import Getter
 from ProxyPool.utils.tester import Tester
 from ProxyPool.settings import CYCLE_GETTER, CYCLE_TESTER, API_HOST, API_THREADED, API_PORT
-from logger import Logger
-
-logger = Logger('proxyPoolLogger').getlog()
+from logger import proxy_logger as logger
 
 
 tester_process, getter_process, server_process = None, None, None

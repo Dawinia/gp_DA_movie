@@ -15,7 +15,6 @@ logging.basicConfig(
     filename=settings['BOXOFFICE_LOG_FILE'],
     level=logging.INFO,
     format='%(asctime)s -  %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
-spider_logger = logging.getLogger('boxOfficeLogger')
 
 
 class Logger:
@@ -37,7 +36,7 @@ class Logger:
         if logger == 'boxOfficeLogger':
             self.log_filename = settings['BOXOFFICE_LOG_FILE']
         elif logger == 'proxyPoolLogger':
-            self.log_filename = settings['LOG_FILE']
+            self.log_filename = settings['PROXYPOOL_LOG_FILE']
 
         file_handler = logging.FileHandler(self.log_filename, 'a', encoding='utf-8')  # 这个是python3的
         file_handler.setLevel(logging.INFO)
@@ -63,5 +62,9 @@ class Logger:
         file_handler.close()
         console_handler.close()
 
-    def getlog(self):
+    def get_log(self):
         return self.logger
+
+
+spider_logger = Logger('boxOfficeLogger').get_log()
+proxy_logger = Logger('proxyPoolLogger').get_log()
