@@ -15,9 +15,9 @@ from sqlalchemy.orm import session
 logger = Logger('boxOfficeLogger').getlog()
 
 
-class BoxOfficePipeline(object):
+class ItemPipeline(object):
     def __init__(self, redis_helper: RedisHelper):
-        logger.error(f"start to use judge duplicate")
+        logger.info(f"start to use judge duplicate item")
         self.conn = redis_helper.get_conn()
 
     @classmethod
@@ -59,11 +59,9 @@ class MySQLPipeline(object):
     def __init__(self, mysql_helper: MySQLHelper):
         self.session: session = mysql_helper.get_session()
         self.id_seen = set()
-        logger.error(f"pipeline init")
 
     @classmethod
     def from_crawler(cls, crawler):
-        logger.error(f"setting: {crawler.settings.get('SET_TEST')}")
         settings = crawler.settings
         return cls(MySQLHelper(settings['DATABASE_USER'], settings['DATABASE_PASSWORD'], settings['DATABASE_PORT'],
                                settings['DATABASE_NAME']))
@@ -75,7 +73,7 @@ class MySQLPipeline(object):
         self.session.close()
 
     def process_item(self, item, spider):
-        logger.critical(f"type of item is {type(item)}")
+        logger.info(f"type of item is {type(item)}")
         if isinstance(item, BoxOfficeItem):
             self.session.add(BoxOfficeTableTemplate(**item))
         elif isinstance(item, MovieInfoItem):
@@ -84,7 +82,7 @@ class MySQLPipeline(object):
             self.session.add(PersonTableTemplate(**item))
         # elif isinstance(item, MovieCommentItem):
         #     self.session.add(MovieCommentTableTemplate(**item))
-        logger.warning(f"insert database finished")
+        logger.info(f"insert database finished")
         try:
             self.session.commit()
         except InvalidRequestError:

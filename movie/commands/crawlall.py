@@ -18,7 +18,7 @@ class Command(ScrapyCommand):
         return "Run all spiders"
 
     def crawl(self, queue, spider):
-        logger.error(f"spider = {spider}")
+        logger.info(f"spider = {spider}")
         # settings = Settings()
         # settings.set("PROJECT", {"movie"})
         settings = get_project_settings()

@@ -133,7 +133,7 @@ class CookiesMiddleware(object):
 
 class DuplicateMiddleware(object):
     def __init__(self, redis_helper: RedisHelper, key):
-        logger.error(f"start to use judge duplicate")
+        logger.info(f"start to use judge duplicate url")
         self.conn = redis_helper.get_conn()
         self.key = key
 
@@ -143,9 +143,8 @@ class DuplicateMiddleware(object):
         md5_obj.update(request.url.encode(encoding='utf-8'))
         new_url = md5_obj.hexdigest()
         if self.conn.sadd(self.key, new_url) == 0:
-            logger.error(f"{request.url} has been crawled")
+            logger.error(f"{request.url} has been crawled, drop it")
             # raise IgnoreRequest(f"{request.url} has been crawled")
-        logger.error(f"url = {request.url}")
         return None
 
     @classmethod
@@ -200,7 +199,7 @@ class ProxyMiddleware(object):
         proxy = 'http://' + Proxy(proxy[0][1:-1], int(proxy[1])).string()
         print(proxy)
         if proxy:
-            logger.debug('使用代理 ' + proxy)
+            logger.info('使用代理 ' + proxy)
             request.meta['proxy'] = proxy
 
     @classmethod

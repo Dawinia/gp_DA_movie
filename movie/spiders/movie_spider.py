@@ -1,7 +1,6 @@
 from urllib.parse import urlencode
 
 import scrapy
-import logging
 from scrapy.loader import ItemLoader
 from movie.items import BoxOfficeItem, MovieInfoItem, PersonInfoItem
 import time
@@ -87,7 +86,7 @@ class MovieSpider(scrapy.Spider):
     def start_requests(self):
         data = {'showDate': 20160101}
         base_url = 'http://piaofang.maoyan.com/dashboard-ajax/movie?'
-        logger.error(f"boxOffice start request for url = {base_url}")
+        logger.info(f"boxOffice start request for url = {base_url}")
         for date in range(self.settings.get('BEGIN_DATE'), self.settings.get('END_DATE') + 1):
             if not is_legal_date(str(date)):
                 continue
@@ -106,7 +105,7 @@ class MovieSpider(scrapy.Spider):
         :return:
         """
         time.sleep(random.uniform(0, 1))
-        logger.error(f"now crawl url : {response.url}")
+        logger.info(f"now crawl url for boxOffice: {response.url}")
         item_loader = ItemLoader(item=BoxOfficeItem(), response=response)
         text = json.loads(response.text, strict=False)
 
@@ -134,7 +133,7 @@ class MovieSpider(scrapy.Spider):
             item_loader.replace_value('splitBoxInfo', movie_info.get('splitBoxSplitUnit', []).get('num', ""))
             item_loader.replace_value('crawlDate', query_date)
             item_loader.replace_value('yearRate', get_year_rate(query_date, i + 1))
-            logger.warning(f"get {i + 1} movie info, named {movie_info.get('movieName', '')}.")
+            logger.info(f"get {i + 1} boxOffice, named {movie_info.get('movieName', '')}.")
             # logger.error(f"boxOffice spider put {movie_info.get('movieName')} into queue")
             yield item_loader.load_item()
 
@@ -146,8 +145,6 @@ class MovieSpider(scrapy.Spider):
             yield scrapy.Request(url=search_url, cookies=self.cookies, callback=self.parse_movie_info_url,
                                  dont_filter=True,
                                  cb_kwargs=dict(movie_name=movie_name, movie_year=query_date, tpp_id=movie_id))
-
-        logger.error(f"boxOffice start parse")
 
     def parse_movie_info_url(self, response, movie_name, movie_year, tpp_id):
         """
@@ -163,7 +160,7 @@ class MovieSpider(scrapy.Spider):
             logger.error(f"kwargs not assign")
             return
         text = json.loads(response.text, strict=False)
-        logger.info(f"the url is {response.url}")
+        logger.info(f"the url of movieInfo in suggestion is {response.url}")
         logger.info(f"len of text is {len(text)}")
         if len(text) == 0:
             logger.error(f"not response scraped")
@@ -184,20 +181,18 @@ class MovieSpider(scrapy.Spider):
             time.sleep(random.uniform(1, 2))
 
     def parse_movie_info(self, response, tpp_id):
-        logger.critical(f"crawled movie info of {response.url}")
+        logger.info(f"crawled movie info of {response.url}")
         item_loader = ItemLoader(item=MovieInfoItem(), response=response)
         person_item_loader = ItemLoader(item=PersonInfoItem(), response=response)
         data = response.xpath("//script[@type='application/ld+json']/text()").extract()[0]
-        logger.critical(f"type of data is {type(data)}")
         try:
             text = json.loads(data, strict=False)
         except json.decoder.JSONDecodeError as de:
-            print(de)
             logger.error(f"json decode error {de} in url = {response.url}")
         finally:
             text = json.loads(data, strict=False)
 
-        logger.error(f"len of movie info = {len(text)}")
+        logger.info(f"len of movie info = {len(text)}")
         item_loader.replace_value('movieName', text.get('name', ''))
         item_loader.replace_value('movieName', text.get('name', ''))
         item_loader.replace_value('dbMovieID', text.get('url', '')[9: -1])
@@ -208,15 +203,13 @@ class MovieSpider(scrapy.Spider):
             return result if len(result) else [""]
 
         def get_person_info(parent):
-            logger.info(f"start to crawl person")
+            logger.info(f"start to crawl person info")
             for detail in text.get(parent, []):
                 person_item_loader.replace_value('name', detail.get('name', ''))
                 person_item_loader.replace_value('url', detail.get('url', ''))
                 person_item_loader.replace_value('identity', parent)
                 yield person_item_loader.load_item()
 
-        logger.critical(f"items = {get_name_list('actor')}")
-        print(f"items = {get_name_list('actor')}")
         item_loader.replace_value('directors', get_name_list('director'))
         item_loader.replace_value('writers', get_name_list('author'))
         item_loader.replace_value('actors', get_name_list('actor'))
