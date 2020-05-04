@@ -209,7 +209,7 @@ class MovieSpider(scrapy.Spider):
                 person_item_loader.replace_value('url', detail.get('url', ''))
                 person_item_loader.replace_value('identity', parent)
                 logger.info(f"get person info with identity {parent}")
-                yield person_item_loader.load_item()
+                yield person_item_loader
 
         for column, item_name in base_column.items():
             item_loader.replace_value(item_name, get_name_list(column))
@@ -231,7 +231,7 @@ class MovieSpider(scrapy.Spider):
 
         for column in base_column.keys():
             for item in get_person_info(column):
-                pass
+                yield item.load_item()
         # next(get_person_info('director'))
         # get_person_info('author')
         # get_person_info('actor')
