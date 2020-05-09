@@ -7,6 +7,7 @@
 
 from scrapy import signals
 import requests
+from scrapy.exceptions import IgnoreRequest
 
 from ProxyPool.scheme.Proxy import Proxy
 from logger import spider_logger as logger
@@ -142,7 +143,7 @@ class DuplicateMiddleware(object):
         new_url = md5_obj.hexdigest()
         if self.conn.sadd(self.key, new_url) == 0:
             logger.error(f"{request.url} has been crawled, drop it")
-            # raise IgnoreRequest(f"{request.url} has been crawled")
+            raise IgnoreRequest(f"{request.url} has been crawled")
         return None
 
     @classmethod
