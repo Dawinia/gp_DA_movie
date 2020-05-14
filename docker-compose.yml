@@ -1,0 +1,7 @@
+version: '3'
+services:
+  scrapy_spider:
+    build: .
+    container_name: spider
+    volumes:
+    - .: /code
