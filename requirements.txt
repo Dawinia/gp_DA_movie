@@ -3,7 +3,7 @@ lxml==4.6.5
 aiohttp==3.7.4
 Flask==1.1.2
 requests==2.22.0
-Twisted==20.3.0
+Twisted==22.2.0
 redis==3.3.11
 Scrapy==1.8.1
 fake_useragent==0.1.11
