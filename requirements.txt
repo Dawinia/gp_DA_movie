@@ -4,7 +4,7 @@ aiohttp==3.7.4
 Flask==1.1.2
 requests==2.22.0
 Twisted==20.3.0
-redis==3.3.11
+redis==4.4.4
 Scrapy==1.8.1
 fake_useragent==0.1.11
 attrs==19.3.0
